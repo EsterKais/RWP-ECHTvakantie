@@ -1,0 +1,120 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* GRID SETTINGS */
+$full-width:          1220px;
+$min-width:           900px;
+
+/* COLORS */
+$white:              #FFF;
+$background-light:   #F1F1F1;
+$background-dark:    #444;
+$main-color:         #55B6E1;
+$main-color-accent:  #4494B7;
+$sec-color:          #F6CA68;
+$sec-color-accent:   #DDB45A;
+
+body {
+  background: $white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  padding:0;
+  margin:0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $full-width;
+  min-width: $min-width;
+  padding: 0 20px;
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header--top {
+  background: $white;
+  width: 100%;
+  padding: 15px 0;
+
+
+  .logo {
+    width: 20%;
+    font-weight: bold;
+    font-size: 26px;
+    letter-spacing: -1px;
+    color: #222;
+  }
+
+  nav {
+    width: 60%;
+  }
+
+  .search {
+    width: 20%;
+  }
+}
+
+.search-field {
+  width: 100%;
+  border:0;
+  padding: 15px 10px;
+  background: $background-light;
+  font-weight: 16px;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.search-field:focus {
+  background: $main-color;
+  color: white;
+}
+
+.header--bottom {
+  background: $background-light;
+  color: black;
+  padding: 15px 0;
+
+  ul {
+  margin:0;
+  padding: 0;
+
+    li {
+      display:inline;
+      list-style: none;
+      margin-right: 28px;
+      font-size: 14px;
+    }
+   }
+ }
+
+footer {
+  color: white;
+}
+
+ .footer--top {
+   background: $background-dark;
+   padding: 30px 0;
+ }
+
+ .footer--bottom {
+   background: $background-dark;
+   border-top: 1px solid #666;
+   padding: 15px 0;
+   text-align: center;
+ }
