@@ -1,0 +1,2 @@
+class PhotoTheme < ApplicationRecord
+end
