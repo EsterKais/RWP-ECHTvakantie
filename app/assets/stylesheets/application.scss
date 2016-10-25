@@ -99,7 +99,7 @@ header {
       li {
         display:inline;
         list-style: none;
-        margin-right: 35px;
+        margin-right: 15px;
         padding: 10px;
         font-size: 14px;
 
@@ -163,7 +163,7 @@ header {
     li {
       display:inline;
       list-style: none;
-      margin-right: 28px;
+      margin-right: 20px;
       font-size: 14px;
     }
    }
@@ -210,7 +210,7 @@ footer {
 .column-4 {
   width: 32%;
   float: left;
-  background: red;
+  background: gray;
   text-align: center;
   color:white;
   padding: 100px 0;
@@ -220,7 +220,15 @@ footer {
   color: white;
   width: 23.5%;
   float:left;
-  background: red;
+  background: gray;
   text-align: center;
   padding: 100px 0;
 }
+
+.theme1 { background: url(''); }
+.theme2 { background: url(''); }
+.theme3 { background: url(''); }
+.theme4 { background: url(''); }
+.theme5 { background: url(''); }
+.theme6 { background: url(''); }
+.theme7 { background: url(''); }

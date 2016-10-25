@@ -8,6 +8,12 @@
 
 # PIM added this for testing
 theme1 = Theme.create(name: "Theme1")
+theme2 = Theme.create(name: "Theme2")
+theme3 = Theme.create(name: "Theme3")
+theme4 = Theme.create(name: "Theme4")
+theme5 = Theme.create(name: "Theme5")
+theme6 = Theme.create(name: "Theme6")
+theme7 = Theme.create(name: "Theme7")
 
 
 
