@@ -3,40 +3,55 @@ require 'capybara'
 
 feature 'integration tests theme page', js: true do       # this is used when having js::::
 
+  before do
+    DatabaseCleaner.clean
+  end
 
   # PIM theme does NOT need a vacation
   let ( :theme1 ) { create :theme, name: "Nuts" }
-  let ( :theme2 ) { create :theme, name: "Apples" }
 
-  let ( :vacation1 ) { create :vacation1, themes: [theme1], name: "Peanut" }
-  let ( :vacation2 ) { create :vacation2, themes: [theme2], name: "Golden" }
 
-  scenario 'add a product' do
+  let( :vacation1 ) { create :vacation, themes: [theme1], title: "Peanut" }
 
-    visit themes_path
+  #let ( :theme2 ) { create :theme, name: "Apples" }
+  #let( :vacation2 ) { create :vacation, themes: [theme2], title: "Golden" }
 
-    click_link "Nuts"
+  it 'navigation to themes show page' do
 
-    expect(page).to have_content("Golden")
+    visit root_path
+
+    # expecting theme name
+    expect(page).to have_content("Nuts")
+
+    end
+
+  it 'navigation to themes show page' do
+
+    visit theme_path(theme1)
+
+    # expecting theme name
+    expect(page).to have_content("Nuts")
+
+  end
+
+  it 'navigation to vacation show page' do
+
+    visit vacation_path(vacation1)
+
+    # expecting vacation title
+    expect(page).to have_content("Peanut")
 
   end
 end
-    # # fill in the form
-    # fill_in 'product_name', with: 'Automatic website builder'
-    # fill_in 'product_description', with: 'The awesome description'
-    # fill_in 'product_price', with: 10
-    #
-    # within '#product_category_ids' do
-    #   find("option[value='#{category.id}']").click
-    # end
-    #
-    # attach_file('images_', File.join(Rails.root, '/spec/support/IMG-20160920-WA0005.jpg'))
-    #
-    # # click save
-    # click_button('Save')
-    #
-    # sleep(10)
-    #
-    # # expect to have a product in the db now
-    # expect(Product.all.length).to eq(1)
+
+
+
+
+# click_on  "Themes"
+# find(".dropdown-menu").click
+# sleep(60)
+#
+# within ('.header--bottom') do
+#   click_on theme1.name
+# end
 
