@@ -32,6 +32,5 @@ feature 'Add product', js: true do
     # expect to have a product in the db now
     expect(Product.all.length).to eq(1)
 
-
   end
 end
