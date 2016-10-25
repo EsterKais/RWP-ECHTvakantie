@@ -24,13 +24,7 @@ class ThemesController < ApplicationController
   end
 
 
-  def show
 
-    @tphotos = @theme.tphotos
-
-    @vacations = @theme.vacations
-
-  end
 
   def destroy
     @theme = Theme.find_by_name(params[:name])
@@ -55,18 +49,45 @@ class ThemesController < ApplicationController
     end
   end
 
-  # def by_name
-  #   @artists = Artist.by_name
-  # end
-  #
-  # def by_created_at
-  #   @artists = Artist.by_created_at
-  # end
+
+
+  # PIM working from here onwards
+  def show
+    @vacations = @theme.vacations
+  end
+
+  def by_title
+    @vacations = @theme.vacations.by_name
+  end
+
+  def by_created_at
+    @vacations = @theme.vacations.created_at
+  end
+
+  def by_price
+    @vacations = @theme.vacations.by_price
+  end
+
+  def by_country
+    @vacations = @theme.vacations.by_country
+  end
+
+  def by_location
+    @vacations = @theme.vacations.by_location
+  end
+
+  def by_address
+    @vacations = @theme.vacations.by_address
+  end
+
 
   private
 
   def set_theme
     @theme = Theme.find_by_name(params[:name])
+
+    @tphotos = @theme.tphotos
+
   end
 
   def image_params

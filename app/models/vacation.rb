@@ -12,19 +12,28 @@ class Vacation < ApplicationRecord
 
 
 
-  def self.order_by_name
-    order(:name)
+  # PIM working here down::::
+  def by_title
+    self.sort { |a,b| a.title.downcase <=> b.title.downcase }
   end
 
-  def self.order_by_country
+  def by_created_at
+    order(:created_at)
+  end
+
+  def by_price
+    order(:price)
+  end
+
+  def by_country
     order(:country)
   end
 
-  def self.order_by_location
+  def by_location
     order(:location)
   end
 
-  def self.order_by_price
-    order(:price)
+  def by_address
+    order(:address)
   end
 end

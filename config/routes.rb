@@ -8,6 +8,14 @@ Rails.application.routes.draw do
   resources :vacations, param: :title
   resources :themes, param: :name
   resources :tphotos
+
+  get 'theme_by_title' => 'themes#by_title'
+
+  root 'themes#index'
+
+
+
+
   # get 'vacations/new' => 'vacations#new', as: :new_vacation             # what does ":as" mean ????
   # post 'vacations' => 'vacations#create'
   #
@@ -27,7 +35,7 @@ Rails.application.routes.draw do
   # patch 'themes/:name' => 'themes#update'
   # delete 'themes/:name' => 'themes#destroy'
 
-  root 'themes#index'
+
 
 
 end

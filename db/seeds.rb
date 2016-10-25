@@ -22,11 +22,20 @@ tphoto2 = Tphoto.create(remote_image_url: "http://res.cloudinary.com/dnwkjak4p/i
 tphoto3 = Tphoto.create(remote_image_url: "http://res.cloudinary.com/dnwkjak4p/image/upload/v1476007287/20161005-zsogv_l4urst.png")
 
 # Themes
-Theme.create(name: "Special", description: "nil", style: "nil", tphotos: [tphoto1])
-Theme.create(name: "Luxury", description: "nil", style: "nil", tphotos: [tphoto2])
-Theme.create(name: "Body & Mind", description: "nil", style: "nil", tphotos: [tphoto3])
+theme1 = Theme.create(name: "Special", description: "nil", style: "nil", tphotos: [tphoto1])
+theme2 = Theme.create(name: "Luxury", description: "nil", style: "nil", tphotos: [tphoto2])
+theme3 = Theme.create(name: "Body & Mind", description: "nil", style: "nil", tphotos: [tphoto3])
+
+
+
 
 #Vacations
-Vacation.create(title: "Paris", country: "France", region: "nil", price: "nil", description: "nil", show: "true", vphotos: [vphoto1])
-Vacation.create(title: "Berlin", country: "Germany", region: "nil", price: "nil", description: "nil", show: "true", vphotos: [vphoto2])
-Vacation.create(title: "Amsterdam", country: "The Netherlands", region: "nil", price: "nil", description: "nil", show: "true", vphotos: [vphoto3])
+Vacation.create(title: "Paris", address: "Benedelangs 35", country: "France", region: "nil", price: "nil", description: "nil", show: "true", vphotos: [vphoto1], themes: [theme1])
+Vacation.create(title: "Spain", address: "Bloemenmarkt 2", country: "The Netherlands", region: "nil", price: "nil", description: "nil", show: "true", vphotos: [vphoto3], themes: [theme1])
+Vacation.create(title: "Amsterdam", address: "Weesperplein", country: "The Netherlands", region: "nil", price: "nil", description: "nil", show: "true", vphotos: [vphoto3], themes: [theme1])
+Vacation.create(title: "Nicaragua", address: "Nicaragua", country: "The Netherlands", region: "nil", price: "nil", description: "nil", show: "true", vphotos: [vphoto3], themes: [theme1])
+Vacation.create(title: "Antarctica", address: "Flevoland", country: "The Netherlands", region: "nil", price: "nil", description: "nil", show: "true", vphotos: [vphoto3], themes: [theme1])
+
+Vacation.create(title: "Berlin", address: "Andorra", country: "Germany", region: "nil", price: "nil", description: "nil", show: "true", vphotos: [vphoto2], themes: [theme2])
+Vacation.create(title: "France", address: "Sweden", country: "The Netherlands", region: "nil", price: "nil", description: "nil", show: "true", vphotos: [vphoto3], themes: [theme3])
+
