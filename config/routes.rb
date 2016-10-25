@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :vacations, param: :title
   resources :themes, param: :name
   resources :tphotos
+  resources :vphotos
+
   # get 'vacations/new' => 'vacations#new', as: :new_vacation             # what does ":as" mean ????
   # post 'vacations' => 'vacations#create'
   #

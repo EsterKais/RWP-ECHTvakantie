@@ -1,0 +1,26 @@
+p
+  strong
+    | Title:
+  = @vacation.title
+p
+  | C:
+  = @vacation.country
+p  
+  | R:
+  = @vacation.region
+p  
+  | P:
+  = @vacation.price
+p  
+  | S:
+  = @vacation.show
+
+h4
+  | Photos
+- @vacation.vphotos.each do |photo|
+  .panel.panel-default
+    .panel-heading
+      = image_tag photo.image.thumbnail
+= link_to 'Edit', edit_vacation_path(@vacation)
+|  |
+= link_to 'Back', vacations_path
