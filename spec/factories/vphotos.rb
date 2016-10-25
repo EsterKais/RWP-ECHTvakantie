@@ -1,5 +1,6 @@
 FactoryGirl.define do
-  factory :photo_theme do
+  factory :vphoto do
+    vacation nil
     image "MyString"
   end
 end

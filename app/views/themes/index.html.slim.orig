@@ -1,14 +1,39 @@
+<<<<<<< HEAD
+- @themes.each do |theme|
+  p
+    = link_to theme.name, theme
+  p
+    = theme.description
+  p
+    = link_to "Open", theme
+  p
+    = link_to 'Edit', edit_theme_path(theme)
+  p
+    = link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New theme', new_theme_path
+=======
+
 .container
   .themes
-    .grid
-      - @themes.each do |theme|  
-         .theme-column style=["background:black;"]
-          = theme.name
-          br
-          = link_to 'Edit', edit_theme_path(theme)
-          = link_to 'Destroy', theme, method: :delete, data: {confirm: 'Are you sure?'} 
-
-          
+    .row
+      .column-4
+        | Hi
+      .column-4
+        | Hi
+      .column-4
+        | Hi
+    .row
+      .column-3
+        | Hi
+      .column-3
+        | Hi        
+      .column-3
+        | Hi
+      .column-3
+        | Hi 
+        
+        
 
 main.articles
   h1 themes
@@ -30,3 +55,4 @@ main.articles
            
   br/
   = link_to 'New theme', new_theme_path
+>>>>>>> master

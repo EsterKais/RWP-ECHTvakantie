@@ -1,2 +1,0 @@
-class PhotoVacation < ApplicationRecord
-end
