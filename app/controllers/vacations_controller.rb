@@ -1,15 +1,15 @@
 class VacationsController < ApplicationController
 
     def index
-        @vacations = Theme.all
+        @vacations = Vacation.all
     end
 
     def new
-        @vacation = Theme.new
+        @vacation = Vacation.new
     end
 
     def create
-        @vacation = Theme.new( vacation_params )
+        @vacation = Vacation.new( vacation_params )
 
         if @vacation.save
             redirect_to vacation_path(@vacation)
@@ -20,11 +20,11 @@ class VacationsController < ApplicationController
 
 
     def show
-        @vacation = Theme.find_by_title(vacation_params[:title])
+        @vacation = Vacation.find_by_title(params[:title])
     end
 
     def destroy
-        @vacation = Theme.find_by_title(vacation_params[:title])
+        @vacation = Vacation.find_by_title(params[:title])
 
         @vacation.destroy
 
@@ -32,11 +32,11 @@ class VacationsController < ApplicationController
     end
 
     def edit
-        @theme = Theme.find_by_title(vacation_params[:title])
+        @theme = Vacation.find_by_title(params[:title])
     end
 
     def update
-        @vacation = Theme.find_by_title(vacation_params[:title])
+        @vacation = Vacation.find_by_title(params[:title])
 
         if @vacation.update_attributes( vacation_params )
             redirect_to vacation_path(@theme), notice: "Update succesvol"
