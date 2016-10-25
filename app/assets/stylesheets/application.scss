@@ -168,6 +168,113 @@ header {
     }
    }
  }
+// VACATION SHOW PAGE by ESTER
+
+.vacation {
+margin-top: -100px;
+// border: 1px solid red;
+display: flex;
+flex-direction: row;
+
+
+  .vacation-pic{
+    // border: 1px solid black;
+    background: black;
+    height: 250px;
+    width: 40%;
+    color: white;
+  }
+
+  .vacation-info{
+    // border: 2px solid green;
+    width: 60%;
+
+    .vacation-title{
+      color: white;
+      font-size: 50px;
+      margin-top: 40px;
+      margin-left: 10px;
+    }
+
+    .vacation-location{
+      // border: 2px solid black;
+      margin-left: 15px;
+      font-size: 30px;
+      margin-top: 25px;
+
+      .social-media.vacation{
+        background-color: black;
+        width: 100px;
+        height: 25px;
+      }
+    }
+
+      .vacation-price{
+        font-size: 20px;
+        margin-top: 25px;
+      }
+    }
+  }
+
+.vacation-descr{
+  // border: 2px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .vacation-descr-title{
+    // border: 2px solid black;
+    font-size: 30px;
+  }
+
+  .vacation-descr-text{
+    margin-top: 5px;
+    // border: 2px solid pink;
+    font-size: 20px;
+    text-align: justify;
+
+  }
+}
+
+.vacation-selection{
+  // border: 2px solid black;
+  background-color: black;
+  color: pink;
+  padding-top: 20px;
+  text-align: center;
+  // opacity: 0.3;
+
+  .flexbox {
+    display:flex;
+    align-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .vacation-selection-pic{
+    height: 200px;
+    margin: 50px 0;
+    margin-right: 3%;
+    width: 40%;
+    background-color: white;
+
+    &:nth-child(3) {
+      margin: 50px 0;
+    }
+  }
+}
+
+.review {
+  background: gray;
+  height: 300px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.map {
+  background: gray;
+  height: 300px;
+  color: white;
+}
+// end of VACATION SHOW PAGE by ESTER
 
 footer {
   color: white;
