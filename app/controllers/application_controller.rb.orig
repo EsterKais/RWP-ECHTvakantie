@@ -1,8 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+<<<<<<< HEAD
+
+=======
   before_filter :theme
 
   def theme
     @themes = Theme.all
   end
+>>>>>>> master
 end

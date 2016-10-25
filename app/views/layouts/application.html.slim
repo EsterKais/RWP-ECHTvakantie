@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
+    title EchtVakantie
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css"
+    link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"
+
+  body
+    = render 'shared/header'
+    
+    = yield
+
+    = render 'shared/footer'

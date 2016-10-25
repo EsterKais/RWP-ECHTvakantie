@@ -60,3 +60,6 @@ composer.lock
 
 .xml
 .orig
+
+Gemfile
+Gemfile.lock
