@@ -9,6 +9,6 @@
 
 
 
-
-vacation1 = Vacation.create(name: "leuke vakantie", description: Faker::Hipster.paragraph, address: "Bloemenmarkt 1")
-vacation2 = Vacation.create(name: "gezellig", description: Faker::Hipster.paragraph, address: "Amsterdam")
+# test
+vacation1 = Vacation.create(title: "leuke vakantie", description: Faker::Hipster.paragraph, address: "Bloemenmarkt 1")
+vacation2 = Vacation.create(title: "gezellig", description: Faker::Hipster.paragraph, address: "Amsterdam")

@@ -1,0 +1,46 @@
+p a
+p a
+p a
+p s
+
+.container
+  .themes
+    .row
+      .column-4
+        | Hi
+      .column-4
+        | Hi
+      .column-4
+        | Hi
+    .row
+      .column-3
+        | Hi
+      .column-3
+        | Hi        
+      .column-3
+        | Hi
+      .column-3
+        | Hi 
+        
+        
+
+main.articles
+  h1 themes
+  table
+    thead
+      tr
+        th Name
+        th colspan="3" 
+    tbody
+      - @themes.each do |theme|
+        article.articles-card
+          a
+            h2= link_to theme.name, theme, :class => 'articles-card-title'
+          p.articles-card-paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          button= link_to "check out", theme, :class => 'articles-card-button'
+        tr
+          td= link_to 'Edit', edit_theme_path(theme)
+          td= link_to 'Destroy', theme, method: :delete, data: {confirm: 'Are you sure?'} 
+           
+  br/
+  = link_to 'New theme', new_theme_path
