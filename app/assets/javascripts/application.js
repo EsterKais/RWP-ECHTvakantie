@@ -18,6 +18,6 @@
 
 $(document).ready(function(){
   $('.dropdown-menu').click(function(){
-    $('.header--bottom').slideDown();
-  })
+    $('.header--bottom').slideToggle();
+  });
 });

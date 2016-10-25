@@ -27,6 +27,19 @@ $main-color-accent:  #4494B7;
 $sec-color:          #F6CA68;
 $sec-color-accent:   #DDB45A;
 
+/* THEME COLORS */
+$theme1:             #fff;
+$theme2:             #fff;
+$theme3:             #fff;
+$theme4:             #fff;
+$theme5:             #fff;
+$theme6:             #fff;
+$theme7:             #fff;
+$theme8:             #fff;
+$theme9:             #fff;
+$theme10:            #fff;
+$theme11:            #fff;
+
 body {
   background: $white;
   font-family: 'Montserrat', sans-serif;
@@ -51,6 +64,7 @@ header {
   position: fixed;
   top:0;
   width: 100%;
+  height: 100px;
 }
 
 .header--top {
@@ -150,24 +164,54 @@ footer {
   color: white;
 }
 
- .footer--top {
-   background: $background-dark;
-   padding: 30px 0;
- }
+.footer--top {
+ background: $background-dark;
+ padding: 30px 0;
 
- .footer--bottom {
-   background: $background-dark;
-   border-top: 1px solid #666;
-   padding: 15px 0;
-   text-align: center;
- }
+  .social-media {
+    text-align: center;
+    width: 100%;
+    line-height: 30px;
+
+    img {
+      padding: 5px;
+    }
+  }
+}
+
+.footer--bottom {
+ background: $background-dark;
+ border-top: 1px solid #666;
+ padding: 15px 0;
+ text-align: center;
+ font-size: 11px;
+}
 
 
- .themes {
+.themes {
 
- }
+}
 
 .row {
   display: flex;
-  height: 2000px;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+
+.column-4 {
+  width: 32%;
+  float: left;
+  background: red;
+  text-align: center;
+  color:white;
+  padding: 100px 0;
+}
+
+.column-3 {
+  color: white;
+  width: 23.5%;
+  float:left;
+  background: red;
+  text-align: center;
+  padding: 100px 0;
 }
