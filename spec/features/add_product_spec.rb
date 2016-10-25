@@ -2,16 +2,18 @@ require 'rails_helper'
 require 'capybara'
 
 feature 'Add product', js: true do
-  # user needs to be logged in to add a product
-  before { login_as user }
 
   # create a user
-  let ( :user) { create :user, email: "host@user.com" }
+  # let ( :user) { create :user, email: "host@user.com" }
   # create a tempt category
-  let! ( :category ) { create :category, name: "A category", products: [] }
+
+  let! ( :theme ) { create :theme }
+
+  let! ( :vacation1 ) { create :vacation1, themes: [] }
+  let! ( :vacation2 ) { create :vacation2, themes: [] }
 
   scenario 'add a product' do
-    visit new_product_path
+    visit themes_path
 
     # fill in the form
     fill_in 'product_name', with: 'Automatic website builder'
@@ -31,6 +33,7 @@ feature 'Add product', js: true do
 
     # expect to have a product in the db now
     expect(Product.all.length).to eq(1)
+
 
   end
 end
