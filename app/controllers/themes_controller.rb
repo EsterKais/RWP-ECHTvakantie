@@ -1,5 +1,5 @@
 class ThemesController < ApplicationController
-  before_action :set_theme, only: [:edit, :update]
+  before_action :set_theme, only: [:edit, :update, :show]
 
   # homepage
   def index
@@ -25,8 +25,11 @@ class ThemesController < ApplicationController
 
 
   def show
-    @theme = Theme.find_by_name(params[:name])
+
     @tphotos = @theme.tphotos
+
+    @vacations = @theme.vacations
+
   end
 
   def destroy
@@ -51,6 +54,14 @@ class ThemesController < ApplicationController
       render :edit
     end
   end
+
+  # def by_name
+  #   @artists = Artist.by_name
+  # end
+  #
+  # def by_created_at
+  #   @artists = Artist.by_created_at
+  # end
 
   private
 
