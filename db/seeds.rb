@@ -6,9 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# PIM added this for testing
+theme1 = Theme.create(name: "Theme1")
 
 
 
-# test
+# PIM added this for testing
 vacation1 = Vacation.create(title: "leuke vakantie", description: Faker::Hipster.paragraph, address: "Bloemenmarkt 1")
 vacation2 = Vacation.create(title: "gezellig", description: Faker::Hipster.paragraph, address: "Amsterdam")
