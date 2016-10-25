@@ -40,6 +40,7 @@ main.articles
           button= link_to "check out", theme, :class => 'articles-card-button'
         tr
           td= link_to 'Edit', edit_theme_path(theme)
+          td= link_to 'Destroy', theme, method: :delete, data: {confirm: 'Are you sure?'} 
            
   br/
   = link_to 'New theme', new_theme_path
