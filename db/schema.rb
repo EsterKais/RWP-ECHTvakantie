@@ -45,10 +45,10 @@ ActiveRecord::Schema.define(version: 20161025081906) do
   end
 
   create_table "themes_vacations", force: :cascade do |t|
-    t.integer "room_id"
     t.integer "theme_id"
-    t.index ["room_id"], name: "index_themes_vacations_on_room_id", using: :btree
+    t.integer "vacation_id"
     t.index ["theme_id"], name: "index_themes_vacations_on_theme_id", using: :btree
+    t.index ["vacation_id"], name: "index_themes_vacations_on_vacation_id", using: :btree
   end
 
   create_table "vacations", force: :cascade do |t|
