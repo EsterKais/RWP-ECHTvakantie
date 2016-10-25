@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+Hi
+=======
+
 
 <p>
   <strong>Name:</strong>
@@ -10,3 +14,4 @@
 
 <%= link_to 'Edit', edit_theme_path(@theme) %> |
 <%= link_to 'Back', themes_path %>
+>>>>>>> master
