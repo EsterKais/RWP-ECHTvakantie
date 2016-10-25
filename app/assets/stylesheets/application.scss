@@ -48,7 +48,9 @@ body {
 }
 
 .header--top {
-  background: $white;
+  background: linear-gradient(170deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+
+  color: white;
   width: 100%;
   padding: 15px 0;
 
@@ -58,7 +60,7 @@ body {
     font-weight: bold;
     font-size: 26px;
     letter-spacing: -1px;
-    color: #222;
+    color: white;
   }
 
   nav {
@@ -74,7 +76,7 @@ body {
   width: 100%;
   border:0;
   padding: 15px 10px;
-  background: $background-light;
+  background: rgba(0,0,0,0.1);
   font-weight: 16px;
   border-radius: 5px;
   font-family: 'Montserrat', sans-serif;
@@ -89,6 +91,8 @@ body {
   background: $background-light;
   color: black;
   padding: 15px 0;
+  display: none;
+  position: relative;
 
   ul {
   margin:0;
@@ -118,3 +122,12 @@ footer {
    padding: 15px 0;
    text-align: center;
  }
+
+
+ .themes {
+
+ }
+
+.row {
+  display: flex;
+}
