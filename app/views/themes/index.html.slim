@@ -1,32 +1,13 @@
+.slider
+  h1 Hi
 .container
   .themes
     .grid
       - @themes.each do |theme|  
-         .theme-column style=["background:black;"]
+         .theme-column style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{theme.tphotos[0].image}); background-size: cover;"
           = theme.name
           br
-          = link_to 'Edit', edit_theme_path(theme)
-          = link_to 'Destroy', theme, method: :delete, data: {confirm: 'Are you sure?'} 
-
+          = link_to 'Edit', edit_theme_path(theme), class: "admin"
+          = link_to 'Destroy', theme, method: :delete, data: {confirm: 'Are you sure?'}, class: "admin"
+    = link_to 'New theme', new_theme_path
           
-
-main.articles
-  h1 themes
-  table
-    thead
-      tr
-        th Name
-        th colspan="3" 
-    tbody
-      - @themes.each do |theme|
-        article.articles-card
-          a
-            h2= link_to theme.name, theme, :class => 'articles-card-title'
-          p.articles-card-paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          button= link_to "check out", theme, :class => 'articles-card-button'
-        tr
-          td= link_to 'Edit', edit_theme_path(theme)
-          td= link_to 'Destroy', theme, method: :delete, data: {confirm: 'Are you sure?'} 
-           
-  br/
-  = link_to 'New theme', new_theme_path
