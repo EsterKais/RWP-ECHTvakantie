@@ -1,4 +1,5 @@
 class ThemesController < ApplicationController
+  before_action :set_theme, only: [:edit, :update]
 
   # homepage
   def index
@@ -12,16 +13,20 @@ class ThemesController < ApplicationController
   def create
     @theme = Theme.new( theme_params )
 
-    if @theme.save
-      redirect_to theme_path(@theme)
+  if @theme.save
+      image_params.each do |image|
+      @theme.tphotos.create(image: image)
+    end
+    redirect_to theme_path(@theme), notice: "Room successfully created"
     else
-      render 'new'
+      render :new
     end
   end
 
 
   def show
     @theme = Theme.find_by_name(params[:name])
+    @tphotos = @theme.tphotos
   end
 
   def destroy
@@ -33,14 +38,15 @@ class ThemesController < ApplicationController
   end
 
   def edit
-    @theme = Theme.find_by_name(params[:name])
+    @tphotos = @theme.tphotos
   end
 
   def update
-    @theme = Theme.find_by_name(params[:name])
-
-    if @theme.update_attributes( theme_params )
-      redirect_to theme_path(@theme), notice: "Update succesvol"
+    if @theme.update(theme_params)
+      image_params.each do |image|
+        @theme.tphotos.create(image: image)
+      end
+      redirect_to edit_theme_path(@theme), notice: "Update succesvol"
     else
       render :edit
     end
@@ -48,6 +54,13 @@ class ThemesController < ApplicationController
 
   private
 
+  def set_theme
+    @theme = Theme.find_by_name(params[:name])
+  end
+
+  def image_params
+    params[:images].present? ? params.require(:images) : []
+  end
 
   def theme_params
     params.require(:theme).permit(:name, :style, :description)
