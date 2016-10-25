@@ -99,7 +99,7 @@ header {
       li {
         display:inline;
         list-style: none;
-        margin-right: 35px;
+        margin-right: 15px;
         padding: 10px;
         font-size: 14px;
 
@@ -163,7 +163,7 @@ header {
     li {
       display:inline;
       list-style: none;
-      margin-right: 28px;
+      margin-right: 20px;
       font-size: 14px;
     }
    }
@@ -201,26 +201,22 @@ footer {
 
 }
 
-.row {
+.grid {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2%;
+  flex-wrap: wrap;
 }
 
-.column-4 {
-  width: 32%;
-  float: left;
-  background: red;
-  text-align: center;
-  color:white;
-  padding: 100px 0;
-}
-
-.column-3 {
-  color: white;
+.theme-column {
   width: 23.5%;
-  float:left;
-  background: red;
+  color: white;
   text-align: center;
   padding: 100px 0;
+  background: gray;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+
+  &:nth-child(-n+3) {
+    width: 32%;
+  }
 }
