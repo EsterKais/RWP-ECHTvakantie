@@ -1,7 +1,12 @@
 class Theme < ApplicationRecord
+<<<<<<< HEAD
   has_many :tphotos
-  has_and_belongs_to_many :vacations
   
+=======
+
+  has_and_belongs_to_many :vacations
+
+>>>>>>> master
   def to_param
     name
   end
