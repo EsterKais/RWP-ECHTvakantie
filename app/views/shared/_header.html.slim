@@ -13,10 +13,7 @@ header
         input type="text" class="search-field" placeholder="Search..."
   .header--bottom
     .container
-      ul 
-        li Romantisch
-        li Outdoor
-        li Adventure
-        li Apres Ski
-        li Farmlang
-        li Mountain Trip
+      ul
+        - @themes.each do |theme|
+          li= link_to theme.name, theme
+.placeholder-header
