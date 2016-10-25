@@ -15,6 +15,18 @@ ActiveRecord::Schema.define(version: 20161025102132) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "photo_themes", force: :cascade do |t|
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photo_vacations", force: :cascade do |t|
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
@@ -30,6 +42,13 @@ ActiveRecord::Schema.define(version: 20161025102132) do
     t.string   "style"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "themes_vacations", force: :cascade do |t|
+    t.integer "theme_id"
+    t.integer "vacation_id"
+    t.index ["theme_id"], name: "index_themes_vacations_on_theme_id", using: :btree
+    t.index ["vacation_id"], name: "index_themes_vacations_on_vacation_id", using: :btree
   end
 
   create_table "tphotos", force: :cascade do |t|
