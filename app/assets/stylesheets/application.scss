@@ -47,11 +47,17 @@ body {
   flex-wrap: wrap;
 }
 
+header {
+  position: fixed;
+  top:0;
+  width: 100%;
+}
+
 .header--top {
   background: linear-gradient(170deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-
   color: white;
   width: 100%;
+  z-index: 9999;
   padding: 15px 0;
 
 
@@ -59,12 +65,41 @@ body {
     width: 20%;
     font-weight: bold;
     font-size: 26px;
+    margin-top: 4px;
     letter-spacing: -1px;
     color: white;
   }
 
   nav {
     width: 60%;
+
+    ul {
+    margin:0;
+    margin-top: 10px;
+    padding: 0;
+
+      li {
+        display:inline;
+        list-style: none;
+        margin-right: 35px;
+        padding: 10px;
+        font-size: 14px;
+
+        &:hover {
+          background: red;
+          cursor: pointer;
+          background: rgba(0,0,0,0.1);
+          border-radius: 5px;
+          position: relative;
+          top: -1px;
+        }
+
+        &:active {
+          position: relative;
+          top: 1px;
+        }
+      }
+     }
   }
 
   .search {
@@ -80,19 +115,23 @@ body {
   font-weight: 16px;
   border-radius: 5px;
   font-family: 'Montserrat', sans-serif;
-}
-
-.search-field:focus {
-  background: $main-color;
   color: white;
 }
 
+.search-field:focus {
+  color: white;
+  box-shadow: 0;
+}
+
+
 .header--bottom {
-  background: $background-light;
+  background: $white;
   color: black;
   padding: 15px 0;
   display: none;
+  z-index: -1;
   position: relative;
+  box-shadow: 0px 0px 173px 0px rgba(0,0,0,0.26);
 
   ul {
   margin:0;
@@ -130,4 +169,5 @@ footer {
 
 .row {
   display: flex;
+  height: 2000px;
 }

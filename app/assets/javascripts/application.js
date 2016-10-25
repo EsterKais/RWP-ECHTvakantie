@@ -17,8 +17,7 @@
 
 
 $(document).ready(function(){
-  $('.bxslider').bxSlider();
-  $('nav').click(function(){
-    $('.header--bottom').toggle();
+  $('.dropdown-menu').click(function(){
+    $('.header--bottom').slideDown();
   })
 });
