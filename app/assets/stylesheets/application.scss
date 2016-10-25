@@ -68,7 +68,7 @@ header {
 }
 
 .placeholder-header {
-  height: 73px;
+  height: 121px;
   width: 100%;
 }
 .header--top {
@@ -116,6 +116,12 @@ header {
           position: relative;
           top: 1px;
         }
+
+        a {
+          color: white;
+          text-decoration: none;
+
+        }
       }
      }
   }
@@ -146,7 +152,6 @@ header {
   background: $white;
   color: black;
   padding: 15px 0;
-  display: none;
   z-index: -1;
   position: relative;
   box-shadow: 0px 0px 173px 0px rgba(0,0,0,0.26);
