@@ -1,0 +1,15 @@
+p
+  strong
+    | Name:
+  = @theme.name
+h4
+  | List of Vacations
+h4
+  | Photos
+- @theme.tphotos.each do |photo|
+  .panel.panel-default
+    .panel-heading
+      = image_tag photo.image.thumbnail
+= link_to 'Edit', edit_theme_path(@theme)
+|  |
+= link_to 'Back', themes_path

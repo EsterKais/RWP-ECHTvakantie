@@ -1,0 +1,7 @@
+- if @tphotos
+  - @tphotos.each do |photo|
+    .panel.panel-default
+      .panel-heading
+        = image_tag photo.image.thumbnail
+      .panel-body
+        = link_to "Delete", tphoto_path(photo.id), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" }
