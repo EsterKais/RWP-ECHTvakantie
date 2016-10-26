@@ -1,4 +1,5 @@
 class VacationsController < ApplicationController
+  before_action :set_vacation, only: [:edit, :update, :show, :destroy]
 
     def index
         @vacations = Vacation.all
@@ -9,37 +10,38 @@ class VacationsController < ApplicationController
     end
 
     def create
-        @vacation = Vacation.new( vacation_params )
+        @vacation = Vacation.new(vacation_params)
 
         if @vacation.save
-            redirect_to vacation_path(@vacation)
+          image_params.each do |image|
+            @vacation.vphotos.create(image: image)
+          end
+            redirect_to vacation_path(@vacation), notice: "Vakantie succesvol aangemaakt."
         else
-            render 'new'
+            render :new
         end
     end
 
-
     def show
-        @vacation = Vacation.find_by_title(params[:title])
+        @vphotos = @vacation.vphotos
     end
 
     def destroy
-        @vacation = Vacation.find_by_title(params[:title])
-
         @vacation.destroy
 
         redirect_to root_path
     end
 
     def edit
-        @theme = Vacation.find_by_title(params[:title])
+      @vphotos = @vacation.vphotos
     end
 
     def update
-        @vacation = Vacation.find_by_title(params[:title])
-
-        if @vacation.update_attributes( vacation_params )
-            redirect_to vacation_path(@theme), notice: "Update succesvol"
+        if @vacation.update(vacation_params)
+          image_params.each do |image|
+            @vacation.vphotos.create(image: image)
+          end
+            redirect_to edit_vacation_path(@vacation), notice: "Update succesvol"
         else
             render :edit
         end
@@ -47,6 +49,13 @@ class VacationsController < ApplicationController
 
     private
 
+    def set_vacation
+      @vacation = Vacation.find_by_title(params[:title])
+    end
+
+    def image_params
+      params[:images].present? ? params.require(:images) : []
+    end
 
     def vacation_params
         params.require(:vacation).permit(:title, :country, :region, :price, :description, :show)
