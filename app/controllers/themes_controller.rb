@@ -53,7 +53,8 @@ class ThemesController < ApplicationController
 
   # PIM working from here onwards
   def show
-    @vacations = @theme.vacations
+    @vacations = @theme.vacations.
+      filtered(params[:filters])
   end
 
   def by_title
