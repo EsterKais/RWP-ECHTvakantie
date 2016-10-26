@@ -9,12 +9,23 @@
         .filtertitle
           | Specificeer jouw zoekopdracht...
         .filtercontent
-          | Content here
+          | Content here§
       .theme-left-admin
-        = link_to 'Edit', edit_theme_path(@theme)
-        = link_to 'Back', themes_path
+        .title
+          | Administratie opties
+        .content
+          = link_to 'Edit', edit_theme_path(@theme)
     .theme-right-column
-      |asdas
+      - @theme.vacations.each do |vacation|
+        .vacation-single
+          .vl-image
+            | Image here
+          .vl-title
+            = vacation[:title]
+          .vl-place
+            = vacation[:region]
+          .vl-description
+            = vacation[:description]
+          .vl-price
+            = vacation[:price]
     .clear
-    
-   pre = @vacations.map(&:region)
