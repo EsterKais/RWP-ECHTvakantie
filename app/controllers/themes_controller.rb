@@ -1,5 +1,6 @@
 class ThemesController < ApplicationController
   before_action :set_theme, only: [:edit, :update, :show]
+  before_action :set_vacations, only: [:edit, :update, :destroy]
 
   # homepage
   def index
@@ -55,6 +56,10 @@ class ThemesController < ApplicationController
   end
 
   private
+
+  def set_vacations
+    @vacations = @theme.vacations
+  end
 
   def set_theme
     @theme = Theme.find_by_name(params[:name])
