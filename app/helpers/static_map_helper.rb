@@ -10,7 +10,6 @@ module StaticMapHelper
     }.merge(options)
 
     query_string =  params.map{|k,v| "#{k}=#{v}"}.join("&")
-    image_tag "http://maps.googleapis.com/maps/api/staticmap?#{query_string}&key=AIzaSyAuyArgWCx6lM7VW8gAxyFhi1bNqexoFcQ", :alt => vacation.title
+    "<iframe src='http://maps.googleapis.com/maps/api/staticmap?#{query_string}&key=AIzaSyAuyArgWCx6lM7VW8gAxyFhi1bNqexoFcQ', alt='#{vacation.title}'></iframe>"
   end
-
 end

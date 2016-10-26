@@ -16,8 +16,8 @@
 //= require_tree .
 
 
-// function dropdown() {
-//   $('.dropdown-menu').click(function(){
-//     $('.header--bottom').slideToggle();
-//   });
-// });
+$(document).ready(function(){
+  $('.dropdown-menu').click(function(){
+    $('.header-bottom').fadeOut();
+  });
+})
