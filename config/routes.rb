@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
-
   ######################################################################################################################
   # WOUTER special route (fix this later)
   get '/thema/:name/*filters' => "themes#show"
@@ -38,14 +37,14 @@ Rails.application.routes.draw do
   # normal routes for themes
 
   get 'thema/new' => 'themes#new', as: :new_theme
-  post 'themas' => 'themes#create'
+  post 'thema' => 'themes#create'
 
-  get 'themas/:name' => 'themes#show', as: :theme
-  get 'themas/:name/edit' => 'themes#edit', as: :edit_theme
+  get 'thema/:name' => 'themes#show', as: :theme
+  get 'thema/:name/edit' => 'themes#edit', as: :edit_theme
 
-  put 'themas/:name' => 'themes#update'
-  patch 'themas/:name' => 'themes#update'
-  delete 'themas/:name' => 'themes#destroy'
+  put 'thema/:name' => 'themes#update'
+  patch 'thema/:name' => 'themes#update'
+  delete 'thema/:name' => 'themes#destroy'
   ######################################################################################################################
 
 
