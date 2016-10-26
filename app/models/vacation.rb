@@ -7,8 +7,8 @@ class Vacation < ApplicationRecord
 
   AVAILABLE_FILTERS = {
     regio: RegionFilter,
-    # prijs: PriceFilter,
-    # search: SearchFilter,
+    land: CountryFilter,
+    prijs: PriceFilter,
   }
 
 
