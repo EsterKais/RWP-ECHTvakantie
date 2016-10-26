@@ -62,8 +62,8 @@ class VacationsController < ApplicationController
     @themes = @vacation.themes
   end
 
-  def set_reviews
-    @reviews = @vacation.reviews
+  def set_review
+    @review = @vacation.review
   end
 
   def set_photos
