@@ -371,3 +371,52 @@ footer {
     font-weight: 300;
   }
 }
+
+.theme-banner {
+  height: 300px;
+  position: relative;
+}
+
+.theme-name {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.theme-left-column {
+  float: left;
+  width: 30%;
+  margin-top: 20px;
+}
+
+.theme-right-column {
+  float: right;
+  width: 68%;
+  margin-top: 20px;
+}
+
+.clear {
+  clear: both;
+}
+
+.filter {
+  width: calc(100%-40px);
+  border-radius: 5px;
+}
+
+.filtertitle {
+  border-radius: 5px 5px 0 0;
+  background: $background-dark;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 15px 20px;
+}
+
+.filtercontent {
+  background: $background-light;
+  padding: 15px 20px;
+  border-radius: 0 0 5px 5px;
+}
