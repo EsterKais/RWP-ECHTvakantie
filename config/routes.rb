@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # resources :vacations
@@ -12,9 +13,6 @@ Rails.application.routes.draw do
   get 'theme_by_title' => 'themes#by_title'
 
   root 'themes#index'
-
-
-
 
   # get 'vacations/new' => 'vacations#new', as: :new_vacation             # what does ":as" mean ????
   # post 'vacations' => 'vacations#create'
@@ -34,8 +32,5 @@ Rails.application.routes.draw do
   #
   # patch 'themes/:name' => 'themes#update'
   # delete 'themes/:name' => 'themes#destroy'
-
-
-
 
 end
