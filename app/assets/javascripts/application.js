@@ -21,3 +21,7 @@ $(document).ready(function(){
     $('.header-bottom').fadeOut();
   });
 })
+
+$(document).ready(function(){
+  $('.bxslider').bxSlider();
+});

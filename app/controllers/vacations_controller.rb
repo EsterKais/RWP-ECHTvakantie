@@ -1,7 +1,7 @@
 class VacationsController < ApplicationController
   before_action :set_vacation, only: [:edit, :update, :show, :destroy]
   before_action :set_themes, only: [:edit, :update, :show, :destroy]
-  before_action :set_reviews, only: [:edit, :update, :show, :destroy]
+  # before_action :set_reviews, only: [:edit, :update, :show, :destroy]
 
   # where do we wanna set which photos???
   # one thing is for sure: in update we wanna set vphotos ourselves (using build_photos method) because there we delete or add new ones
@@ -14,7 +14,7 @@ class VacationsController < ApplicationController
     @themes = Themes.all
     @vphotos = Vphoto.all
     @tphoto = Tphoto.all
-    @reviews = Review.all
+    # @reviews = Review.all
   end
 
   def new
@@ -32,6 +32,7 @@ class VacationsController < ApplicationController
   end
 
   def show
+
   end
 
   def destroy
@@ -62,9 +63,9 @@ class VacationsController < ApplicationController
     @themes = @vacation.themes
   end
 
-  def set_reviews
-    @reviews = @vacation.reviews
-  end
+  # def set_reviews
+  #   @reviews = @vacation.reviews
+  # end
 
   def set_photos
     # set photos belonging to this vacation
@@ -75,7 +76,7 @@ class VacationsController < ApplicationController
     # and we push inside an array all photos belonging to each theme
     @tphotos = []
     @vacation.themes.each do |theme|
-      @tphotos << theme.tphotos
+      @tphotos.concat(theme.tphotos)
     end
   end
 

@@ -1,12 +1,19 @@
 .map
-  | THEME PICTURE HERE
-  / = @vacation.themes.tphotos
+  / | THEME PICTURE here
+  - photo_object = @tphotos.first
+  = image_tag photo_object.image.url
   
 .container  
   .vacation
       .vacation-pic
-        | VACATION PICTURES HERE
-        = image_tag @vphotos.first.image
+        ul.bxslider
+          - @vphotos.each do |photo|
+            li
+              = image_tag photo.image
+            / img src="http://picpulp.com/wp-content/uploads/2013/03/81.jpg?x11708"
+          / li
+          /   img src="http://i.dailymail.co.uk/i/pix/2015/12/31/13/2FB0080800000578-3366058-Photographers_around_the_world_shared_their_most_hilarious_pictu-a-68_1451566922888.jpg"
+            
 
       .vacation-info
       
@@ -49,3 +56,4 @@
       | Vacation2
     .vacation-selection-pic
       | Vacation3
+      
