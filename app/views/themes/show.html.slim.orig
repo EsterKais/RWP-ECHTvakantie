@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+
+
+
+= link_to "Frankrijk", filter_frankrijk_path
+= link_to "Spanje", filter_spanje_path
+= link_to "Nederland", filter_nederland_path
+
+= link_to "Ardennen", filter_ardennen_path
+= link_to "Waddeneilanden", filter_waddeneilanden_path
+= link_to "Ardennen", filter_ardennen_path
+
+
+- @vacations.each do |vacation|
+  = vacation.title
+
+
+
+
+=======
 .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{@theme.tphotos[0].image}) center fixed; background-size: cover;"
   .container
     .theme-name
@@ -18,3 +38,4 @@
     .clear
     
    pre = @vacations.map(&:region)
+>>>>>>> master
