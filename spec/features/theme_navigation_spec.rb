@@ -3,6 +3,7 @@ require 'capybara'
 
 feature 'integration tests theme page', js: true do       # this is used when having js::::
 
+  # clean DB first
   before do
     DatabaseCleaner.clean
   end
