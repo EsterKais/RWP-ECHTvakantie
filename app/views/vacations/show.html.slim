@@ -1,16 +1,18 @@
 .map
   | THEME PICTURE HERE
+  / = @vacation.themes.tphotos
   
 .container  
   .vacation
       .vacation-pic
         | VACATION PICTURES HERE
+        = image_tag @vphotos.first.image
 
       .vacation-info
       
 
         .vacation-title
-          | VacationTitle
+          = @vacation.title
           
           / .social-media.vacation
           /   img src="http://res.cloudinary.com/unique/image/upload/v1477388245/pinterest-logo_hoh7pl.png"
