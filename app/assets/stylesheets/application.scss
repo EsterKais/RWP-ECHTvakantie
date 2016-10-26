@@ -347,8 +347,8 @@ footer {
 
 .slider {
   width: 100%;
-  height: 500px;
-  background: url('http://res.cloudinary.com/unique/image/upload/q_76/v1477408102/Water_lsqdam.jpg');
+  height: 300px;
+  background: url('http://res.cloudinary.com/unique/image/upload/q_76/v1477408102/Water_lsqdam.jpg') center;
   background-size: cover;
   margin-bottom: 20px;
   background-blend-mode: color-dodge;
@@ -358,5 +358,16 @@ footer {
     margin: 0;
     padding: 0;
     color: white;
+    padding-top: 110px;
+    text-align: center;
+
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+    font-weight: 300;
   }
 }
