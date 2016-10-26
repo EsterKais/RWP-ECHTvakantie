@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
    resources :vacations, param: :title
-  
+
 
   resources :themes, param: :name
 
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   root 'themes#index'
 
 
-  # get 'vacations/new' => 'vacations#new', as: :new_vacation             # what does ":as" mean ????
+  get 'vacations/new' => 'vacations#new', as: :new_vacation             # what does ":as" mean ????
   # post 'vacations' => 'vacations#create'
   #
   # get 'vacations/:name' => 'vacations#show', as: :vacation              # what does ":as" mean ????
