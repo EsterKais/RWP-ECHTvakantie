@@ -39,3 +39,9 @@ Vacation.create(title: "Antarctica", address: "Flevoland", country: "The Netherl
 Vacation.create(title: "Berlin", address: "Andorra", country: "Germany", region: "Frankrijkafdasdghfgj", price: "nil", description: "nil", show: "true", vphotos: [vphoto2], themes: [theme2])
 Vacation.create(title: "France", address: "Sweden", country: "The Netherlands", region: "Frankrijk", price: "nil", description: "nil", show: "true", vphotos: [vphoto3], themes: [theme3])
 
+
+Vacation.create(title: "Paris", address: "Purmerend", country: "France", region: "Ardennen", price: "nil", description: "nil", show: "true", vphotos: [vphoto1], themes: [theme1])
+Vacation.create(title: "Paris1", address: "Spui", country: "France", region: "Ardennen", price: "nil", description: "nil", show: "true", vphotos: [vphoto1], themes: [theme1])
+Vacation.create(title: "Paris2", address: "Beethovenstraat", country: "France", region: "Ardennen", price: "nil", description: "nil", show: "true", vphotos: [vphoto1], themes: [theme1])
+Vacation.create(title: "Paris3", address: "Cuijk", country: "France", region: "Ardennen", price: "nil", description: "nil", show: "true", vphotos: [vphoto1], themes: [theme1])
+Vacation.create(title: "Paris4", address: "Scheveningen", country: "France", region: "Ardennen", price: "nil", description: "nil", show: "true", vphotos: [vphoto1], themes: [theme1])

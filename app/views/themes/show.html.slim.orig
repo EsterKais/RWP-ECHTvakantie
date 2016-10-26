@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
 <p>
   <strong>Name:</strong>
   <%= @theme.name %>
@@ -10,3 +11,22 @@
 
 <%= link_to 'Edit', edit_theme_path(@theme) %> |
 <%= link_to 'Back', themes_path %>
+=======
+
+
+= link_to "Frankrijk", filter_frankrijk_path
+= link_to "Spanje", filter_spanje_path
+= link_to "Nederland", filter_nederland_path
+
+= link_to "Ardennen", filter_ardennen_path
+= link_to "Waddeneilanden", filter_waddeneilanden_path
+= link_to "Ardennen", filter_ardennen_path
+
+
+- @vacations.each do |vacation|
+  = vacation.title
+
+
+
+
+>>>>>>> Stashed changes
