@@ -50,7 +50,8 @@ class ThemesController < ApplicationController
   end
 
   def show
-    @vacations = @theme.vacations
+    @vacations = @theme.vacations.
+      filtered(params[:filters])
   end
 
   private

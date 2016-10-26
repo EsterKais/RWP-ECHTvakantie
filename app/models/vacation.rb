@@ -5,6 +5,28 @@ class Vacation < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
+  AVAILABLE_FILTERS = {
+    regio: RegionFilter,
+    # prijs: PriceFilter,
+    # search: SearchFilter,
+  }
+
+  def self.filtered(filters)
+    return self if filters.blank?
+
+    results = self
+
+    filters.split("/").in_groups_of(2) do |filter|
+      type, value = filter
+      if AVAILABLE_FILTERS.keys.include?(type.to_sym)
+        filter = AVAILABLE_FILTERS[type.to_sym].new(value, results)
+        results = filter.results
+      end
+    end
+
+    results
+  end
+
 
   def to_param
     title
