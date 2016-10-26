@@ -1,6 +1,6 @@
 class ThemesController < ApplicationController
   before_action :set_theme, only: [:edit, :update, :show]
-  before_action :set_vacations, only: [:edit, :update, :show, :destroy]
+  before_action :set_vacations, only: [:edit, :update, :destroy]
 
   # homepage
   def index
