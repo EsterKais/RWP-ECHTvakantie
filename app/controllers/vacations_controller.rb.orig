@@ -22,10 +22,13 @@ class VacationsController < ApplicationController
         end
     end
 
-
     def show
-        
-	@vphotos = @vacation.vphotos
+<<<<<<< HEAD
+        @vacation = Vacation.find_by_title(params[:title])
+
+=======
+        @vphotos = @vacation.vphotos
+>>>>>>> master
     end
 
     def destroy
@@ -35,7 +38,7 @@ class VacationsController < ApplicationController
     end
 
     def edit
-	@vphotos = @vacation.vphotos
+      @vphotos = @vacation.vphotos
     end
 
     def update
