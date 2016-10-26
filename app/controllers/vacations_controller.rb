@@ -1,5 +1,6 @@
 class VacationsController < ApplicationController
   before_action :set_vacation, only: [:edit, :update, :show, :destroy]
+  before_action :set_themes, only: [:edit, :update, :show, :destroy]
 
   def index
     @vacations = Vacation.all
@@ -46,6 +47,11 @@ class VacationsController < ApplicationController
   def set_vacation
     @vacation = Vacation.find_by_title(params[:title])
   end
+
+
+    def set_themes
+      @themes = @vacation.themes
+    end
 
   def build_photos
     params.require(:photos).each do |photo|
