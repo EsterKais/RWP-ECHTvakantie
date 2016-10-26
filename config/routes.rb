@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+  # this is our one and only index action, for now
   root 'themes#index'
+
 
   resources :tphotos
   resources :vphotos
@@ -20,15 +22,15 @@ Rails.application.routes.draw do
   ######################################################################################################################
   # normal routes for vacations
 
-  get 'vakanties/new' => 'vacations#new', as: :new_vacation
-  post 'vakanties' => 'vacations#create'
+  get 'vakantie/new' => 'vacations#new', as: :new_vacation
+  post 'vakantie' => 'vacations#create'
 
-  get 'vakanties/:title' => 'vacations#show', as: :vacation
-  get 'vakanties/:title/edit' => 'vacations#edit', as: :edit_vacation
+  get 'vakantie/:title' => 'vacations#show', as: :vacation
+  get 'vakantie/:title/edit' => 'vacations#edit', as: :edit_vacation
 
-  put 'vakanties/:title' => 'vacations#update'
-  patch 'vakanties/:title' => 'vacations#update'
-  delete 'vakanties/:title' => 'vacations#destroy'
+  put 'vakantie/:title' => 'vacations#update'
+  patch 'vakantie/:title' => 'vacations#update'
+  delete 'vakantie/:title' => 'vacations#destroy'
   ######################################################################################################################
 
 
