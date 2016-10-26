@@ -25,8 +25,6 @@ class ThemesController < ApplicationController
   end
 
 
-
-
   def destroy
     @theme = Theme.find_by_name(params[:name])
 
