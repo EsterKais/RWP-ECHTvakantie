@@ -8,7 +8,7 @@ class Vacation < ApplicationRecord
   AVAILABLE_FILTERS = {
     regio: RegionFilter,
     land: CountryFilter,
-    # search: SearchFilter,
+    prijs: PriceFilter,
   }
 
   def self.filtered(filters)
