@@ -1,23 +1,4 @@
 <<<<<<< HEAD
-
-
-
-= link_to "Frankrijk", filter_frankrijk_path
-= link_to "Spanje", filter_spanje_path
-= link_to "Nederland", filter_nederland_path
-
-= link_to "Ardennen", filter_ardennen_path
-= link_to "Waddeneilanden", filter_waddeneilanden_path
-= link_to "Ardennen", filter_ardennen_path
-
-
-- @vacations.each do |vacation|
-  = vacation.title
-
-
-
-
-=======
 .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{@theme.tphotos[0].image}) center fixed; background-size: cover;"
   .container
     .theme-name
@@ -29,13 +10,27 @@
         .filtertitle
           | Specificeer jouw zoekopdracht...
         .filtercontent
-          | Content here
+          | Content here§
       .theme-left-admin
-        = link_to 'Edit', edit_theme_path(@theme)
-        = link_to 'Back', themes_path
+        .title
+          | Administratie opties
+        .content
+          = link_to 'Edit', edit_theme_path(@theme)
     .theme-right-column
-      |asdas
+      - @theme.vacations.each do |vacation|
+        .vacation-single
+          .vl-image
+            | Image here
+          .vl-title
+            = vacation[:title]
+          .vl-place
+            = vacation[:region]
+          .vl-description
+            = vacation[:description]
+          .vl-price
+            = vacation[:price]
     .clear
-    
-   pre = @vacations.map(&:region)
+=======
+
+
 >>>>>>> master
