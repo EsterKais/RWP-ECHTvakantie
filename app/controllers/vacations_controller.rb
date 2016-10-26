@@ -1,7 +1,7 @@
 class VacationsController < ApplicationController
   before_action :set_vacation, only: [:edit, :update, :show, :destroy]
   before_action :set_themes, only: [:edit, :update, :show, :destroy]
-  before_action :set_reviews, only: [:edit, :update, :show, :destroy]
+  before_action :set_review, only: [:edit, :update, :show, :destroy]
 
   # where do we wanna set which photos???
   # one thing is for sure: in update we wanna set vphotos ourselves (using build_photos method) because there we delete or add new ones
