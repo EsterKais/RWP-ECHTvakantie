@@ -14,21 +14,12 @@ feature 'integration tests theme page', js: true do       # this is used when ha
   #let ( :theme2 ) { create :theme, name: "Apples" }
   #let( :vacation2 ) { create :vacation, themes: [theme2], title: "Golden" }
 
-  it 'navigation to themes show page' do
+  it 'navigation to vacation show page' do
 
-    visit root_path
+    visit vacation_path(vacation1)
 
-    # expecting theme name
-    expect(page).to have_content("Nuts")
-
-    end
-
-  it 'navigation to themes show page' do
-
-    visit theme_path(theme1)
-
-    # expecting theme name
-    expect(page).to have_content("Nuts")
+    # expecting vacation title
+    expect(page).to have_content("Peanut")
 
   end
 end

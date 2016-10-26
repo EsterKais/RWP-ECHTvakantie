@@ -1,24 +1,37 @@
 require 'rails_helper'
 require 'capybara'
 
-feature 'Search product', js: true do
+feature 'Add product', js: true do
+  # user needs to be logged in to add a product
+  before { login_as user }
 
-  let! ( :user ) { create :user, email: "some@email.com" }
-  let! ( :profile ) { create :profile, user: user }
-  let! ( :product ) { create :product, name: "How to build a website", user: user }
-  let!( :category ) { create :category, name: "A category", products: [product] }
+  # create a user
+  let ( :user) { create :user, email: "host@user.com" }
+  # create a tempt category
+  let! ( :category ) { create :category, name: "A category", products: [] }
 
-  scenario 'search a product' do
-    visit root_path
+  scenario 'add a product' do
+    visit new_product_path
 
-    click_link("Search")
-    within("#search_form") do
-      fill_in 'search', with: 'build'
+    # fill in the form
+    fill_in 'product_name', with: 'Automatic website builder'
+    fill_in 'product_description', with: 'The awesome description'
+    fill_in 'product_price', with: 10
+
+    within '#product_category_ids' do
+      find("option[value='#{category.id}']").click
     end
-    sleep(1)
-    click_button('submit_search')
-    sleep(1)
-    expect(page).to have_content("How to build a website")
+
+    attach_file('images_', File.join(Rails.root, '/spec/support/IMG-20160920-WA0005.jpg'))
+
+    # click save
+    click_button('Save')
+
+    sleep(10)
+
+    # expect to have a product in the db now
+    expect(Product.all.length).to eq(1)
+
 
   end
 end
