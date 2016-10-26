@@ -21,6 +21,7 @@ class VacationsController < ApplicationController
 
     def show
         @vacation = Vacation.find_by_title(params[:title])
+
     end
 
     def destroy
