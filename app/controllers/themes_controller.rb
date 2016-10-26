@@ -13,9 +13,9 @@ class ThemesController < ApplicationController
   # for index we'll just feed as much as we got
   def index
     @vacations = Vacation.all
-    @themes = Themes.all
+    @themes = Theme.all
     @vphotos = Vphoto.all
-    @tphoto = Tphoto.all
+    @tphotos = Tphoto.all
     @reviews = Review.all
   end
 
