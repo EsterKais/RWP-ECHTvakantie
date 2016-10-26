@@ -183,11 +183,11 @@ flex-direction: row;
 
 
   .vacation-pic{
-    // border: 1px solid black;
-    background: black;
+    border: 1px solid black;
+    // background: black;
     height: 250px;
     width: 40%;
-    color: white;
+    color: black;
   }
 
   .vacation-info{
@@ -275,9 +275,9 @@ flex-direction: row;
 }
 
 .map {
-  background: gray;
+  border: solid 2px black;
   height: 300px;
-  color: white;
+  color: black;
 }
 // end of VACATION SHOW PAGE by ESTER
 
