@@ -1,0 +1,7 @@
+- if @vphotos
+  - @vphotos.each do |photo|
+    .panel.panel-default
+      .panel-heading
+        = image_tag photo.image.thumbnail
+      .panel-body
+        = link_to "Delete", vphoto_path(photo.id), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" }

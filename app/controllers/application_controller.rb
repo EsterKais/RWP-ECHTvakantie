@@ -7,4 +7,5 @@ class ApplicationController < ActionController::Base
   def theme
     @themes = Theme.all
   end
+
 end

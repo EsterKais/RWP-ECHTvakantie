@@ -1,18 +1,44 @@
+<<<<<<< HEAD
+p
+  strong
+    | Title:
+  = @vacation.title
+p
+  | C:
+  = @vacation.country
+p  
+  | R:
+  = @vacation.region
+p  
+  | P:
+  = @vacation.price
+p  
+  | S:
+  = @vacation.show
+
+h4
+  | Photos
+- @vacation.vphotos.each do |photo|
+  .panel.panel-default
+    .panel-heading
+      = image_tag photo.image.thumbnail
+= link_to 'Edit', edit_vacation_path(@vacation)
+|  |
+= link_to 'Back', vacations_path
+=======
 .map
   | THEME PICTURE HERE
-  / = @vacation.themes.tphotos
   
 .container  
   .vacation
       .vacation-pic
         | VACATION PICTURES HERE
-        = image_tag @vphotos.first.image
 
       .vacation-info
       
 
         .vacation-title
-          = @vacation.title
+          | VacationTitle
           
           / .social-media.vacation
           /   img src="http://res.cloudinary.com/unique/image/upload/v1477388245/pinterest-logo_hoh7pl.png"
@@ -37,7 +63,7 @@
     |POSSIBLY A REVIEW
   
 .map
-  = static_map_for(@vacation, options = {})
+  |= static_map_for(@vacation, options = {})
 
     
 .vacation-selection
@@ -49,3 +75,4 @@
       | Vacation2
     .vacation-selection-pic
       | Vacation3
+>>>>>>> master
