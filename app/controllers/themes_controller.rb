@@ -9,9 +9,14 @@ class ThemesController < ApplicationController
   # However, setting all (!) vphotos here, might slow down the service
   before_action :set_photos, only: [:edit, :show, :destroy]
 
-  # homepage
+
+  # for index we'll just feed as much as we got
   def index
-    @themes = Theme.all
+    @vacations = Vacation.all
+    @themes = Themes.all
+    @vphotos = Vphoto.all
+    @tphoto = Tphoto.all
+    @reviews = Review.all
   end
 
   def new

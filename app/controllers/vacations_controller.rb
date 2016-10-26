@@ -8,9 +8,13 @@ class VacationsController < ApplicationController
   before_action :set_photos, only: [:edit, :show, :destroy]
 
 
-
+  # for index we'll just feed as much as we got
   def index
     @vacations = Vacation.all
+    @themes = Themes.all
+    @vphotos = Vphoto.all
+    @tphoto = Tphoto.all
+    @reviews = Review.all
   end
 
   def new
