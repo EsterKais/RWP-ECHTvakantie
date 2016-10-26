@@ -1,6 +1,11 @@
 require 'rails_helper'
 require 'capybara'
 
+
+################################################ START HERE : tphotos cant be blank in factory so add photo to tphoto in factory
+
+
+
 feature 'Add vacation', js: true do
 
   # clean DB first
@@ -9,12 +14,19 @@ feature 'Add vacation', js: true do
   end
 
   # user needs to be logged in to add a vacation
-  user = FactoryGirl.create(:user)
-  login_as(user, :scope => :user)
+  before { login_as user }
+  let ( :user) { create :user, email: "host@user.com" }
 
+  ################ this should be another to acheive the same ###########
+  ##                                                                   ##
+  ##   user needs to be logged in to add a vacation                    ##
+  ##   user = FactoryGirl.create(:user)                                ##
+  ##   login_as(user, :scope => :user)                                 ##
+  ##                                                                   ##
+  #######################################################################
 
   # create a tempt category
-  let! ( :theme ) { create :theme, title: "Ordesa" }
+  let! ( :theme ) { create :theme, name: "Ordesa" }
 
   scenario 'by filling in the form' do
     visit new_vacation_path

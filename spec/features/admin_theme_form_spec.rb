@@ -3,14 +3,18 @@ require 'capybara'
 
 feature 'Add a theme', js: true do
   # user needs to be logged in to add a vacation
-  # before { login_as user }
+  before { login_as user }
 
-  # user needs to be logged in to add a vacation
-  user = FactoryGirl.create(:user)
-  login_as(user, :scope => :user)
+  # create a user
+  let ( :user) { create :user, email: "host@user.com" }
 
-
-  # create a tempt category
+ ################ this should be another to acheive the same ###########
+ ##                                                                   ##
+ ##   user needs to be logged in to add a vacation                    ##
+ ##   user = FactoryGirl.create(:user)                                ##
+ ##   login_as(user, :scope => :user)                                 ##
+ ##                                                                   ##
+ #######################################################################
 
   scenario 'by filling in the form' do
     visit new_theme_path
