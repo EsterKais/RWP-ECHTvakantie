@@ -1,6 +1,13 @@
 class VacationsController < ApplicationController
   before_action :set_vacation, only: [:edit, :update, :show, :destroy]
   before_action :set_themes, only: [:edit, :update, :show, :destroy]
+  before_action :set_reviews, only: [:edit, :update, :show, :destroy]
+
+  # where do we wanna set which photos???
+  # one thing is for sure: in update we wanna set vphotos ourselves (using build_photos method) because there we delete or add new ones
+  before_action :set_photos, only: [:edit, :show, :destroy]
+
+
 
   def index
     @vacations = Vacation.all
@@ -21,7 +28,6 @@ class VacationsController < ApplicationController
   end
 
   def show
-    @vphotos = @vacation.vphotos
   end
 
   def destroy
@@ -30,7 +36,6 @@ class VacationsController < ApplicationController
   end
 
   def edit
-    @vphotos = @vacation.vphotos
   end
 
   def update
@@ -49,9 +54,26 @@ class VacationsController < ApplicationController
   end
 
 
-    def set_themes
-      @themes = @vacation.themes
+  def set_themes
+    @themes = @vacation.themes
+  end
+
+  def set_reviews
+    @reviews = @vacation.reviews
+  end
+
+  def set_photos
+    # set photos belonging to this vacation
+    @vphotos = @vacation.vphotos
+
+    # set photos belonging to all themes belonging to this vacation:
+    # so first we need to get all themes
+    # and we push inside an array all photos belonging to each theme
+    @tphotos = []
+    @vacation.themes.each do |theme|
+      @tphotos << theme.tphotos
     end
+  end
 
   def build_photos
     params.require(:photos).each do |photo|
@@ -60,7 +82,7 @@ class VacationsController < ApplicationController
   end
 
   def vacation_params
-    params.require(:vacation).permit(:title, :country, :region, :price,
+    params.require(:vacation).permit(:address, :title, :country, :region, :price,
       :description, :show, vphotos_attributes: [ :image ])
   end
 end
