@@ -238,11 +238,22 @@ flex-direction: row;
   }
 
   .vacation-descr-text{
+    display: flex;
+    flex-direction: row;
     margin-top: 5px;
     // border: 2px solid pink;
     font-size: 20px;
     text-align: justify;
 
+    .map {
+      // border: solid 2px black;
+      height: 300px;
+      width: 3000px;
+      border-radius: 40%;
+      overflow: hidden;
+      align-items: center;
+      margin-left: 20px;
+    }
   }
 }
 
@@ -256,6 +267,7 @@ flex-direction: row;
 
   .flexbox {
     display:flex;
+    flex-direction: row;
     align-content: space-between;
     flex-wrap: nowrap;
   }
@@ -264,28 +276,44 @@ flex-direction: row;
     height: 200px;
     margin: 50px 0;
     margin-right: 3%;
-    width: 40%;
+    width: 30%;
     background-color: white;
-
-    &:nth-child(3) {
-      margin: 50px 0;
-    }
   }
 }
 
 .review {
-  background: gray;
   height: 300px;
-  color: white;
+  color: black;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+
+  .review-picture{
+    border-radius: 50%;
+    height: 200px;
+    width: 700px;
+    overflow: hidden;
+    margin-right: 30px;
+  }
+  .review-text {
+    margin-top: 50px;
+    text-align: justify;
+    vertical-align: middle;
+
+    .review-name {
+      margin-top: 50px;
+      text-align: right;
+    }
+  }
 }
 
-.map {
+.vac-show-header {
   border: solid 2px black;
   height: 300px;
   width: 100%;
   color: black;
 }
+
 // end of VACATION SHOW PAGE by ESTER
 
 footer {

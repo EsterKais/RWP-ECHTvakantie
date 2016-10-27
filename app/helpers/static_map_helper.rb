@@ -4,7 +4,7 @@ module StaticMapHelper
     params = {
         :center => [vacation.latitude, vacation.longitude].join(","),
         :zoom => 10,
-        :size => "1600x250",
+        :size => "1020x300",
         :markers => [vacation.latitude, vacation.longitude].join(","),
         :sensor => true
     }.merge(options)
