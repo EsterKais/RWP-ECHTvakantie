@@ -9,6 +9,10 @@ class ThemesController < ApplicationController
   # However, setting all (!) vphotos here, might slow down the service
   before_action :set_photos, only: [:edit, :show, :destroy]
 
+  # never touch this again
+  def show
+    @vacations = @theme.vacations.filtered(params[:filters])
+  end
 
   # for index we'll just feed as much as we got
   def index
@@ -60,37 +64,6 @@ class ThemesController < ApplicationController
     end
   end
 
-
-
-  # # PIM WIP from here onwards
-  # def show
-  #   @vacations = @theme.vacations.
-  #     filtered(params[:filters])
-  # end
-  #
-  # def by_title
-  #   @vacations = @theme.vacations.by_name
-  # end
-  #
-  # def by_created_at
-  #   @vacations = @theme.vacations.created_at
-  # end
-  #
-  # def by_price
-  #   @vacations = @theme.vacations.by_price
-  # end
-  #
-  # def by_country
-  #   @vacations = @theme.vacations.by_country
-  # end
-  #
-  # def by_location
-  #   @vacations = @theme.vacations.by_location
-  # end
-  #
-  # def by_address
-  #   @vacations = @theme.vacations.by_address
-  # end
 
 
   private
