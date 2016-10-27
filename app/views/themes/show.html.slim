@@ -9,7 +9,10 @@
         .filtertitle
           | Specificeer jouw zoekopdracht...
         .filtercontent
-          | Content here§
+        .filtercontent
+          = link_to "Frankrijk", filter_frankrijk_path
+          = link_to "Nederland", filter_nederland_path
+          = link_to "Spanje", filter_spanje_path
       .theme-left-admin
         .title
           | Administratie opties
