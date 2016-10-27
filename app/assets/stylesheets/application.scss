@@ -281,10 +281,29 @@ flex-direction: row;
 }
 
 .review {
-  background: gray;
   height: 300px;
-  color: white;
+  color: black;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+
+  .review-picture{
+    border-radius: 50%;
+    height: 200px;
+    width: 700px;
+    overflow: hidden;
+    margin-right: 30px;
+  }
+  .review-text {
+    margin-top: 50px;
+    text-align: justify;
+    vertical-align: middle;
+
+    .review-name {
+      margin-top: 50px;
+      text-align: right;
+    }
+  }
 }
 
 .vac-show-header {
