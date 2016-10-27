@@ -20,15 +20,17 @@
           = link_to 'Edit', edit_theme_path(@theme)
     .theme-right-column
       - @vacations.each do |vacation|
-        .vacation-single
-          .vl-image
-            | Image here
-          .vl-title
-            = vacation[:title]
-          .vl-place
-            = vacation[:region]
-          .vl-description.list-description
-            = vacation[:description]
-          .vl-price
-            = vacation[:price]
+        = link_to vacation do
+          .vacation-single
+            .vl-image style="background: url(#{vacation.vphotos[0].image}) center; background-size: cover"
+
+            .vl-title
+              = vacation[:title]
+            .vl-place
+              = vacation[:region]
+            .vl-description
+              = vacation[:description].truncate_words(20)
+            .vl-price
+              | Prijs indicatie: 
+              = vacation[:price]
     .clear
