@@ -34,21 +34,7 @@ theme3.save!
 
 #Vacations
 
-paris = Vacation.create!(title: "Paris", address: "Benedelangs 35", country: "Frankrijk", region: "Ardennen", price: "nil", description: "nil", show: "true", themes: [theme1])
-spain = Vacation.create!(title: "Spain", address: "Bloemenmarkt 2", country: "Frankrijk", region: "Ardennen", price: "nil", description: "nil", show: "true", themes: [theme1])
-amsterdam = Vacation.create!(title: "Amsterdam", address: "Weesperplein", country: "Frankrijk", region: "Ardennen", price: "nil", description: "nil", show: "true", themes: [theme1])
-nicaragua = Vacation.create!(title: "Nicaragua", address: "Nicaragua", country: "The Netherlands", region: "Ardennen", price: "nil", description: "nil", show: "true", themes: [theme1])
-antarctica = Vacation.create!(title: "Antarctica", address: "Flevoland", country: "The Netherlands", region: "Waddeneilanden", price: "nil", description: "nil", show: "true", themes: [theme1])
 
-berlin = Vacation.create!(title: "Berlin", address: "Andorra", country: "Germany", region: "Waddeneilanden", price: "nil", description: "nil", show: "true", themes: [theme2])
-france = Vacation.create!(title: "France", address: "Sweden", country: "The Netherlands", region: "Ordesa", price: "nil", description: "nil", show: "true", themes: [theme3])
-
-Vphoto.create!(vacation: berlin, remote_image_url: "http://res.cloudinary.com/dnwkjak4p/image/upload/v1476007276/99ca8b27a84b46c373803df268167d15c3488e99_tvrfql.jpg")
-Vphoto.create!(vacation: paris, remote_image_url: "http://res.cloudinary.com/dnwkjak4p/image/upload/v1476007282/20161005-q3895_hjoc8t.png")
-Vphoto.create!(vacation: spain, remote_image_url: "http://res.cloudinary.com/dnwkjak4p/image/upload/v1476007282/20161005-q3895_hjoc8t.png")
-Vphoto.create!(vacation: nicaragua, remote_image_url: "http://res.cloudinary.com/dnwkjak4p/image/upload/v1476007282/20161005-q3895_hjoc8t.png")
-Vphoto.create!(vacation: amsterdam, remote_image_url: "http://res.cloudinary.com/dnwkjak4p/image/upload/v1476007282/20161005-q3895_hjoc8t.png")
-Vphoto.create!(vacation: antarctica, remote_image_url: "http://res.cloudinary.com/dnwkjak4p/image/upload/v1476007282/20161005-q3895_hjoc8t.png")
 
 #for Theme Nature
 slapenBos = Vacation.create!(title: "Slapen in het Bos", address: "Benedelangs 35", country: "The Netherlands", region: "Central Holland", price: "EchtDuur", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", show: "true", themes: [theme2])

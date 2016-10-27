@@ -2,8 +2,21 @@ class Vacation < ApplicationRecord
   has_many :vphotos
   has_and_belongs_to_many :themes
 
+
+  validates :title, presence: true, length: {maximum: 50}
+  validates :description, presence: true, length: {maximum: 500}
+
+  validates :country, presence: true, length: {maximum: 20}
+  validates :region, presence: true, length: {maximum: 20}
+  validates :address, presence: true, length: {maximum: 50}
+
+  validates :show, presence: true
+
+  validates :tphotos, presence: true
+
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
+
 
   AVAILABLE_FILTERS = {
     regio: RegionFilter,
@@ -15,7 +28,8 @@ class Vacation < ApplicationRecord
   # In controller use following method like so Vacation.filtered("land/Spanje") of Vacation.filtered("prijs/echt-goedkoop")
 
   def self.filtered(filters)
-    return self if filters.blank?
+    # this didn't seem to do anything
+    # return self if filters.blank?
 
     results = self
 

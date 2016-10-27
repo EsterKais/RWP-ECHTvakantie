@@ -11,7 +11,11 @@ class ThemesController < ApplicationController
 
   # never touch this again
   def show
-    @vacations = @theme.vacations.filtered(params[:filters])
+    if params[:filters] != nil
+      @vacations = @theme.vacations.filtered(params[:filters])
+    else
+      @vacations = @theme.vacations
+    end
   end
 
   # for index we'll just feed as much as we got
