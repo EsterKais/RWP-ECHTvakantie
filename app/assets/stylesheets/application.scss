@@ -234,11 +234,22 @@ flex-direction: row;
   }
 
   .vacation-descr-text{
+    display: flex;
+    flex-direction: row;
     margin-top: 5px;
     // border: 2px solid pink;
     font-size: 20px;
     text-align: justify;
 
+    .map {
+      // border: solid 2px black;
+      height: 300px;
+      width: 3000px;
+      border-radius: 40%;
+      overflow: hidden;
+      align-items: center;
+      margin-left: 20px;
+    }
   }
 }
 
@@ -276,12 +287,13 @@ flex-direction: row;
   margin-bottom: 20px;
 }
 
-.map {
+.vac-show-header {
   border: solid 2px black;
   height: 300px;
   width: 100%;
   color: black;
 }
+
 // end of VACATION SHOW PAGE by ESTER
 
 footer {

@@ -1,4 +1,4 @@
-.map
+.vac-show-header
   - photo_object = @tphotos.first
   .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{photo_object.image.url}) center; background-size: cover;"
 
@@ -34,13 +34,17 @@
     .vacation-descr-title
       |Description
     .vacation-descr-text
+      br/
+      br/
       |Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      .map
+        = static_map_for(@vacation, options = {})
 
+  
   .review
     |POSSIBLY A REVIEW
   
-.map
-  = static_map_for(@vacation, options = {})
+
 
     
 .vacation-selection
