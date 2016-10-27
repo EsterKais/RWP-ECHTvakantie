@@ -32,9 +32,9 @@ Rails.application.routes.draw do
   # get '/thema/:name/regio/ardennen' => "themes#show", as: :filter_ardennen
   # get '/thema/:name/regio/waddeneilanden' => "themes#show", as: :filter_waddeneilanden
 
-  get '/thema/:name/prijs/goedkoop' => "themes#show", as: :filter_goedkoop
-  get '/thema/:name/prijs/normaal' => "themes#show", as: :filter_normaal
-  get '/thema/:name/prijs/duur' => "themes#show", as: :filter_duur
+  get '/thema/:name/prijs/voordelig' => "themes#show", as: :filter_voordelig
+  get '/thema/:name/prijs/gemiddeld' => "themes#show", as: :filter_gemiddeld
+  get '/thema/:name/prijs/prijzig' => "themes#show", as: :filter_prijzig
 
   resources :tphotos
   resources :vphotos
