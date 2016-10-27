@@ -403,6 +403,11 @@ footer {
   float: right;
   width: 68%;
   margin-top: 20px;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
 }
 
 .clear {
@@ -468,6 +473,12 @@ footer {
   width: calc(100%);
   margin-bottom: 10px;
   height: 150px;
+
+  &:hover{
+    position: relative;
+    top:-2px;
+    box-shadow: 0px 0px 2px 2px #ddd;
+  }
 
   .vl-image {
     height: 150px;
