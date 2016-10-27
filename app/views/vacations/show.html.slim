@@ -1,6 +1,5 @@
 .vac-show-header
-  - photo_object = @tphotos.first
-  .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{photo_object}) center; background-size: cover;"
+  .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{@tphotos[0].image}) center; background-size: cover;"
 
 .container  
   .vacation
