@@ -92,7 +92,7 @@ class VacationsController < ApplicationController
   end
 
   def build_photos
-    params.require(:vphotos).each do |photo|
+    params.fetch(:vphotos, {}).each do |photo|
       @vacation.vphotos.build(image: photo)
     end
   end
