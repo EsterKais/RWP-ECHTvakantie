@@ -25,3 +25,28 @@ $(window).bind("load", function() {
   $('.bxslider').bxSlider({
   });
 });
+
+
+var currentBackground = 0;
+var backgrounds = [];
+backgrounds[0] = 'http://res.cloudinary.com/unique/image/upload/v1477498791/Nature_k5rz4b.jpg';
+backgrounds[1] = 'http://res.cloudinary.com/unique/image/upload/q_76/v1477408102/Water_lsqdam.jpg';
+
+function changeBackground() {
+    currentBackground++;
+    if(currentBackground > 1) currentBackground = 0;
+
+    $('.slider').fadeOut(100,function() {
+        $('.slider').css({
+            'background-image' : "url('" + backgrounds[currentBackground] + "')"
+        });
+        $('.slider').fadeIn(100);
+    });
+
+
+    setTimeout(changeBackground, 2000);
+}
+
+$(document).ready(function() {
+    setTimeout(changeBackground, 2000);
+});

@@ -383,7 +383,8 @@ footer {
 .slider {
   width: 100%;
   height: 300px;
-  background: url('http://res.cloudinary.com/unique/image/upload/q_76/v1477408102/Water_lsqdam.jpg') center;
+  background: url(http://res.cloudinary.com/unique/image/upload/q_76/v1477408102/Water_lsqdam.jpg) center;
+  background-color: #333;
   background-size: cover;
   margin-bottom: 20px;
   background-blend-mode: color-dodge;
@@ -431,11 +432,6 @@ footer {
   float: right;
   width: 68%;
   margin-top: 20px;
-
-  a {
-    color: black;
-    text-decoration: none;
-  }
 }
 
 .clear {
@@ -501,12 +497,6 @@ footer {
   width: calc(100%);
   margin-bottom: 10px;
   height: 150px;
-
-  &:hover{
-    position: relative;
-    top:-2px;
-    box-shadow: 0px 0px 2px 2px #ddd;
-  }
 
   .vl-image {
     height: 150px;
