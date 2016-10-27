@@ -20,6 +20,7 @@ $(document).ready(function(){
   $('.dropdown-menu').click(function(){
     $('.header-bottom').fadeOut();
   });
+  $(".list-description").text($('.list-description').text().substr(0, 170)+'...');
 });
 
 $(document).ready(function(){

@@ -7,7 +7,7 @@
   .themes
     .grid
       - @themes.each do |theme|  
-        = link_to(theme) do
+        = link_to theme do
           .theme-column style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{theme.tphotos[0].image}); background-size: cover;"
             = theme.name
             br

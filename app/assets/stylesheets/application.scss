@@ -87,6 +87,11 @@ header {
     margin-top: 4px;
     letter-spacing: -1px;
     color: white;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
 
   nav {
@@ -133,18 +138,17 @@ header {
 }
 
 .search-field {
-  width: 100%;
+  width: calc(100% - 20px);
   border:0;
   padding: 15px 10px;
-  background: rgba(0,0,0,0.1);
   font-weight: 16px;
   border-radius: 5px;
   font-family: 'Montserrat', sans-serif;
-  color: white;
+  color: black;
 }
 
 .search-field:focus {
-  color: white;
+  color: black;
   box-shadow: 0;
 }
 
@@ -323,7 +327,7 @@ footer {
 }
 
 .theme-column {
-  width: 23.5%;
+  width: 32%;
   color: white;
   text-align: center;
   padding: 100px 0;
@@ -344,7 +348,7 @@ footer {
   }
 
   &:nth-child(-n+3) {
-    width: 32%;
+    width: 33%;
   }
 }
 

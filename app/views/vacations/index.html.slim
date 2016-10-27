@@ -1,9 +1,15 @@
 - if @vacations.blank?
-  h4
-    | There are no recipes containing the term #{params[:search]}.
+  .container
+    h4
+      | Hmmmh... zo te zien hebben wij nergens jouw zoekopdracht "#{params[:search]}" gevonden. 
+    h5
+      | Probeer je zoekterm aan te passen.
 
 .container
   .model
+    - if @vacations.present?
+      h5
+        | We hebben #{@vacations.count} zoekresultaten gevonden voor "#{params[:search]}".
     - @vacations.each do |vacation|
       .vacation-single
         .vl-image
