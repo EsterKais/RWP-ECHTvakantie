@@ -6,9 +6,12 @@
   .vacation
       .vacation-pic
         ul.bxslider
-          - @vphotos.each do |photo|
-            li
-              = image_tag photo.image            
+
+          / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
+          - if @vacation.vphotos[0] == []
+            - @vphotos.each do |photo|
+              li
+                = image_tag photo.image
       .vacation-info
         .vacation-title
           = @vacation.title
@@ -45,8 +48,11 @@
     
     = @vacarray.each_with_index do |e, index|  
       = link_to @vacarray[index] do
-        .thumbnail style="background: url(#{@vacarray[index].vphotos[0].image})"
-          = @vacarray[index].title
+
+        / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
+        - if @vacation.vphotos[0] == []
+          .thumbnail style="background: url(#{@vacarray[index].vphotos[0].image})"
+            = @vacarray[index].title
       - break if index == 2
 
     
