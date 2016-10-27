@@ -1,1 +1,18 @@
-h1 Hi
+- if @vacations.blank?
+  h4
+    | There are no recipes containing the term #{params[:search]}.
+
+.container
+  .model
+    - @vacations.each do |vacation|
+      .vacation-single
+        .vl-image
+          | Image here
+        .vl-title
+          = vacation[:title]
+        .vl-place
+          = vacation[:region]
+        .vl-description
+          = vacation[:description]
+        .vl-price
+          = vacation[:price]

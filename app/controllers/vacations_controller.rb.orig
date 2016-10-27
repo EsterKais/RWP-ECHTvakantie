@@ -1,9 +1,13 @@
 class VacationsController < ApplicationController
   before_action :set_vacation, only: [:edit, :update, :show, :destroy]
   before_action :set_themes, only: [:edit, :update, :show, :destroy]
+<<<<<<< HEAD
+  # before_action :set_reviews, only: [:edit, :update, :show, :destroy]
+=======
 
   # there is only 1 review
   before_action :set_review, only: [:edit, :update, :show, :destroy]
+>>>>>>> master
 
   # where do we wanna set which photos???
   # one thing is for sure: in update we wanna set vphotos ourselves (using build_photos method) because there we delete or add new ones
@@ -16,6 +20,9 @@ class VacationsController < ApplicationController
     @themes = Theme.all
     @vphotos = Vphoto.all
     @tphoto = Tphoto.all
+<<<<<<< HEAD
+    # @reviews = Review.all
+=======
     @reviews = Review.all
 
     if params[:search]
@@ -23,6 +30,7 @@ class VacationsController < ApplicationController
     else
       @vacations = Vacation.all.order("created_at DESC")
     end
+>>>>>>> master
   end
 
   def new
@@ -71,9 +79,15 @@ class VacationsController < ApplicationController
     @themes = @vacation.themes
   end
 
+<<<<<<< HEAD
+  # def set_reviews
+  #   @reviews = @vacation.reviews
+  # end
+=======
   def set_review
     @review = @vacation.review
   end
+>>>>>>> master
 
   def set_photos
     # set photos belonging to this vacation

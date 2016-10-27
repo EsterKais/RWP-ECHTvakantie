@@ -10,7 +10,11 @@ header
           li.dropdown-menu Themes
           li Contact
       .search
-        input type="text" class="search-field" placeholder="Search..."
+      = form_tag(vacations_path, :method => "get", id: "search-form") do
+        = text_field_tag :search, params[:search], placeholder: "Search Recipes"
+        = submit_tag "Search", :name => nil
+
+
   .header--bottom
     .container
       ul
