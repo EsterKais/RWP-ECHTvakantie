@@ -25,10 +25,10 @@
     = f.text_field :show
   .field
     = f.label :price
-    = f.text_field :price
+    = f.select :price, [['Goedkoop', 1], ['Normaal', 2], ['Duur', 3]]
   .field
     = f.label :thema
-    = f.collection_select :theme_ids, Theme.all, :id, :name,{ :prompt => "Kies thema"}, {  :multiple => true }
+    = f.collection_select :theme_ids, Theme.all, :id, :name, { :prompt => "Kies thema"}, {  :multiple => true }
   .field
     = f.label :description
     = f.text_field :description
