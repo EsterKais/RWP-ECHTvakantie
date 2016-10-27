@@ -1,4 +1,5 @@
 class VacationsController < ApplicationController
+  helper_method :sort_vacations, :sort_direction
   before_action :set_vacation, only: [:edit, :update, :show, :destroy]
   before_action :set_themes, only: [:edit, :update, :show, :destroy]
 

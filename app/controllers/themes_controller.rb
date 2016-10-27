@@ -1,4 +1,5 @@
 class ThemesController < ApplicationController
+  helper_method :sort_vacations, :sort_direction
   before_action :set_theme, only: [:edit, :update, :show]
 
   # vacations should only be set for :edit, :update, :destroy
@@ -14,9 +15,11 @@ class ThemesController < ApplicationController
   def show
     if params[:filters] != nil
       # Maybe, when thing get buggy, we wanna clean up @vacations before applying the filter like so, #@vacations = []
+      # sort_vacations & sort_direction are in ApplicationController
       @vacations = @theme.vacations.filtered(params[:filters])
+        .order(sort_vacations + ' ' + sort_direction)
     else
-      @vacations = @theme.vacations
+      @vacations = @theme.vacations.order(sort_vacations + ' ' + sort_direction)
     end
   end
 
