@@ -16,7 +16,7 @@
 
 /* GRID SETTINGS */
 $full-width:          1220px;
-$min-width:           900px;
+$min-width:           1220px;
 
 /* COLORS */
 $white:              #FFF;
@@ -46,6 +46,11 @@ body {
   font-weight: 300;
   padding:0;
   margin:0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .container {
@@ -533,9 +538,10 @@ footer {
   padding: 20px;
   background: rgb(52, 181, 123);
   margin-bottom: 10px;
+  color: white;
 
   a {
-    color: white;
+    color: white !important;
     text-decoration: none;
   }
 }
