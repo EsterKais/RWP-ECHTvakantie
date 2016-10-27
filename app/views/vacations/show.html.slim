@@ -1,6 +1,5 @@
 .vac-show-header
-  - photo_object = @tphotos.first
-  .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{photo_object}) center; background-size: cover;"
+  .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{@tphotos[0].image}) center; background-size: cover;"
 
 .container  
   .vacation
@@ -38,7 +37,7 @@
         span ~ Vincent Scholten
 
 .vacation-selection
-  | Misschien vind je deze locaties ook interessant...
+  | Misschien vind je deze vakanties ook interessant...
   .container.flexbox
     - @vacarray = []
     - @vacations.each do |vacation|
@@ -54,11 +53,3 @@
           .thumbnail style="background: url(#{@vacarray[index].vphotos[0].image})"
             = @vacarray[index].title
       - break if index == 2
-
-    
-    / 
-    / = link_to @vacarray[1] do
-    /   .vacation-selection-pic style="background: url(#{@vacarray[1].vphotos[0].image})"
-    /     = @vacarray[1].title
-    / 
-  

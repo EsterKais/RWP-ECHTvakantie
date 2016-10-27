@@ -50,6 +50,13 @@
         .content
           = link_to 'Edit', edit_theme_path(@theme)
     .theme-right-column
+      p Sorteer op: 
+      p= sortable "title", "Naam"
+      p= sortable "country", "Land"
+      p= sortable "region", "Regio"
+      p= sortable "price", "Prijs"
+      p= sortable "created_at", "Nieuwste"
+
       - @vacations.each do |vacation|
         = link_to vacation do
           .vacation-single

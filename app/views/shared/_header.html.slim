@@ -5,10 +5,14 @@ header
         = link_to "EchtVakantie", root_path
       nav
         ul
-          li= link_to "Home", root_path
-          li About
-          li.dropdown-menu Themes
-          li Contact
+          = link_to root_path do
+            li Home
+          = link_to root_path do
+            li Over ons
+          = link_to themes_path do
+            li.dropdown-menu Themas
+          = link_to root_path do
+            li Contact
       .search
         = form_tag(vacations_path, :method => "get",presence: true, allow_blank: false) do
           = text_field_tag :search, params[:search], placeholder: "Zoek naar een vakantie...", class: "search-field"
@@ -19,5 +23,6 @@ header
     .container
       ul
         - @themes.each do |theme|
-          li= link_to theme.name, theme
+          li= link_to theme do
+            = theme.name
 .placeholder-header
