@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   ######################################################################################################################
   # users/sign_in/ is /admin
   devise_scope :user do get "/admin" => "devise/sessions#new" end
+  devise_scope :user do get "/admin/loguit" => "devise/sessions#destroy" end
 
   ######################################################################################################################
   # actually we wanna have actions defined for all possible filters, like so in our views:  "/#{key}/#{value}/"

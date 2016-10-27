@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def sort_vacations
     # params[:sort] || "title"
-    %w[title country region price created_at].include?(params[:sort]) ? params[:sort] : "name"
+    %w[title country region price created_at].include?(params[:sort]) ? params[:sort] : "title"
   end
 
 
