@@ -16,7 +16,7 @@
 
 
           / LAND FILTER
-          /tried to put this in a helper method but somehow the method should an array of many html tags which it doens't
+          /tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
           - @countries = Vacation.distinct(:country).pluck(:country)
           - if @countries != []
             - @countries.each do |country|
@@ -26,7 +26,7 @@
           hr
 
           / REGIO FILTER
-          /tried to put this in a helper method but somehow the method should an array of many html tags which it doens't
+          /tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
           - @regions = Vacation.distinct(:region).pluck(:region)
           - if @regions != []
             - @regions.each do |region|
@@ -54,7 +54,7 @@
         = link_to vacation do
           .vacation-single
             / PIM commented this out because it gave me errors (undefined method `image' for nil:NilClass)
-            /.vl-image style="background: url(#{vacation.vphotos[0].image}) center; background-size: cover"
+            .vl-image style="background: url(#{vacation.vphotos[0].image}) center; background-size: cover"
 
             .vl-title
               = vacation[:title]
