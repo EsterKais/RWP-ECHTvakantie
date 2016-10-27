@@ -27,9 +27,14 @@ Rails.application.routes.draw do
   get '/thema/:name/land/duitsland' => "themes#show", as: :filter_duitsland
   get '/thema/:name/land/oostenrijk' => "themes#show", as: :filter_oostenrijk
 
-  get '/thema/:name/regio/randstad' => "themes#show", as: :filter_randstad
-  get '/thema/:name/regio/ardennen' => "themes#show", as: :filter_ardennen
-  get '/thema/:name/regio/waddeneilanden' => "themes#show", as: :filter_waddeneilanden
+  get '/thema/:name/regio/midden-nederland' => "themes#show", as: :filter_middennederland
+  get '/thema/:name/regio/zuid-holland' => "themes#show", as: :filter_zuidnederland
+  get '/thema/:name/regio/noord-holland' => "themes#show", as: :filter_noordholland
+  get '/thema/:name/regio/zuid-belgie' => "themes#show", as: :filter_zuidbelgie
+  get '/thema/:name/regio/noord-zweden' => "themes#show", as: :filter_noordzweden
+  get '/thema/:name/regio/noord-duitsland' => "themes#show", as: :filter_noordduitsland
+  get '/thema/:name/regio/zuid-frankrijk' => "themes#show", as: :filter_zuidfrankrijk
+  get '/thema/:name/regio/wenen' => "themes#show", as: :filter_wenen
 
   get '/thema/:name/prijs/echt-goedkoop' => "themes#show", as: :filter_goedkoop
   get '/thema/:name/prijs/echt-normaal' => "themes#show", as: :filter_normaal
