@@ -10,18 +10,18 @@
           | Specificeer jouw zoekopdracht...
         .filtercontent
         .filtercontent
-          p 
-            = link_to "Frankrijk", filter_frankrijk_path
+
+          = countries_filter
+          = regions_filter
+
+          P
+           = link_to "Echt goedkoop", filter_goedkoop_path
+          P
+           = link_to "Echt betaalbaar", filter_normaal_path
           p
-            = link_to "Nederland", filter_nederland_path
-          p 
-            = link_to "Spanje", filter_spanje_path
-          p
-            = link_to "Belgie", filter_spanje_path
-          p
-            = link_to "Zweden", filter_spanje_path
-          p
-            = link_to "Oostenrijk", filter_spanje_path
+           = link_to "Echt duur", filter_duur_path
+
+
       .theme-left-admin
         .title
           | Administratie opties
