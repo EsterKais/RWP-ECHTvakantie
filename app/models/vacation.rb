@@ -47,6 +47,7 @@ class Vacation < ApplicationRecord
 
 
   def self.search(search)
+
     where("title ILIKE ? OR country ILIKE ? OR region ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
   end
 
