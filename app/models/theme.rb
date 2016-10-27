@@ -4,7 +4,7 @@ class Theme < ApplicationRecord
 
   accepts_nested_attributes_for :tphotos, reject_if: :all_blank?
 
-  validates :tphotos, presence: true
+  # don't validate photos please!
   validates :name, presence: true, length: {maximum: 50}
   validates :description, presence: true, length: {maximum: 500}
 

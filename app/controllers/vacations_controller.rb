@@ -97,6 +97,7 @@ class VacationsController < ApplicationController
   end
 
   def vacation_params
+    # here we forgot to add theme_id, which also needs to be added in the create_form
     params.require(:vacation).permit(:address, :title, :country, :region, :price,
       :description, :show, vphotos_attributes: [ :image ])
   end
