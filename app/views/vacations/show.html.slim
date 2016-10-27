@@ -9,56 +9,55 @@
           - @vphotos.each do |photo|
             li
               = image_tag photo.image            
-
       .vacation-info
-      
-
         .vacation-title
           = @vacation.title
-          
-          / .social-media.vacation
-          /   img src="http://res.cloudinary.com/unique/image/upload/v1477388245/pinterest-logo_hoh7pl.png"
-          /   img src="http://res.cloudinary.com/unique/image/upload/v1477388235/twitter-logo-button_zoblsr.png"
-          /   img src="http://res.cloudinary.com/unique/image/upload/v1477388238/instagram-logo_iuhbc3.png"
-          /   img src="http://res.cloudinary.com/unique/image/upload/v1477388242/facebook-logo-button_vclbux.png"
-          / 
         .vacation-location
           = @vacation.region
           | , #{@vacation.country}
-
           .vacation-price
             = @vacation.price
+  .vac-desc
+    .vac-desc-left
+      h3 Omschrijving
+      p 
+        = @vacation.description
+    .vac-desc-right
+      = static_map_for(@vacation, options = {})
+  .vac-details
+    .vac-review
+      .vac-review-left
+        img src='http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,h_218/v1477556090/EchtVakantie/Vincent_profielfoto.jpg'
+      .vac-review-right
+        h2 Review
+        p
+          = @vacation.review
+        span ~ Vincent Scholten
 
-            
-  .vacation-descr
-    .vacation-descr-title
-      |Description
-    .vacation-descr-text
-      br/
-      br/
-      = @vacation.description
-      .map
-        = static_map_for(@vacation, options = {})
-  br/
-  br/
-  br/
-  .review
-    .review-picture
-      img src='http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,h_218/v1477556090/EchtVakantie/Vincent_profielfoto.jpg'
-    .review-text
-      |"
-      = @vacation.review
-      |"
-      .review-name
-        |Vincent Scholten
-    
 .vacation-selection
   | Misschien vind je deze locaties ook interessant...
   .container.flexbox
-    ul
-    .vacation-selection-pic
-      | Vacation1
-    .vacation-selection-pic
-      | Vacation2
-    .vacation-selection-pic
-      | Vacation3
+    - @vacarray = []
+    - @vacations.each do |vacation|
+      - if vacation.themes == @vacation.themes
+        - if vacation.title != @vacation.title
+          - @vacarray << vacation          
+    
+    - if @vacarray.count(5)      
+      = link_to @vacarray[1] do
+        .thumbnail style="background: url(#{@vacarray[1].vphotos[0].image})"
+          = @vacarray[1].title
+      = link_to @vacarray[2] do
+        .thumbnail style="background: url(#{@vacarray[2].vphotos[0].image})"
+          = @vacarray[2].title
+      = link_to @vacarray[3] do
+        .thumbnail style="background: url(#{@vacarray[3].vphotos[0].image})"
+          = @vacarray[3].title
+          
+    
+    / 
+    / = link_to @vacarray[1] do
+    /   .vacation-selection-pic style="background: url(#{@vacarray[1].vphotos[0].image})"
+    /     = @vacarray[1].title
+    / 
+  
