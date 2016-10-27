@@ -7,10 +7,13 @@
   .themes
     .grid
       - @themes.each do |theme|  
-         .theme-column style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{theme.tphotos[0].image}); background-size: cover;"
-          = theme.name
-          br
-          = link_to 'Edit', edit_theme_path(theme), class: "admin"
-          = link_to 'Destroy', theme, method: :delete, data: {confirm: 'Are you sure?'}, class: "admin"
-    = link_to 'New theme', new_theme_path
+        = link_to(theme) do
+          .theme-column style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{theme.tphotos[0].image}); background-size: cover;"
+            = theme.name
+            br
+            = link_to 'Edit', edit_theme_path(theme), class: "admin"
+            = link_to 'Destroy', theme, method: :delete, data: {confirm: 'Are you sure?'}, class: "admin"
+    = link_to new_theme_path do
+      .new-theme
+        | New theme
           
