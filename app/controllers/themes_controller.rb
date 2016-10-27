@@ -31,10 +31,7 @@ class ThemesController < ApplicationController
   end
 
   def new
-
-    if current_user != nil
-      @theme = Theme.new
-    end
+    @theme = Theme.new
   end
 
   def create
