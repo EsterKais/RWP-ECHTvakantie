@@ -43,17 +43,12 @@
         - if vacation.title != @vacation.title
           - @vacarray << vacation          
     
-    - if @vacarray.count(5)      
-      = link_to @vacarray[1] do
-        .thumbnail style="background: url(#{@vacarray[1].vphotos[0].image})"
-          = @vacarray[1].title
-      = link_to @vacarray[2] do
-        .thumbnail style="background: url(#{@vacarray[2].vphotos[0].image})"
-          = @vacarray[2].title
-      = link_to @vacarray[3] do
-        .thumbnail style="background: url(#{@vacarray[3].vphotos[0].image})"
-          = @vacarray[3].title
-          
+    = @vacarray.each_with_index do |e, index|  
+      = link_to @vacarray[index] do
+        .thumbnail style="background: url(#{@vacarray[index].vphotos[0].image})"
+          = @vacarray[index].title
+      - break if index == 2
+
     
     / 
     / = link_to @vacarray[1] do
