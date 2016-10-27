@@ -26,7 +26,6 @@ class ThemesController < ApplicationController
     @themes = Theme.all
     @vphotos = Vphoto.all
     @tphotos = Tphoto.all
-    @reviews = Review.all
   end
 
   def new
@@ -64,7 +63,7 @@ class ThemesController < ApplicationController
       image_params.each do |image|
         @theme.tphotos.create(image: image)
       end
-      redirect_to edit_theme_path(@theme), notice: "Update succesvol"
+      redirect_to theme_path(@theme), notice: "Update succesvol"
     else
       render :edit
     end

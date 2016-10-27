@@ -16,26 +16,30 @@
     = f.text_field :country
   .field
     = f.label :region
-    = f.text_field :region    
+    = f.text_field :region
+  .field
+    = f.label :address
+    = f.text_field :address
+  .field
+    = f.label :show
+    = f.text_field :show
   .field
     = f.label :price
-    = f.text_field :price     
+    = f.text_field :price
+  .field
+    = f.label :thema
+    = f.collection_select :theme_ids, Theme.all, :id, :name,{ :prompt => "Kies thema"}, {  :multiple => true }
   .field
     = f.label :description
     = f.text_field :description
   .field
     = f.label :review
     = f.text_area :review
-  .field
-    = radio_button_tag(:show, "true")
-    = label_tag(:show_label, "Zichtbaar")
-    = radio_button_tag(:show, "false")
-    = label_tag(:show_label, "Onzichtbaar")
-    
+
   .form-group
     span.btn.btn-default
       |  Upload Photos
-      = file_field_tag "photos[]", type: :file, multiple: true
+      = file_field_tag "vphotos[]", type: :file, multiple: true
   #vphotos
     = render 'vphotos/list'
   .actions
