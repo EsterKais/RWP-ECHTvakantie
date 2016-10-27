@@ -10,9 +10,15 @@
           | Specificeer jouw zoekopdracht...
         .filtercontent
         .filtercontent
-
-          /== countries_filter
-          /== regions_filter
+ 
+        
+        p
+          = link_to "Voordelig", filter_voordelig_path
+        p
+          = link_to "Gemiddeld", filter_gemiddeld_path
+        p
+          = link_to "Prijzig", filter_prijzig_path
+        hr
 
 
           / LAND FILTER
@@ -31,17 +37,12 @@
           - if @regions != []
             - @regions.each do |region|
               p
-                = link_to "#{region}", "/thema/#{params[:name]}/land/#{region}"
+                = link_to "#{region}", "/thema/#{params[:name]}/regio/#{region}"
 
 
           hr
 
-          P
-           = link_to "Echt goedkoop", filter_voordelig_path
-          P
-           = link_to "Echt betaalbaar", filter_gemiddeld_path
-          p
-           = link_to "Echt duur", filter_prijzig_path
+
 
 
       .theme-left-admin
