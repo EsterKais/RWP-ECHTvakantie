@@ -23,5 +23,7 @@ $(document).ready(function(){
 })
 
 $(document).ready(function(){
-  $('.bxslider').bxSlider();
+  $('.bxslider').bxSlider({
+    pagerCustom: '#bx-pager'
+  });
 });
