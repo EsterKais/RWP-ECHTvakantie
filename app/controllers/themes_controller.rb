@@ -10,8 +10,11 @@ class ThemesController < ApplicationController
   before_action :set_photos, only: [:edit, :show, :destroy]
 
   # never touch this again
+  # so we did touch it again. We need an if to make sure nothing happens when there is no params[:filters]
   def show
     if params[:filters] != nil
+      # we wanna clean up @vacations before applying the filter
+      @vacations = []
       @vacations = @theme.vacations.filtered(params[:filters])
     else
       @vacations = @theme.vacations
@@ -28,7 +31,10 @@ class ThemesController < ApplicationController
   end
 
   def new
-    @theme = Theme.new
+
+    if current_user != nil
+      @theme = Theme.new
+    end
   end
 
   def create
