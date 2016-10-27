@@ -15,7 +15,8 @@ class Vacation < ApplicationRecord
   # In controller use following method like so Vacation.filtered("land/Spanje") of Vacation.filtered("prijs/echt-goedkoop")
 
   def self.filtered(filters)
-    return self if filters.blank?
+    # this didn't seem to do anything
+    # return self if filters.blank?
 
     results = self
 
