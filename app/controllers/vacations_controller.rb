@@ -43,7 +43,7 @@ class VacationsController < ApplicationController
 
   def show
     @themes = Theme.all
-    @vacations = Vacation.all
+    @vacations = Vacation.order("RANDOM()").all
   end
 
   def destroy
