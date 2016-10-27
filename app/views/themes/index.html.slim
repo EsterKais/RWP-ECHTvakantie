@@ -12,5 +12,6 @@
           br
           = link_to 'Edit', edit_theme_path(theme), class: "admin"
           = link_to 'Destroy', theme, method: :delete, data: {confirm: 'Are you sure?'}, class: "admin"
-    = link_to 'New theme', new_theme_path
+    .new-theme
+      = link_to 'New theme', new_theme_path
           

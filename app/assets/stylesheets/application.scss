@@ -488,3 +488,15 @@ footer {
     z-index: -99;
   }
 }
+
+.new-theme {
+  width: calc(100% - 40px);
+  text-align: center;
+  padding: 20px;
+  background: rgb(52, 181, 123);
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
