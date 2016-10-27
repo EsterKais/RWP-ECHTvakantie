@@ -40,6 +40,7 @@ class VacationsController < ApplicationController
   end
 
   def show
+
   end
 
   def destroy
@@ -83,7 +84,7 @@ class VacationsController < ApplicationController
     # and we push inside an array all photos belonging to each theme
     @tphotos = []
     @vacation.themes.each do |theme|
-      @tphotos << theme.tphotos
+      @tphotos.concat(theme.tphotos)
     end
   end
 

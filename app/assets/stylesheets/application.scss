@@ -184,11 +184,12 @@ flex-direction: row;
 
 
   .vacation-pic{
-    border: 1px solid black;
-    // background: black;
+    // border: 1px solid black;
     height: 250px;
     width: 40%;
     color: black;
+    padding: 0px 20px 0px 20px;
+    background: white;
   }
 
   .vacation-info{
@@ -199,12 +200,12 @@ flex-direction: row;
       color: white;
       font-size: 50px;
       margin-top: 40px;
-      margin-left: 10px;
+      margin-left: 20px;
     }
 
     .vacation-location{
       // border: 2px solid black;
-      margin-left: 15px;
+      margin-left: 25px;
       font-size: 30px;
       margin-top: 25px;
 
@@ -224,7 +225,7 @@ flex-direction: row;
 
 .vacation-descr{
   // border: 2px solid black;
-  margin-top: 20px;
+  margin-top: 150px;
   margin-bottom: 20px;
 
   .vacation-descr-title{
@@ -278,6 +279,7 @@ flex-direction: row;
 .map {
   border: solid 2px black;
   height: 300px;
+  width: 100%;
   color: black;
 }
 // end of VACATION SHOW PAGE by ESTER
