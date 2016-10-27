@@ -1,42 +1,44 @@
-= form_for @vacation, html: { multipart: true } do |f|
-  - if @vacation.errors.any?
-    #error_explanation
-      h2
-        = pluralize(@vacation.errors.count, "error")
-        |  prohibited this theme from being saved:
-      ul
-        - @vacation.errors.full_messages.each do |message|
-          li
-            = message
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :country
-    = f.text_field :country
-  .field
-    = f.label :region
-    = f.text_field :region    
-  .field
-    = f.label :price
-    = f.text_field :price     
-  .field
-    = f.label :description
-    = f.text_field :description
-  .field
-    = f.label :review
-    = f.text_area :review
-  .field
-    = radio_button_tag(:show, "true")
-    = label_tag(:show_label, "Zichtbaar")
-    = radio_button_tag(:show, "false")
-    = label_tag(:show_label, "Onzichtbaar")
-    
-  .form-group
-    span.btn.btn-default
-      |  Upload Photos
-      = file_field_tag "photos[]", type: :file, multiple: true
-  #vphotos
-    = render 'vphotos/list'
-  .actions
-    = f.submit
+.container
+  .admin-model
+    = form_for @vacation, html: { multipart: true } do |f|
+      - if @vacation.errors.any?
+        #error_explanation
+          h2
+            = pluralize(@vacation.errors.count, "error")
+            |  prohibited this theme from being saved:
+          ul
+            - @vacation.errors.full_messages.each do |message|
+              li
+                = message
+      .field
+        = f.label :title
+        = f.text_field :title
+      .field
+        = f.label :country
+        = f.text_field :country
+      .field
+        = f.label :region
+        = f.text_field :region    
+      .field
+        = f.label :price
+        = f.text_field :price     
+      .field
+        = f.label :description
+        = f.text_field :description
+      .field
+        = f.label :review
+        = f.text_area :review
+      .field
+        = radio_button_tag(:show, "true")
+        = label_tag(:show_label, "Zichtbaar")
+        = radio_button_tag(:show, "false")
+        = label_tag(:show_label, "Onzichtbaar")
+        
+      .form-group
+        span.btn.btn-default
+          |  Upload Photos
+          = file_field_tag "photos[]", type: :file, multiple: true
+      #vphotos
+        = render 'vphotos/list'
+      .actions
+        = f.submit
