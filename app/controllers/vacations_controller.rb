@@ -43,6 +43,7 @@ class VacationsController < ApplicationController
 
   def show
     @themes = Theme.all
+    @vacations = Vacation.order("RANDOM()").all
   end
 
   def destroy
@@ -97,6 +98,7 @@ class VacationsController < ApplicationController
   end
 
   def vacation_params
+    # here we forgot to add theme_id, which also needs to be added in the create_form
     params.require(:vacation).permit(:address, :title, :country, :region, :price,
       :description, :show, :review, vphotos_attributes: [ :image ], theme_ids: [])
   end
