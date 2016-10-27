@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+  # this is our one and only index action, for now
   root 'themes#index'
+
 
   resources :tphotos
   resources :vphotos
@@ -9,27 +11,28 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
-
   ######################################################################################################################
   # WOUTER special route (fix this later)
   get '/thema/:name/*filters' => "themes#show"
 
   ######################################################################################################################
 
-
+  # users/sign_in/ is /admin
+  devise_scope :user do get "/admin" => "devise/sessions#new" end
 
   ######################################################################################################################
   # normal routes for vacations
 
-  get 'vakanties/new' => 'vacations#new', as: :new_vacation
-  post 'vakanties' => 'vacations#create'
+  get 'vakantie/new' => 'vacations#new', as: :new_vacation
+  post 'vakantie' => 'vacations#create'
 
-  get 'vakanties/:title' => 'vacations#show', as: :vacation
-  get 'vakanties/:title/edit' => 'vacations#edit', as: :edit_vacation
+  get 'vakanties/' => 'vacations#index', as: :vacations
+  get 'vakantie/:title' => 'vacations#show', as: :vacation
+  get 'vakantie/:title/edit' => 'vacations#edit', as: :edit_vacation
 
-  put 'vakanties/:title' => 'vacations#update'
-  patch 'vakanties/:title' => 'vacations#update'
-  delete 'vakanties/:title' => 'vacations#destroy'
+  put 'vakantie/:title' => 'vacations#update'
+  patch 'vakantie/:title' => 'vacations#update'
+  delete 'vakantie/:title' => 'vacations#destroy'
   ######################################################################################################################
 
 
@@ -37,15 +40,16 @@ Rails.application.routes.draw do
   ######################################################################################################################
   # normal routes for themes
 
+  get 'themes' => 'themes#index'
   get 'thema/new' => 'themes#new', as: :new_theme
-  post 'themas' => 'themes#create'
+  post 'thema' => 'themes#create'
 
-  get 'themas/:name' => 'themes#show', as: :theme
-  get 'themas/:name/edit' => 'themes#edit', as: :edit_theme
+  get 'thema/:name' => 'themes#show', as: :theme
+  get 'thema/:name/edit' => 'themes#edit', as: :edit_theme
 
-  put 'themas/:name' => 'themes#update'
-  patch 'themas/:name' => 'themes#update'
-  delete 'themas/:name' => 'themes#destroy'
+  put 'thema/:name' => 'themes#update'
+  patch 'thema/:name' => 'themes#update'
+  delete 'thema/:name' => 'themes#destroy'
   ######################################################################################################################
 
 
