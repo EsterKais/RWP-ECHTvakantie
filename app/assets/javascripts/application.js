@@ -20,10 +20,9 @@ $(document).ready(function(){
   $('.dropdown-menu').click(function(){
     $('.header-bottom').fadeOut();
   });
-})
+});
 
 $(document).ready(function(){
   $('.bxslider').bxSlider({
-    pagerCustom: '#bx-pager'
   });
 });
