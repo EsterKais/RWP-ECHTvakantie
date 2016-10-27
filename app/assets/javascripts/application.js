@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//
+//  TURBOLINKS BULLDOZERING THROUGH !!!
+//
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
