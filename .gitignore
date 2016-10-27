@@ -60,8 +60,10 @@ composer.lock
 
 .xml
 
-# this needed to be *orig   duh... :)
+# this needed to be *.orig, right?
+
 *.orig
+.orig
 
 Gemfile
 Gemfile.lock
