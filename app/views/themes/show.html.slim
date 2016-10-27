@@ -23,8 +23,9 @@
 
           / LAND FILTER
           /tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
+          - @countries = []
           - @countries = Vacation.distinct(:country).pluck(:country)
-          - if @countries != []
+          - if @countries.any?
             - @countries.each do |country|
               p
                 = link_to "#{country}", "/thema/#{params[:name]}/land/#{country}"
@@ -33,8 +34,9 @@
 
           / REGIO FILTER
           /tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
+          - @regions = []
           - @regions = Vacation.distinct(:region).pluck(:region)
-          - if @regions != []
+          - if @regions.any?
             - @regions.each do |region|
               p
                 = link_to "#{region}", "/thema/#{params[:name]}/regio/#{region}"
