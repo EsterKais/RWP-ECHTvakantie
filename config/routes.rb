@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   get '/thema/:name/land/frankrijk' => "themes#show", as: :filter_frankrijk
   get '/thema/:name/land/spanje' => "themes#show", as: :filter_spanje
   get '/thema/:name/land/nederland' => "themes#show", as: :filter_nederland
+  get '/thema/:name/land/belgie' => "themes#show", as: :filter_belgie
+  get '/thema/:name/land/zweden' => "themes#show", as: :filter_zweden
+  get '/thema/:name/land/duitsland' => "themes#show", as: :filter_duitsland
 
   get '/thema/:name/regio/randstad' => "themes#show", as: :filter_randstad
   get '/thema/:name/regio/ardennen' => "themes#show", as: :filter_ardennen
@@ -36,4 +39,3 @@ Rails.application.routes.draw do
   root 'themes#index'
 
 end
-
