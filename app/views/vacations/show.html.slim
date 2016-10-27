@@ -2,26 +2,26 @@
   - photo_object = @tphotos.first
   .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{photo_object}) center; background-size: cover;"
 
-.container  
+.container
   .vacation
       .vacation-pic
         ul.bxslider
           - @vphotos.each do |photo|
             li
-              = image_tag photo.image            
+              = image_tag photo.image
 
       .vacation-info
-      
+
 
         .vacation-title
           = @vacation.title
-          
+
           / .social-media.vacation
           /   img src="http://res.cloudinary.com/unique/image/upload/v1477388245/pinterest-logo_hoh7pl.png"
           /   img src="http://res.cloudinary.com/unique/image/upload/v1477388235/twitter-logo-button_zoblsr.png"
           /   img src="http://res.cloudinary.com/unique/image/upload/v1477388238/instagram-logo_iuhbc3.png"
           /   img src="http://res.cloudinary.com/unique/image/upload/v1477388242/facebook-logo-button_vclbux.png"
-          / 
+          /
         .vacation-location
           = @vacation.region
           | , #{@vacation.country}
@@ -29,7 +29,7 @@
           .vacation-price
             = @vacation.price
 
-            
+
   .vacation-descr
     .vacation-descr-title
       |Description
@@ -51,7 +51,7 @@
       |"
       .review-name
         |Vincent Scholten
-    
+
 .vacation-selection
   | Misschien vind je deze locaties ook interessant...
   .container.flexbox
