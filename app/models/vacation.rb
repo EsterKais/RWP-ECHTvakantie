@@ -3,6 +3,7 @@ class Vacation < ApplicationRecord
   has_and_belongs_to_many :themes
 
 
+  # don't validate photos please!
   validates :title, presence: true, length: {maximum: 50}
   validates :description, presence: true, length: {maximum: 500}
 

@@ -13,8 +13,7 @@ class ThemesController < ApplicationController
   # so we did touch it again. We need an if to make sure nothing happens when there is no params[:filters]
   def show
     if params[:filters] != nil
-      # we wanna clean up @vacations before applying the filter
-      @vacations = []
+      # Maybe, when thing get buggy, we wanna clean up @vacations before applying the filter like so, #@vacations = []
       @vacations = @theme.vacations.filtered(params[:filters])
     else
       @vacations = @theme.vacations
