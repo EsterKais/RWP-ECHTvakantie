@@ -1,6 +1,8 @@
-h1
-  | Editing vacation
-= render 'form', vacation: @vacation
-= link_to 'Laat zien', @vacation
-|  |
-= link_to 'Terug', vacations_path
+.container
+  .admin-model
+    h1
+      | Editing vacation
+    = render 'form', vacation: @vacation
+    = link_to 'Laat zien', @vacation
+    |  |
+    = link_to 'Terug', vacations_path
