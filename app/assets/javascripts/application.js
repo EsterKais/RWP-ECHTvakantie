@@ -16,14 +16,12 @@
 //= require_tree .
 
 
-$(document).ready(function(){
+
+$(window).bind("load", function() {
   $('.dropdown-menu').click(function(){
     $('.header-bottom').fadeOut();
   });
   $(".list-description").text($('.list-description').text().substr(0, 170)+'...');
-});
-
-$(document).ready(function(){
   $('.bxslider').bxSlider({
   });
 });

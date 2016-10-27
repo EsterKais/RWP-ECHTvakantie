@@ -27,8 +27,11 @@
     = f.label :review
     = f.text_area :review
   .field
-    = f.label :show
-    = f.text_field :show
+    = radio_button_tag(:show, "true")
+    = label_tag(:show_label, "Zichtbaar")
+    = radio_button_tag(:show, "false")
+    = label_tag(:show_label, "Onzichtbaar")
+    
   .form-group
     span.btn.btn-default
       |  Upload Photos

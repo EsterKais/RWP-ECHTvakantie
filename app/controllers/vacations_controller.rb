@@ -42,7 +42,7 @@ class VacationsController < ApplicationController
   end
 
   def show
-
+    @themes = Theme.all
   end
 
   def destroy

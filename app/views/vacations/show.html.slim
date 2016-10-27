@@ -1,6 +1,6 @@
-.map
+.vac-show-header
   - photo_object = @tphotos.first
-  .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{photo_object.image.url}) center; background-size: cover;"
+  .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{photo_object}) center; background-size: cover;"
 
 .container  
   .vacation
@@ -23,32 +23,42 @@
           /   img src="http://res.cloudinary.com/unique/image/upload/v1477388242/facebook-logo-button_vclbux.png"
           / 
         .vacation-location
-          |Region, Country
+          = @vacation.region
+          | , #{@vacation.country}
 
           .vacation-price
-            |Affordability
+            = @vacation.price
 
             
   .vacation-descr
     .vacation-descr-title
       |Description
     .vacation-descr-text
-      |Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+      br/
+      br/
+      = @vacation.description
+      .map
+        = static_map_for(@vacation, options = {})
+  br/
+  br/
+  br/
   .review
-    |POSSIBLY A REVIEW
-  
-.map
-  = static_map_for(@vacation, options = {})
-
+    .review-picture
+      img src='http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,h_218/v1477556090/EchtVakantie/Vincent_profielfoto.jpg'
+    .review-text
+      |"
+      = @vacation.review
+      |"
+      .review-name
+        |Vincent Scholten
     
 .vacation-selection
   | Misschien vind je deze locaties ook interessant...
   .container.flexbox
+    ul
     .vacation-selection-pic
       | Vacation1
     .vacation-selection-pic
       | Vacation2
     .vacation-selection-pic
       | Vacation3
-      
