@@ -7,11 +7,10 @@ header
         ul
           = link_to root_path do
             li Home
-          = link_to root_path do
+          = link_to '/pages/Over_ons' do
             li Over ons
-          = link_to themes_path do
-            li.dropdown-menu Themas
-          = link_to root_path do
+          li.dropdown-menu Themas &nabla;
+          = link_to '/pages/Contact' do
             li Contact
       .search
         = form_tag(vacations_path, :method => "get",presence: true, allow_blank: false) do

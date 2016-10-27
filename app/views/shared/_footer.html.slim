@@ -7,7 +7,17 @@ footer
         img src="http://res.cloudinary.com/unique/image/upload/v1477388235/twitter-logo-button_zoblsr.png"
         img src="http://res.cloudinary.com/unique/image/upload/v1477388238/instagram-logo_iuhbc3.png"
         img src="http://res.cloudinary.com/unique/image/upload/v1477388242/facebook-logo-button_vclbux.png"
-        
+        br
+        - if current_user
+          = link_to '/admin/loguit'
+            span.admin-button Uitloggen
+          = link_to '/thema/new'
+            span.admin-button Thema toevoegen
+          = link_to '/vakantie/new'
+            span.admin-button Vakantie toevoegen
+        - else 
+          = link_to 'admin'
+            span.admin-button Inloggen als admin
 
   .footer--bottom
     .container
