@@ -53,16 +53,6 @@ lesOrmes = Vacation.create!(title: "Camping Les Ormes", address: "Benedelangs 35
 daniel = Vacation.create!(title: "Daniel - Smart Luxury", address: "Benedelangs 35", country: "Austria", region: "Vienna", price: "EchtDuur", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", show: "true", themes: [theme3])
 silver = Vacation.create!(title: "Camp Silver", address: "Benedelangs 35", country: "The Netherlands", region: "North Holland", price: "EchtGoedkoop", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", show: "true", themes: [theme3])
 
-
-
-# OLD THEMES JUST IN CASE
-# spain = Vacation.create!(title: "Spain", address: "Bloemenmarkt 2", country: "The Netherlands", region: "nil", price: "nil", description: "nil", show: "true", themes: [theme1])
-# amsterdam = Vacation.create!(title: "Amsterdam", address: "Weesperplein", country: "The Netherlands", region: "nil", price: "nil", description: "nil", show: "true", themes: [theme1])
-# nicaragua = Vacation.create!(title: "Nicaragua", address: "Nicaragua", country: "The Netherlands", region: "nil", price: "nil", description: "nil", show: "true", themes: [theme1])
-# antarctica = Vacation.create!(title: "Antarctica", address: "Flevoland", country: "The Netherlands", region: "nil", price: "nil", description: "nil", show: "true", themes: [theme1])
-# berlin = Vacation.create!(title: "Berlin", address: "Andorra", country: "Germany", region: "nil", price: "nil", description: "nil", show: "true", themes: [theme2])
-# france = Vacation.create!(title: "France", address: "Sweden", country: "The Netherlands", region: "nil", price: "nil", description: "nil", show: "true", themes: [theme3])
-
 # Photos for Vacations
 Vphoto.create!(vacation: slapenBos, remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477556089/EchtVakantie/Nature_-_SlapenInHetBos_-_1.jpg")
 Vphoto.create!(vacation: slapenBos, remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477556089/EchtVakantie/Nature_-_SlapenInHetBos_-_2.jpg")

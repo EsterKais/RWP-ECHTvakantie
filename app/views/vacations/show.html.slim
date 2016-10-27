@@ -23,10 +23,11 @@
           /   img src="http://res.cloudinary.com/unique/image/upload/v1477388242/facebook-logo-button_vclbux.png"
           / 
         .vacation-location
-          |Region, Country
+          = @vacation.region
+          | , #{@vacation.country}
 
           .vacation-price
-            |Affordability
+            = @vacation.price
 
             
   .vacation-descr
