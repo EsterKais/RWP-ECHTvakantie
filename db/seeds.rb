@@ -7,11 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # Photos
 
-
+User.delete_all
 Vphoto.delete_all
 Tphoto.delete_all
 Theme.delete_all
 Vacation.delete_all
+
+# Creating User
+User.create(email: "admin@test.com", password: "secret")
 
 # Themes Photos
 tphoto1 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477555974/EchtVakantie/Special___treehouse.jpg")
@@ -115,4 +118,3 @@ Vphoto.create!(vacation: daniel, remote_image_url: "http://res.cloudinary.com/df
 Vphoto.create!(vacation: silver, remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477558630/EchtVakantie/Camping_-_Silver_-_1.jpg")
 Vphoto.create!(vacation: silver, remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477558630/EchtVakantie/Camping_-_Silver_-_2.jpg")
 Vphoto.create!(vacation: silver, remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477558630/EchtVakantie/Camping_-_Silver_-_3.jpg")
-
