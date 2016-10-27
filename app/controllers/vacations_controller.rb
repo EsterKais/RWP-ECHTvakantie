@@ -13,10 +13,16 @@ class VacationsController < ApplicationController
   # for index we'll just feed as much as we got
   def index
     @vacations = Vacation.all
-    @themes = Themes.all
+    @themes = Theme.all
     @vphotos = Vphoto.all
     @tphoto = Tphoto.all
     @reviews = Review.all
+
+    if params[:search]
+      @vacations = Vacation.search(params[:search]).order("created_at DESC")
+    else
+      @vacations = Vacation.all.order("created_at DESC")
+    end
   end
 
   def new
