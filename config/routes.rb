@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'vakantie/new' => 'vacations#new', as: :new_vacation
   post 'vakantie' => 'vacations#create'
 
+  get 'vakanties/' => 'vacations#index', as: :vacations
   get 'vakantie/:title' => 'vacations#show', as: :vacation
   get 'vakantie/:title/edit' => 'vacations#edit', as: :edit_vacation
 
@@ -38,6 +39,7 @@ Rails.application.routes.draw do
   ######################################################################################################################
   # normal routes for themes
 
+  get 'themes' => 'themes#index'
   get 'thema/new' => 'themes#new', as: :new_theme
   post 'thema' => 'themes#create'
 
