@@ -22,6 +22,8 @@ $(window).bind("load", function() {
     $('.header-bottom').fadeOut();
   });
   $(".list-description").text($('.list-description').text().substr(0, 170)+'...');
-  $('.bxslider').bxSlider({
-  });
+});
+
+$(document).ready(function(){
+  $('.bxslider').bxSlider();
 });
