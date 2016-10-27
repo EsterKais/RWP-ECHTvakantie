@@ -37,11 +37,11 @@
           hr
 
           P
-           = link_to "Echt goedkoop", filter_goedkoop_path
+           = link_to "Echt goedkoop", filter_voordelig_path
           P
-           = link_to "Echt betaalbaar", filter_normaal_path
+           = link_to "Echt betaalbaar", filter_gemiddeld_path
           p
-           = link_to "Echt duur", filter_duur_path
+           = link_to "Echt duur", filter_prijzig_path
 
 
       .theme-left-admin
@@ -60,8 +60,10 @@
       - @vacations.each do |vacation|
         = link_to vacation do
           .vacation-single
-            / PIM commented this out because it gave me errors (undefined method `image' for nil:NilClass)
-            .vl-image style="background: url(#{vacation.vphotos[0].image}) center; background-size: cover"
+
+            / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
+            - if vacation.vphotos[0] == []
+              .vl-image style="background: url(#{vacation.vphotos[0].image}) center; background-size: cover"
 
             .vl-title
               = vacation[:title]

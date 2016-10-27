@@ -25,7 +25,7 @@
     = f.text_field :show
   .field
     = f.label :price
-    = f.select :price, [['Goedkoop', 1], ['Normaal', 2], ['Duur', 3]]
+    = f.select :price, [['Voordelig', 1], ['Gemiddeld', 2], ['Prijzig', 3]]
   .field
     = f.label :thema
     = f.collection_select :theme_ids, Theme.all, :id, :name, { :prompt => "Kies thema"}, {  :multiple => true }
