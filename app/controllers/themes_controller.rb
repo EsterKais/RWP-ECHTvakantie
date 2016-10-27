@@ -10,8 +10,10 @@ class ThemesController < ApplicationController
   before_action :set_photos, only: [:edit, :show, :destroy]
 
   # never touch this again
+  # so we did touch it again. We need an if to make sure nothing happens when there is no params[:filters]
   def show
     if params[:filters] != nil
+      # Maybe, when thing get buggy, we wanna clean up @vacations before applying the filter like so, #@vacations = []
       @vacations = @theme.vacations.filtered(params[:filters])
     else
       @vacations = @theme.vacations
@@ -24,7 +26,6 @@ class ThemesController < ApplicationController
     @themes = Theme.all
     @vphotos = Vphoto.all
     @tphotos = Tphoto.all
-    @reviews = Review.all
   end
 
   def new
@@ -62,7 +63,7 @@ class ThemesController < ApplicationController
       image_params.each do |image|
         @theme.tphotos.create(image: image)
       end
-      redirect_to edit_theme_path(@theme), notice: "Update succesvol"
+      redirect_to theme_path(@theme), notice: "Update succesvol"
     else
       render :edit
     end
@@ -95,5 +96,4 @@ class ThemesController < ApplicationController
   def theme_params
     params.require(:theme).permit(:name, :style, :description)
   end
-
 end
