@@ -18,7 +18,7 @@ class VacationsController < ApplicationController
     @themes = Theme.all
     @vphotos = Vphoto.all
     @tphoto = Tphoto.all
-    @reviews = Review.all
+
 
     if params[:search]
       @vacations = Vacation.search(params[:search]).order("created_at DESC")
@@ -57,7 +57,7 @@ class VacationsController < ApplicationController
   def update
     build_photos
     if @vacation.update(vacation_params)
-      redirect_to edit_vacation_path(@vacation), notice: "Update succesvol"
+      redirect_to vacation_path(@vacation), notice: "Update succesvol"
     else
       render :edit
     end
@@ -92,7 +92,7 @@ class VacationsController < ApplicationController
   end
 
   def build_photos
-    params.require(:photos).each do |photo|
+    params.require(:vphotos).each do |photo|
       @vacation.vphotos.build(image: photo)
     end
   end
@@ -100,6 +100,6 @@ class VacationsController < ApplicationController
   def vacation_params
     # here we forgot to add theme_id, which also needs to be added in the create_form
     params.require(:vacation).permit(:address, :title, :country, :region, :price,
-      :description, :show, vphotos_attributes: [ :image ])
+      :description, :show, :review, vphotos_attributes: [ :image ], theme_ids: [])
   end
 end
