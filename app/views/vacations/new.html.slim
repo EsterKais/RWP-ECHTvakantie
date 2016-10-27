@@ -1,4 +1,6 @@
-h1
-  | New vacation
-= render 'form', vacation: @vacation
-= link_to 'Terug', vacations_path
+.container
+  .admin-model
+    h1
+      | New vacation
+    = render 'form', vacation: @vacation
+    = link_to 'Terug', vacations_path
