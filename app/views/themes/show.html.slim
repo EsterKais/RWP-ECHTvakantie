@@ -11,6 +11,16 @@
         .filtercontent
         .filtercontent
           p 
+            = link_to "Voordelig", filter_goedkoop_path
+          p 
+            = link_to "Gemiddeld", filter_normaal_path
+          p 
+            = link_to "Prijzig", filter_duur_path
+            
+        
+        
+          hr
+          p 
             = link_to "Frankrijk", filter_frankrijk_path
           p
             = link_to "Nederland", filter_nederland_path

@@ -36,9 +36,9 @@ Rails.application.routes.draw do
   get '/thema/:name/regio/zuid-frankrijk' => "themes#show", as: :filter_zuidfrankrijk
   get '/thema/:name/regio/wenen' => "themes#show", as: :filter_wenen
 
-  get '/thema/:name/prijs/echt-goedkoop' => "themes#show", as: :filter_goedkoop
-  get '/thema/:name/prijs/echt-normaal' => "themes#show", as: :filter_normaal
-  get '/thema/:name/prijs/echt-duur' => "themes#show", as: :filter_duur
+  get '/thema/:name/prijs/voordelig' => "themes#show", as: :filter_goedkoop
+  get '/thema/:name/prijs/gemiddeld' => "themes#show", as: :filter_normaal
+  get '/thema/:name/prijs/prijzig' => "themes#show", as: :filter_duur
 
   resources :tphotos
   resources :vphotos
