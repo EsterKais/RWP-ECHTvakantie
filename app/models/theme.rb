@@ -7,6 +7,7 @@ class Theme < ApplicationRecord
   validates :tphotos, presence: true
   validates :name, presence: true, length: {maximum: 50}
   validates :description, presence: true, length: {maximum: 500}
+
   # validates style  ?
 
   def to_param

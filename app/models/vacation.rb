@@ -2,8 +2,21 @@ class Vacation < ApplicationRecord
   has_many :vphotos
   has_and_belongs_to_many :themes
 
+
+  validates :title, presence: true, length: {maximum: 50}
+  validates :description, presence: true, length: {maximum: 500}
+
+  validates :country, presence: true, length: {maximum: 20}
+  validates :region, presence: true, length: {maximum: 20}
+  validates :address, presence: true, length: {maximum: 50}
+
+  validates :show, presence: true
+
+  validates :tphotos, presence: true
+
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
+
 
   AVAILABLE_FILTERS = {
     regio: RegionFilter,
