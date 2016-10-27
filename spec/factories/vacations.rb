@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :vacation do
-    title "MyString"
-    country "MyString"
-    region "MyString"
-    price "MyString"
-    description "MyText"
-    show false
+    title         { Faker::Pokemon.name }
+    country       { Faker::Pokemon.name }
+    region        { Faker::Pokemon.name }
+    price         { Faker::Commerce.price }
+    description   { Faker::Lorem.sentence(5) }
+    show true
   end
 end

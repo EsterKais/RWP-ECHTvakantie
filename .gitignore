@@ -59,6 +59,10 @@ nbproject
 composer.lock
 
 .xml
+
+# this needed to be *.orig, right?
+
+*.orig
 .orig
 
 Gemfile

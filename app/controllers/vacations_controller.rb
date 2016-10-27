@@ -1,6 +1,8 @@
 class VacationsController < ApplicationController
   before_action :set_vacation, only: [:edit, :update, :show, :destroy]
   before_action :set_themes, only: [:edit, :update, :show, :destroy]
+
+  # there is only 1 review
   before_action :set_review, only: [:edit, :update, :show, :destroy]
 
   # where do we wanna set which photos???
