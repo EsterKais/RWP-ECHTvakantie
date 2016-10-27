@@ -13,11 +13,20 @@ class VacationsController < ApplicationController
   # for index we'll just feed as much as we got
   def index
     @vacations = Vacation.all
+<<<<<<< HEAD
     # typo: should be Theme not THemes
+=======
+>>>>>>> master
     @themes = Theme.all
     @vphotos = Vphoto.all
     @tphoto = Tphoto.all
     @reviews = Review.all
+
+    if params[:search]
+      @vacations = Vacation.search(params[:search]).order("created_at DESC")
+    else
+      @vacations = Vacation.all.order("created_at DESC")
+    end
   end
 
   def new
@@ -35,6 +44,7 @@ class VacationsController < ApplicationController
   end
 
   def show
+
   end
 
   def destroy
@@ -78,7 +88,7 @@ class VacationsController < ApplicationController
     # and we push inside an array all photos belonging to each theme
     @tphotos = []
     @vacation.themes.each do |theme|
-      @tphotos << theme.tphotos
+      @tphotos.concat(theme.tphotos)
     end
   end
 

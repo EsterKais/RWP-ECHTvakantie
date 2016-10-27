@@ -1,17 +1,22 @@
 Rails.application.routes.draw do
+
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :vacations, param: :title
-  
+  resources :vacations, :path => 'vakantie', param: :title
 
-  resources :themes, param: :name
+  resources :themes, :path => 'thema', param: :name
 
-  # fix this later
+  ######################################################################################################################
+  # WOUTER special route (fix this later)
   get '/thema/:name/*filters' => "themes#show"
 
- #  actually we wanna have actions defined for all possible filters, like so in our views:  "/#{key}/#{value}/"
+  ######################################################################################################################
+  # users/sign_in/ is /admin
+  devise_scope :user do get "/admin" => "devise/sessions#new" end
 
+  ######################################################################################################################
+  # actually we wanna have actions defined for all possible filters, like so in our views:  "/#{key}/#{value}/"
   # our filters
   get '/thema/:name/land/frankrijk' => "themes#show", as: :filter_frankrijk
   get '/thema/:name/land/spanje' => "themes#show", as: :filter_spanje
@@ -29,28 +34,5 @@ Rails.application.routes.draw do
   resources :vphotos
 
   root 'themes#index'
-
-
-  # get 'vacations/new' => 'vacations#new', as: :new_vacation             # what does ":as" mean ????
-  # post 'vacations' => 'vacations#create'
-  #
-  # get 'vacations/:name' => 'vacations#show', as: :vacation              # what does ":as" mean ????
-  # get 'vacations/:name/edit' => 'vacations#edit', as: :edit_vacation    # what does ":as" mean ????
-  #
-  # patch 'vacations/:name' => 'vacations#update'
-  # delete 'vacations/:name' => 'vacations#destroy'
-  #
-  #
-  # get 'themes/new' => 'themes#new', as: :new_theme            # what does ":as" mean ????
-  # post 'themes' => 'themes#create'
-  #
-  # get 'themes/:name' => 'themes#show', as: :theme             # what does ":as" mean ????
-  # get 'themes/:name/edit' => 'themes#edit', as: :edit_theme   # what does ":as" mean ????
-  #
-  # patch 'themes/:name' => 'themes#update'
-  # delete 'themes/:name' => 'themes#destroy'
-
-
-
 
 end

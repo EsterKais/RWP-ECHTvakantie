@@ -1,12 +1,14 @@
 .map
-  | THEME PICTURE HERE
-  / = @vacation.themes.tphotos
-  
+  - photo_object = @tphotos.first
+  .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{photo_object.image.url}) center; background-size: cover;"
+
 .container  
   .vacation
       .vacation-pic
-        | VACATION PICTURES HERE
-        = image_tag @vphotos.first.image
+        ul.bxslider
+          - @vphotos.each do |photo|
+            li
+              = image_tag photo.image            
 
       .vacation-info
       
@@ -49,3 +51,4 @@
       | Vacation2
     .vacation-selection-pic
       | Vacation3
+      

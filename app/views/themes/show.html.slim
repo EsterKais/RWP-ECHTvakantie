@@ -16,7 +16,7 @@
         .content
           = link_to 'Edit', edit_theme_path(@theme)
     .theme-right-column
-      - @theme.vacations.each do |vacation|
+      - @vacations.each do |vacation|
         .vacation-single
           .vl-image
             | Image here
