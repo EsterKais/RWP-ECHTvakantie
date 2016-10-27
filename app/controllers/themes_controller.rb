@@ -30,11 +30,7 @@ class ThemesController < ApplicationController
   end
 
   def new
-
-    if current_user.name == "Vincent"
-        @theme = Theme.new
-    end
-
+    @theme = Theme.new
   end
 
   def create
