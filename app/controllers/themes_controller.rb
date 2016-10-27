@@ -31,7 +31,11 @@ class ThemesController < ApplicationController
   end
 
   def new
-    @theme = Theme.new
+
+    if current_user.name == "Vincent"
+        @theme = Theme.new
+    end
+
   end
 
   def create
@@ -98,5 +102,4 @@ class ThemesController < ApplicationController
   def theme_params
     params.require(:theme).permit(:name, :style, :description)
   end
-
 end
