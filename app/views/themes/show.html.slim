@@ -39,7 +39,8 @@
           .title
             | Administratie opties
           .content
-            = link_to 'Edit', edit_theme_path(@theme)
+            = link_to 'Bewerk thema', edit_theme_path(@theme)
+            = link_to 'Verwijder thema', @theme, method: :delete, data: {confirm: 'Are you sure?'}
                     
     .theme-right-column
       span Sorteer op: 

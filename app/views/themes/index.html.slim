@@ -32,10 +32,7 @@
           .thema-kolom style="background: linear-gradient(rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.5)), url(#{theme.tphotos[0].image}); background-size: cover;"
             span
               = theme.name
-            br
-            - if current_user
-              = link_to 'Edit', edit_theme_path(theme), class: "admin-button"
-              = link_to 'Destroy', theme, method: :delete, data: {confirm: 'Are you sure?'}, class: "admin-button"
+      .clear
     - if current_user
       = link_to new_theme_path do
         .new-theme
