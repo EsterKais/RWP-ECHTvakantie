@@ -1,5 +1,7 @@
 class Vacation < ApplicationRecord
-  has_many :vphotos
+
+  has_many :vphotos, dependent: :destroy
+
   has_and_belongs_to_many :themes
 
 
@@ -11,7 +13,7 @@ class Vacation < ApplicationRecord
   validates :region, presence: true, length: {maximum: 20}
   validates :address, presence: true, length: {maximum: 50}
 
-  validates :show, presence: true
+  validates :show, inclusion: [true, false]
 
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
@@ -22,7 +24,6 @@ class Vacation < ApplicationRecord
     land: CountryFilter,
     prijs: PriceFilter,
   }
-
 
   # In controller use following method like so Vacation.filtered("land/Spanje") of Vacation.filtered("prijs/echt-goedkoop")
 

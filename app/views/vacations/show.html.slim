@@ -1,22 +1,24 @@
-.vac-show-header
-  .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{@tphotos[0].image}) center; background-size: cover;"
+- if @tphotos[0].present?
+  .vac-show-header
+    .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{@tphotos[0].image}) center; background-size: cover;"
 
 .container  
   .vacation
       .vacation-pic
         ul.bxslider
-
           / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
           - if @vacation.vphotos[0] == []
-            - @vphotos.each do |photo|
-              li
-                = image_tag photo.image
+          - @vphotos.each do |photo|
+            li
+            = image_tag photo.image
       .vacation-info
         .vacation-title
           = @vacation.title
         .vacation-location
           = @vacation.region
           | , #{@vacation.country}
+        .vacation-address
+          = @vacation.address
           / span
           /   img src="http://www.mapleridgeranches.com/images/socialmedia-icons/pinterest_icon.png"
           /   img src="http://thebohotribe.com/wp-content/themes/The-boho-tribe/images/icons/instagram.png"
@@ -34,12 +36,17 @@
   .vac-details
     .vac-review
       .vac-review-left
-        img src='http://res.cloudinary.com/dfc7k24vb/image/upload/v1477647302/EchtVakantie/IMG_3613.jpg'
+        
       .vac-review-right
         h2 Review
         p
           = @vacation.review
         span ~ Vincent Scholten
+  
+- if current_user
+  .content
+    .admin-button = link_to 'Bewerk vakantie', edit_vacation_path(@vacation)
+    .admin-button = link_to 'Verwijder vakantie', @vacation, method: :delete, data: {confirm: 'Are you sure?'}
 
 - @vacarray = []
 - @vacations.each do |vacation|

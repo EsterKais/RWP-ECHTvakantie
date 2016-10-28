@@ -78,7 +78,6 @@ header {
 .placeholder-header {
   height: 124px;
   width: 100%;
-  box-shadow: 0px 0px 173px 0px rgba(0,0,0,0.5);
 }
 .header--top {
   background: $swimmingpool-blue;
@@ -86,6 +85,7 @@ header {
   width: 100%;
   z-index: 9999;
   padding: 15px 0;
+  box-shadow: 0px 0px 173px 0px rgba(0,0,0,0.5);
 
 
   .logo {
@@ -217,19 +217,17 @@ flex-direction: row;
     }
 
     .vacation-location{
-      // border: 2px solid black;
       margin-left: 25px;
-      font-size: 30px;
+      font-size: 25px;
       margin-top: 25px;
-
-      // .vacation-sm{
-      //   width: 100%;
-      //   text-align: right;
-      //   align-items: flex-end;
-      //   margin-left: 50%;
-      //   }
+      }
+      .vacation-address{
+        margin-left: 25px;
+        font-size: 22px;
+        margin-top: 25px;
       }
     }
+
       .vacation-price{
         font-size: 20px;
         margin-top: 25px;
@@ -237,12 +235,10 @@ flex-direction: row;
     }
 
 .vacation-descr{
-  // border: 2px solid black;
   margin-top: 150px;
   margin-bottom: 20px;
 
   .vacation-descr-title{
-    // border: 2px solid black;
     font-size: 30px;
   }
 
@@ -325,6 +321,24 @@ flex-direction: row;
   width: 100%;
   color: black;
 }
+.title {
+  margin-left: 30%;
+}
+.content {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 30%;
+
+  a {
+    text-decoration: none;
+    color: black;
+    padding: 2px 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+  }
+}
 
 // end of VACATION SHOW PAGE by ESTER
 
@@ -401,7 +415,7 @@ footer {
 .slider {
   width: 100%;
   height: 230px;
-  background: url(http://res.cloudinary.com/unique/image/upload/q_76/v1477408102/Water_lsqdam.jpg) center;
+  background: url(http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650346/EchtVakantie/theme/Special___treehouse.jpg) center;
   background-color: #333;
   background-size: cover;
   text-shadow: 0 0 5px #333;
@@ -570,21 +584,35 @@ footer {
   width: auto;
 
   input {
-    width: calc(100% - 40px);
-    padding: 20px;
+    padding: 10px;
+    font-size: 13px;
+    display: block;
   }
 }
 
 .vac-details {
-  background: $background-dark;
-  color: white;
+  background: url(http://res.cloudinary.com/unique/image/upload/v1477661670/reviewthing_iiuhxq.png) left center;
+  background-color: rgba(#4da6ff, 0.19);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: black;
   width: calc(100% - 80px);
   border-radius: 5px;
   padding: 40px;
+  padding-top: 30px;
   margin: 20px 0;
   font-size: 14px;
   font-weight: 100;
 
+  .vacation-title{
+
+    span {
+      border: solid 1px white;
+      width: 20%;
+      text-align: right;
+      margin-left: 5px;
+    }
+  }
 }
 
 
@@ -627,7 +655,7 @@ display: flex;
 justify-content: space-between;
 
   .vac-review-left {
-  width: 15%;
+  width: 25%;
     img {
       width: 100%;
       border-radius: 200px;
@@ -635,7 +663,8 @@ justify-content: space-between;
   }
 
   .vac-review-right {
-  width: 80%;
+  width: 70%;
+
     h2 {
       font-size: 26px;
     }
@@ -700,6 +729,11 @@ justify-content: space-between;
     border-radius: 5px;
     padding: 20px;
     background: white;
+
+    img {
+      margin-right: 20px;
+      border-radius: 100px;
+    }
   }
 
   .column-2 {
@@ -717,6 +751,7 @@ justify-content: space-between;
 
 .font-hind {
   font-family: 'Hind', sans-serif;
+  text-align: justify;
 }
 
 .usp-row {
@@ -804,4 +839,29 @@ justify-content: space-between;
   padding: 5px;
   background: rgba(0,0,0,0.2);
   border-radius: 5px;
+}
+
+.filtercontent {
+
+  h4 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .filterbutton {
+    margin: 0;
+    padding: 0;
+    background: rgb(111, 193, 214);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+    width: 150px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+
+  }
 }
