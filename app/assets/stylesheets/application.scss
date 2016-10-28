@@ -78,7 +78,6 @@ header {
 .placeholder-header {
   height: 124px;
   width: 100%;
-  box-shadow: 0px 0px 173px 0px rgba(0,0,0,0.5);
 }
 .header--top {
   background: $swimmingpool-blue;
@@ -86,6 +85,7 @@ header {
   width: 100%;
   z-index: 9999;
   padding: 15px 0;
+  box-shadow: 0px 0px 173px 0px rgba(0,0,0,0.5);
 
 
   .logo {
@@ -227,11 +227,13 @@ flex-direction: row;
         margin-top: 25px;
       }
     }
+
       .vacation-price{
         font-size: 20px;
         margin-top: 25px;
       }
     }
+  }
 
 .vacation-descr{
   margin-top: 150px;
@@ -583,21 +585,35 @@ footer {
   width: auto;
 
   input {
-    width: calc(100% - 40px);
-    padding: 20px;
+    padding: 10px;
+    font-size: 13px;
+    display: block;
   }
 }
 
 .vac-details {
-  background: $background-dark;
-  color: white;
+  background: url(http://res.cloudinary.com/unique/image/upload/v1477661670/reviewthing_iiuhxq.png) left center;
+  background-color: rgba(#4da6ff, 0.19);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: black;
   width: calc(100% - 80px);
   border-radius: 5px;
   padding: 40px;
+  padding-top: 30px;
   margin: 20px 0;
   font-size: 14px;
   font-weight: 100;
 
+  .vacation-title{
+
+    span {
+      border: solid 1px white;
+      width: 20%;
+      text-align: right;
+      margin-left: 5px;
+    }
+  }
 }
 
 
@@ -640,7 +656,7 @@ display: flex;
 justify-content: space-between;
 
   .vac-review-left {
-  width: 15%;
+  width: 25%;
     img {
       width: 100%;
       border-radius: 200px;
@@ -648,7 +664,8 @@ justify-content: space-between;
   }
 
   .vac-review-right {
-  width: 80%;
+  width: 70%;
+
     h2 {
       font-size: 26px;
     }
@@ -817,4 +834,29 @@ justify-content: space-between;
   padding: 5px;
   background: rgba(0,0,0,0.2);
   border-radius: 5px;
+}
+
+.filtercontent {
+
+  h4 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .filterbutton {
+    margin: 0;
+    padding: 0;
+    background: rgb(111, 193, 214);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+    width: 150px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+
+  }
 }

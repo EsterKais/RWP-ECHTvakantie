@@ -6,7 +6,7 @@ feature 'Add a theme', js: true do
   before { login_as user }
 
   # create a user
-  let ( :user) { create :user, email: "host@user.com" }
+  let ( :user) { create :user, email: "admin@test.com", password: "secret" }
 
  ################ this should be another to acheive the same ###########
  ##                                                                   ##
@@ -22,12 +22,11 @@ feature 'Add a theme', js: true do
     # fill in the form CHECK FOR THE RIGHT FORM NAMES
     fill_in 'theme_name', with: "Awesome Sauce"
     fill_in 'theme_description', with: Faker::Lorem.sentence(40)
-    fill_in 'theme_type', with: Faker::Internet.name
 
-    attach_file('photos_', File.join(Rails.root, '/spec/support/IMG-20160920-WA0005.jpg'))
+    attach_file('images_', File.join(Rails.root, '/spec/support/frank-nikes-2.jpg'))
 
     # click save
-    click_button('Save')
+    click_button('Create Theme')
 
     sleep(10)
 

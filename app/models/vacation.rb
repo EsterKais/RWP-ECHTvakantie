@@ -1,5 +1,7 @@
 class Vacation < ApplicationRecord
-  has_many :vphotos
+
+  has_many :vphotos, dependent: :destroy
+
   has_and_belongs_to_many :themes
 
 
@@ -23,7 +25,6 @@ class Vacation < ApplicationRecord
     prijs: PriceFilter,
   }
 
-
   # In controller use following method like so Vacation.filtered("land/Spanje") of Vacation.filtered("prijs/echt-goedkoop")
 
   def self.filtered(filters)
@@ -46,7 +47,7 @@ class Vacation < ApplicationRecord
 
 
   def self.search(search)
-    where("title ILIKE ? OR country ILIKE ? OR region ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    where("title ILIKE ? OR country ILIKE ? OR region ILIKE ? OR description ILIKE ? OR review ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
   end
 
   def to_param

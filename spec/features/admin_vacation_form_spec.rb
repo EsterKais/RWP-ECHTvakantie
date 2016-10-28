@@ -15,7 +15,7 @@ feature 'Add vacation', js: true do
 
   # user needs to be logged in to add a vacation
   before { login_as user }
-  let ( :user) { create :user, email: "admin@test.com" }
+  let ( :user) { create :user, email: "admin@test.com", password: "secret" }
 
   ################ this should be another to acheive the same ###########
   ##                                                                   ##
@@ -46,7 +46,10 @@ feature 'Add vacation', js: true do
       find("option[value='Prijzig']").click
     end
 
-    fill_in 'vacation_show', with: true
+    # true!
+    within 'vacation_show' do
+      find("option[value='#{theme.id}']").click
+    end
 
     within '#vacation_themes_ids' do
       find("option[value='#{theme.id}']").click
