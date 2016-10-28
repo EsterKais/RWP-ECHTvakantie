@@ -13,7 +13,7 @@ class Vacation < ApplicationRecord
   validates :region, presence: true, length: {maximum: 20}
   validates :address, presence: true, length: {maximum: 50}
 
-  validates :show, presence: true
+  validates :show, inclusion: [true, false]
 
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
