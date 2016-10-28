@@ -1,5 +1,7 @@
 class Vacation < ApplicationRecord
-  has_many :vphotos
+
+  has_many :vphotos, dependent: :destroy
+
   has_and_belongs_to_many :themes
 
 
@@ -22,7 +24,6 @@ class Vacation < ApplicationRecord
     land: CountryFilter,
     prijs: PriceFilter,
   }
-
 
   # In controller use following method like so Vacation.filtered("land/Spanje") of Vacation.filtered("prijs/echt-goedkoop")
 

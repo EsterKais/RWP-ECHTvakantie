@@ -7,7 +7,7 @@ module CountriesFilterHelper
     # then we check if there are any at all & generate the right filter path
     if @unique_countries.any?
       @unique_countries.each do |country|
-          @links << ("<p>" + link_to( "#{country}", "#{params[:name]}/land/#{country}" ) + "</p>").html_safe
+          @links << ("<p>" + link_to( "#{country}", "/thema/#{params[:name]}/land/#{country}" ) + "</p>").html_safe
       end
     end
 
