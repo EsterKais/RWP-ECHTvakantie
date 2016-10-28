@@ -42,10 +42,13 @@
             = link_to 'Edit', edit_theme_path(@theme)
                     
     .theme-right-column
-      p Sorteer op: 
-      p= sortable "title", "Naam"
-      p= sortable "country", "Land"
-      p= sortable "created_at", "Nieuwste"
+      span Sorteer op: 
+      span.sort-button
+        = sortable "title", "Naam"
+      span.sort-button
+        = sortable "country", "Land"
+      span.sort-button
+        = sortable "created_at", "Nieuwste"
 
       - @vacations.each do |vacation|
         = link_to vacation do
