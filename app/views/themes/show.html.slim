@@ -68,13 +68,13 @@
           /hr
           /
 
-
-
-      .theme-left-admin
-        .title
-          | Administratie opties
-        .content
-          = link_to 'Edit', edit_theme_path(@theme)
+      - if current_user
+        .theme-left-admin
+          .title
+            | Administratie opties
+          .content
+            = link_to 'Edit', edit_theme_path(@theme)
+                    
     .theme-right-column
       p Sorteer op: 
       p= sortable "title", "Naam"
