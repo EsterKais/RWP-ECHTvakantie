@@ -19,18 +19,18 @@
         p
           = link_to "Prijzig", filter_prijzig_path
         hr
-	h4
+	      h4
           | Filter op land:
         
-        - render_countries_filter_links.each do |link|
-          = content_tag( :p, link )
+          - render_countries_filter_links.each do |link|
+            = content_tag( :p, link )
           
-	hr
-	h4 
+	      hr
+	      h4
           | Filter op regio:
 
-        - render_regions_filter_links.each do |link|
-          = content_tag(:p, link)
+          - render_regions_filter_links.each do |link|
+            = content_tag(:p, link)
 
         hr
 
