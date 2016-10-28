@@ -78,7 +78,6 @@ header {
 .placeholder-header {
   height: 124px;
   width: 100%;
-
 }
 .header--top {
   background: $swimmingpool-blue;
@@ -218,15 +217,14 @@ flex-direction: row;
     }
 
     .vacation-location{
-      // border: 2px solid black;
       margin-left: 25px;
-      font-size: 20px;
+      font-size: 25px;
       margin-top: 25px;
-
-      .social-media.vacation{
-        background-color: black;
-        width: 100px;
-        height: 25px;
+      }
+      .vacation-address{
+        margin-left: 25px;
+        font-size: 22px;
+        margin-top: 25px;
       }
     }
 
@@ -238,12 +236,10 @@ flex-direction: row;
   }
 
 .vacation-descr{
-  // border: 2px solid black;
   margin-top: 150px;
   margin-bottom: 20px;
 
   .vacation-descr-title{
-    // border: 2px solid black;
     font-size: 30px;
   }
 
@@ -325,6 +321,24 @@ flex-direction: row;
   height: 300px;
   width: 100%;
   color: black;
+}
+.title {
+  margin-left: 30%;
+}
+.content {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 30%;
+
+  a {
+    text-decoration: none;
+    color: black;
+    padding: 2px 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+  }
 }
 
 // end of VACATION SHOW PAGE by ESTER
