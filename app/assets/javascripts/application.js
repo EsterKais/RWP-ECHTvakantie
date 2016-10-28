@@ -7,6 +7,12 @@
 //= require turbolinks
 //= require_tree .
 
+var ready;
+ready = function() {
+  $('.bxslider').bxSlider();
+};
+$(document).on('turbolinks:load', ready);
+
 
 var currentBackground = 0;
 var backgrounds = [];

@@ -233,7 +233,6 @@ flex-direction: row;
         margin-top: 25px;
       }
     }
-  }
 
 .vacation-descr{
   margin-top: 150px;
@@ -730,6 +729,11 @@ justify-content: space-between;
     border-radius: 5px;
     padding: 20px;
     background: white;
+
+    img {
+      margin-right: 20px;
+      border-radius: 100px;
+    }
   }
 
   .column-2 {
@@ -747,6 +751,7 @@ justify-content: space-between;
 
 .font-hind {
   font-family: 'Hind', sans-serif;
+  text-align: justify;
 }
 
 .usp-row {
