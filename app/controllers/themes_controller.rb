@@ -14,12 +14,13 @@ class ThemesController < ApplicationController
   before_action :set_photos, only: [:edit, :show, :destroy]
 
   # here's the good stuff
-  before_action :set_unique_countries, only: [:show]
   before_action :set_filtered_vacations, only: [:show]
 
 
   def show
-    # check the before_action methods
+    # here's the good stuff
+    set_unique('region')
+    set_unique('country')
   end
 
   # for index we'll just feed as much as we got
@@ -83,16 +84,25 @@ class ThemesController < ApplicationController
     @theme = Theme.find_by_name(params[:name])
   end
 
-  def set_unique_countries
-    # first we get all the countries of all the vacations in this theme
-    @countries = []
-    @unique_countries = []
+  def set_unique(type)
+    # first we get all the countries and regions of all the vacations in this theme
+    all_regions = []
+    all_countries = []
     @theme.vacations.each do |vacation|
-      @countries << vacation.country
+      all_countries << vacation.country
+      all_regions << vacation.region
     end
 
     # then we make sure we only have unique ones
-    @unique_countries = @countries.uniq
+    @unique_countries = all_countries.uniq
+    @unique_regions = all_regions.uniq
+
+    # then we return them, depending on what is asked for
+    if type == 'country'
+      return @unique_countries
+      elsif type == 'region'
+        return @unique_regions
+      end
   end
 
   def set_filtered_vacations
