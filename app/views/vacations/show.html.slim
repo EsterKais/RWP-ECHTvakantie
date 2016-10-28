@@ -15,7 +15,9 @@
         .vacation-title
           = @vacation.title
         .vacation-location
-          = @vacation.region
+          = @vacation.address
+          | , #{@vacation.region}
+          / = @vacation.region
           | , #{@vacation.country}
           / span
           /   img src="http://www.mapleridgeranches.com/images/socialmedia-icons/pinterest_icon.png"
