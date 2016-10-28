@@ -14,10 +14,10 @@
         .vacation-title
           = @vacation.title
         .vacation-location
-          = @vacation.address
-          | , #{@vacation.region}
-          / = @vacation.region
+          = @vacation.region
           | , #{@vacation.country}
+        .vacation-address
+          = @vacation.address
           / span
           /   img src="http://www.mapleridgeranches.com/images/socialmedia-icons/pinterest_icon.png"
           /   img src="http://thebohotribe.com/wp-content/themes/The-boho-tribe/images/icons/instagram.png"

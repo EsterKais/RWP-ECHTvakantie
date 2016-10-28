@@ -219,7 +219,7 @@ flex-direction: row;
     .vacation-location{
       // border: 2px solid black;
       margin-left: 25px;
-      font-size: 20px;
+      font-size: 25px;
       margin-top: 25px;
 
       // .vacation-sm{
@@ -228,6 +228,11 @@ flex-direction: row;
       //   align-items: flex-end;
       //   margin-left: 50%;
       //   }
+      }
+      .vacation-address{
+        margin-left: 25px;
+        font-size: 22px;
+        margin-top: 25px;
       }
     }
       .vacation-price{
