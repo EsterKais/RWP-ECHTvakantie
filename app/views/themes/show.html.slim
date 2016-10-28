@@ -79,7 +79,7 @@
 
             / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
             / .any? returns true of false for an array
-            - if vacation.vphotos.any?
+            - if vacation.vphotos[0].present?
               .vl-image style="background: url(#{vacation.vphotos[0].image}) center; background-size: cover"
 
             .vl-title
