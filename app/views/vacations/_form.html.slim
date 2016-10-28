@@ -22,7 +22,7 @@
     = f.text_field :address
   .field
     = f.label :show
-    = f.text_field :show
+    = f.select :show, [['Yes', true], ['No', false]]
   .field
     = f.label :price
     = f.select :price, [['Voordelig', 1], ['Gemiddeld', 2], ['Prijzig', 3]]
