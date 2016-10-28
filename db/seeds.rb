@@ -17,50 +17,50 @@ Vacation.delete_all
 User.create(email: "admin@test.com", password: "secret")
 
 # Themes Photos
-tphoto1 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477555974/EchtVakantie/Special___treehouse.jpg")
-tphoto2 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477555994/EchtVakantie/Nature2.jpg")
-tphoto3 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477555972/EchtVakantie/Camping.jpg")
-tphoto4 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477555999/EchtVakantie/Romance.jpg")
-tphoto5 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477555983/EchtVakantie/Historic2.jpg")
-tphoto6 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477555983/EchtVakantie/Food.jpg")
-tphoto7 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477555961/EchtVakantie/Farm_life.jpg")
-tphoto8 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477555971/EchtVakantie/Luxury.jpg")
-tphoto9 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/v1477555983/EchtVakantie/Take_a_ride.jpg")
+tphoto1 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650346/EchtVakantie/theme/Special___treehouse.jpg")
+tphoto2 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650352/EchtVakantie/theme/Nature2.jpg")
+tphoto3 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650344/EchtVakantie/theme/Camping.jpg")
+tphoto4 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650354/EchtVakantie/theme/Romance.jpg")
+tphoto5 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650344/EchtVakantie/theme/Historic2.jpg")
+tphoto6 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650349/EchtVakantie/theme/Food.jpg")
+tphoto7 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650341/EchtVakantie/theme/Farm_life.jpg")
+tphoto8 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650344/EchtVakantie/theme/Luxury.jpg")
+tphoto9 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650352/EchtVakantie/theme/Take_a_ride.jpg")
 
 # Themes
-theme1 = Theme.new(name: "Echt in de Bomen", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
+theme1 = Theme.new(name: "In de Bomen", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
 tphoto1.theme = theme1
 theme1.tphotos << tphoto1
 theme1.save!
-theme2 = Theme.new(name: "Echt in de Natuur ", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
+theme2 = Theme.new(name: "In de Natuur ", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
 tphoto2.theme = theme2
 theme2.tphotos << tphoto2
 theme2.save!
-theme3 = Theme.new(name: "Echt Camping", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
+theme3 = Theme.new(name: "Camping", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
 tphoto3.theme = theme3
 theme3.tphotos << tphoto3
 theme3.save!
-theme4 = Theme.new(name: "Echt Romantisch", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
+theme4 = Theme.new(name: "Romantisch", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
 tphoto4.theme = theme4
 theme4.tphotos << tphoto4
 theme4.save!
-theme5 = Theme.new(name: "Echt Historie", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
+theme5 = Theme.new(name: "Historie", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
 tphoto5.theme = theme5
 theme5.tphotos << tphoto5
 theme5.save!
-theme6 = Theme.new(name: "Echt Lekker", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
+theme6 = Theme.new(name: "Lekker", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
 tphoto6.theme = theme6
 theme6.tphotos << tphoto6
 theme6.save!
-theme7 = Theme.new(name: "Echt Boerenleven", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
+theme7 = Theme.new(name: "Boerenleven", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
 tphoto7.theme = theme7
 theme7.tphotos << tphoto7
 theme7.save!
-theme8 = Theme.new(name: "Echt Luxe", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
+theme8 = Theme.new(name: "Luxe", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
 tphoto8.theme = theme8
 theme8.tphotos << tphoto8
 theme8.save!
-theme9 = Theme.new(name: "Echt Toeren", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
+theme9 = Theme.new(name: "Toeren", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
 tphoto9.theme = theme9
 theme9.tphotos << tphoto9
 theme9.save!

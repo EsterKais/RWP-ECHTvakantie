@@ -576,12 +576,23 @@ footer {
   margin: 20px 0;
   font-size: 14px;
   font-weight: 100;
+
+  .vacation-title{
+
+    span {
+      border: solid 1px white;
+      width: 20%;
+      text-align: right;
+      margin-left: 5px;
+    }
+  }
 }
 
 
 .vac-desc {
 display: flex;
 justify-content: space-between;
+// margin-top: 60px;
 
   .vac-desc-left {
   width: 60%;
@@ -655,7 +666,7 @@ justify-content: space-between;
 
 
     .thumbnail {
-      width: calc(325px - 80px);
+(??)      width: calc(393px - 80px);
       padding: 60px 40px;
       background-size: cover !important;
       background-position: center;
