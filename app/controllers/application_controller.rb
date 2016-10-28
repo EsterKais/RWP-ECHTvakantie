@@ -8,4 +8,17 @@ class ApplicationController < ActionController::Base
     @themes = Theme.all
   end
 
+  def sort_vacations
+    # params[:sort] || "title"
+    %w[title country region price created_at].include?(params[:sort]) ? params[:sort] : "title"
+  end
+
+
+  def sort_direction
+    # params[:direction] || "asc"
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
+
+
+
 end

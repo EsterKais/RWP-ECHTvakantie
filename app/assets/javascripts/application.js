@@ -10,20 +10,47 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//
+//  TURBOLINKS BULLDOZERING THROUGH !!!
+//
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
 
-
-$(window).bind("load", function() {
-  $('.dropdown-menu').click(function(){
-    $('.header-bottom').fadeOut();
-  });
-  $(".list-description").text($('.list-description').text().substr(0, 170)+'...');
-});
-
-$(document).ready(function(){
+var ready;
+ready = function() {
   $('.bxslider').bxSlider();
+}
+$(document).on('turbolinks:load', ready);
+
+var currentBackground = 0;
+var backgrounds = [];
+backgrounds[0] = 'http://res.cloudinary.com/unique/image/upload/v1477498791/Nature_k5rz4b.jpg';
+backgrounds[1] = 'http://res.cloudinary.com/unique/image/upload/q_76/v1477408102/Water_lsqdam.jpg';
+
+function changeBackground() {
+    currentBackground++;
+    if(currentBackground > 1) currentBackground = 0;
+
+    $('.slider').fadeOut(1000,function() {
+        $('.slider').css({
+            'background-image' : "url('" + backgrounds[currentBackground] + "')"
+        });
+        $('.slider').fadeIn(1000);
+    });
+
+
+    setTimeout(changeBackground, 5000);
+}
+
+$(document).ready(function() {
+    setTimeout(changeBackground, 5000);
+    $('.dropdown-menu').click(function(){
+      $('.header--bottom').slideToggle();
+      return false;
+    });
+
 });

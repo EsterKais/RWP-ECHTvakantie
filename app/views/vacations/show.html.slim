@@ -1,14 +1,17 @@
 .vac-show-header
-  - photo_object = @tphotos.first
-  .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{photo_object}) center; background-size: cover;"
+  .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{@tphotos[0].image}) center; background-size: cover;"
 
 .container  
   .vacation
       .vacation-pic
         ul.bxslider
-          - @vphotos.each do |photo|
-            li
-              = image_tag photo.image            
+
+          / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
+          / .any? returns true of false for an array
+          - if @vacation.vphotos.any?
+            - @vphotos.each do |photo|
+              li
+                = image_tag photo.image
       .vacation-info
         .vacation-title
           = @vacation.title
@@ -35,7 +38,7 @@
         span ~ Vincent Scholten
 
 .vacation-selection
-  | Misschien vind je deze locaties ook interessant...
+  | Misschien vind je deze vakanties ook interessant...
   .container.flexbox
     - @vacarray = []
     - @vacations.each do |vacation|
@@ -45,14 +48,10 @@
     
     = @vacarray.each_with_index do |e, index|  
       = link_to @vacarray[index] do
-        .thumbnail style="background: url(#{@vacarray[index].vphotos[0].image})"
-          = @vacarray[index].title
-      - break if index == 2
 
-    
-    / 
-    / = link_to @vacarray[1] do
-    /   .vacation-selection-pic style="background: url(#{@vacarray[1].vphotos[0].image})"
-    /     = @vacarray[1].title
-    / 
-  
+        / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
+        / .any? returns true of false for an array
+        - if @vacation.vphotos.any?
+          .thumbnail style="background: url(#{@vacarray[index].vphotos[0].image})"
+            = @vacarray[index].title
+      - break if index == 2

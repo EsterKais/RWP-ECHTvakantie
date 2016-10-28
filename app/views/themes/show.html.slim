@@ -10,59 +10,60 @@
           | Specificeer jouw zoekopdracht...
         .filtercontent
         .filtercontent
-          p 
-            = link_to "Voordelig", filter_goedkoop_path
-          p 
-            = link_to "Gemiddeld", filter_normaal_path
-          p 
-            = link_to "Prijzig", filter_duur_path
-            
+ 
         
-        
+        p
+          = link_to "Voordelig", filter_voordelig_path
+        p
+          = link_to "Gemiddeld", filter_gemiddeld_path
+        p
+          = link_to "Prijzig", filter_prijzig_path
+        hr
+
+
+          / LAND FILTER
+          /tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
+          - @countries = Vacation.distinct(:country).pluck(:country)
+          - if @countries != []
+            - @countries.each do |country|
+              p
+                = link_to "#{country}", "/thema/#{params[:name]}/land/#{country}"
+
           hr
-          p 
-            = link_to "Frankrijk", filter_frankrijk_path
-          p
-            = link_to "Nederland", filter_nederland_path
-          p 
-            = link_to "Spanje", filter_spanje_path
-          p
-            = link_to "Belgie", filter_belgie_path
-          p
-            = link_to "Zweden", filter_zweden_path
-          p
-            = link_to "Oostenrijk", filter_oostenrijk_path
-          p
-            = link_to "Duitsland", filter_duitsland_path
+
+          / REGIO FILTER
+          /tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
+          - @regions = Vacation.distinct(:region).pluck(:region)
+          - if @regions != []
+            - @regions.each do |region|
+              p
+                = link_to "#{region}", "/thema/#{params[:name]}/regio/#{region}"
+
+
           hr
-          
-          p 
-            = link_to "Midden Nederland", filter_middennederland_path
-          p 
-            = link_to "Zuid Holland", filter_zuidnederland_path
-          p 
-            = link_to "Noord Holland", filter_noordholland_path
-          p 
-            = link_to "Zuid Belgie", filter_zuidbelgie_path
-          p 
-            = link_to "Noord Zweden", filter_noordzweden_path
-          p 
-            = link_to "Noord Duitsland", filter_noordduitsland_path
-          p 
-            = link_to "Zuid Frankrijk", filter_zuidfrankrijk_path
-          p 
-            = link_to "Wenen", filter_wenen_path
-        
+
+
+
+
       .theme-left-admin
         .title
           | Administratie opties
         .content
           = link_to 'Edit', edit_theme_path(@theme)
     .theme-right-column
+      p Sorteer op: 
+      p= sortable "title", "Naam"
+      p= sortable "country", "Land"
+      p= sortable "created_at", "Nieuwste"
+
       - @vacations.each do |vacation|
         = link_to vacation do
           .vacation-single
-            .vl-image style="background: url(#{vacation.vphotos[0].image}) center; background-size: cover"
+
+            / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
+            / .any? returns true of false for an array
+            - if vacation.vphotos.any?
+              .vl-image style="background: url(#{vacation.vphotos[0].image}) center; background-size: cover"
 
             .vl-title
               = vacation[:title]
