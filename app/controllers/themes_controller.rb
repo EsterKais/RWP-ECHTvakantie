@@ -1,4 +1,8 @@
 class ThemesController < ApplicationController
+
+  # sorting helper_method
+  helper_method :sort_vacations, :sort_direction
+
   before_action :set_theme, only: [:edit, :update, :show]
 
   # vacations should only be set for :edit, :update, :destroy
@@ -9,15 +13,14 @@ class ThemesController < ApplicationController
   # However, setting all (!) vphotos here, might slow down the service
   before_action :set_photos, only: [:edit, :show, :destroy]
 
-  # never touch this again
-  # so we did touch it again. We need an if to make sure nothing happens when there is no params[:filters]
+  # here's the good stuff
+  before_action :set_filtered_vacations, only: [:show]
+
+
   def show
-    if params[:filters] != nil
-      # Maybe, when thing get buggy, we wanna clean up @vacations before applying the filter like so, #@vacations = []
-      @vacations = @theme.vacations.filtered(params[:filters])
-    else
-      @vacations = @theme.vacations
-    end
+    # here's the good stuff
+    set_unique('region')
+    set_unique('country')
   end
 
   # for index we'll just feed as much as we got
@@ -80,6 +83,39 @@ class ThemesController < ApplicationController
   def set_theme
     @theme = Theme.find_by_name(params[:name])
   end
+
+  def set_unique(type)
+    # first we get all the countries and regions of all the vacations in this theme
+    all_regions = []
+    all_countries = []
+    @theme.vacations.each do |vacation|
+      all_countries << vacation.country
+      all_regions << vacation.region
+    end
+
+    # then we make sure we only have unique ones
+    @unique_countries = all_countries.uniq
+    @unique_regions = all_regions.uniq
+
+    # then we return them, depending on what is asked for
+    if type == 'country'
+      return @unique_countries
+      elsif type == 'region'
+        return @unique_regions
+      end
+  end
+
+  def set_filtered_vacations
+    if params[:filters] != nil
+      # Maybe, when thing get buggy, we wanna clean up @vacations before applying the filter like so, #@vacations = []
+      # sort_vacations & sort_direction are in ApplicationController
+      @vacations = @theme.vacations.filtered(params[:filters])
+                       .order(sort_vacations + ' ' + sort_direction)
+    else
+      @vacations = @theme.vacations.order(sort_vacations + ' ' + sort_direction)
+    end
+  end
+
 
   def set_photos
     # set all vphotos
