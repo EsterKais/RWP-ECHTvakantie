@@ -1,7 +1,8 @@
-.theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{@theme.tphotos[0].image}) center fixed; background-size: cover;"
-  .container
-    .theme-name
-      = @theme.name
+- if @theme.tphotos[0].present?
+  .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{@theme.tphotos[0].image}) center fixed; background-size: cover;"
+    .container
+      .theme-name
+        = @theme.name
 .theme-content
   .container
     .theme-left-column
