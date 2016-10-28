@@ -1,11 +1,16 @@
 module CountriesFilterHelper
 
-  def countries_filter
-    @countries = Vacation.distinct(:country).pluck(:country)
-    if @countries != []
-        @countries.each do |country|
-          "<p>" + link_to( "#{country}", "#{params[:name]}/land/#{country}" ) + "</p>"
+  def render_countries_filter_links
+
+    @links = []
+
+    # then we check if there are any at all & generate the right filter path
+    if @unique_countries.any?
+      @unique_countries.each do |country|
+          @links << ("<p>" + link_to( "#{country}", "#{params[:name]}/land/#{country}" ) + "</p>").html_safe
       end
     end
+
+    return @links
   end
 end

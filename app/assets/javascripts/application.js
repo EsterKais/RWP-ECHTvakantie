@@ -11,12 +11,18 @@
 // about supported directives.
 //
 //
-//  TURBOLINKS BULLDOZERING THROUGH !!!
+
 //
 //= require jquery
+
+//  TURBOLINKS!!!
 //= require jquery.turbolinks
+
 //= require jquery_ujs
+
+//  TURBOLINKS !!!
 //= require turbolinks
+
 //= require_tree .
 
 

@@ -10,17 +10,15 @@ class ThemesController < ApplicationController
   # However, setting all (!) vphotos here, might slow down the service
   before_action :set_photos, only: [:edit, :show, :destroy]
 
-  # never touch this again
-  # so we did touch it again. We need an if to make sure nothing happens when there is no params[:filters]
+  # here's the good stuff
+  before_action :set_unique_countries, only [:show]
+  before_action :set_filtered_vacations, only [:show]
+
+
+
+
   def show
-    if params[:filters] != nil
-      # Maybe, when thing get buggy, we wanna clean up @vacations before applying the filter like so, #@vacations = []
-      # sort_vacations & sort_direction are in ApplicationController
-      @vacations = @theme.vacations.filtered(params[:filters])
-        .order(sort_vacations + ' ' + sort_direction)
-    else
-      @vacations = @theme.vacations.order(sort_vacations + ' ' + sort_direction)
-    end
+    # check the before_action methods
   end
 
   # for index we'll just feed as much as we got
@@ -83,6 +81,30 @@ class ThemesController < ApplicationController
   def set_theme
     @theme = Theme.find_by_name(params[:name])
   end
+
+  def set_unique_countries
+    # first we get all the countries of all the vacations in this theme
+    @countries = []
+    @unique_countries = []
+    @theme.vacations.each do |vacation|
+      @countries << vacation.country
+    end
+
+    # then we make sure we only have unique ones
+    @unique_countries = @countries.uniq
+  end
+
+  def set_filtered_vacations
+    if params[:filters] != nil
+      # Maybe, when thing get buggy, we wanna clean up @vacations before applying the filter like so, #@vacations = []
+      # sort_vacations & sort_direction are in ApplicationController
+      @vacations = @theme.vacations.filtered(params[:filters])
+                       .order(sort_vacations + ' ' + sort_direction)
+    else
+      @vacations = @theme.vacations.order(sort_vacations + ' ' + sort_direction)
+    end
+  end
+
 
   def set_photos
     # set all vphotos
