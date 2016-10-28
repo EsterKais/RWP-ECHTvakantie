@@ -21,29 +21,52 @@
         hr
 
 
-          / LAND FILTER
-          /tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
-          - @countries = []
-          - @countries = Vacation.distinct(:country).pluck(:country)
-          - if @countries.any?
-            - @countries.each do |country|
-              p
-                = link_to "#{country}", "/thema/#{params[:name]}/land/#{country}"
-
-          hr
-
-          / REGIO FILTER
-          /tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
-          - @regions = []
-          - @regions = Vacation.distinct(:region).pluck(:region)
-          - if @regions.any?
-            - @regions.each do |region|
-              p
-                = link_to "#{region}", "/thema/#{params[:name]}/regio/#{region}"
-
-
-          hr
-
+          // LAND FILTER
+          //tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
+          /
+          // first we get all the countries of all the vacations in this theme
+          /- @regions = []
+          /- @unique_regions = []
+          /- @theme.vacations.each do |vacation|
+          /  - @regions << vacation.region
+          /- @regions.uniq = @unique_regions
+          /
+          /- @unique_regions
+          /
+          /
+          ////////
+          /
+          /- @theme_countries = []
+          /- @all_countries = Vacation.distinct(:country).pluck(:country)
+          /
+          /
+          /- @all_countries.each do |country|
+          /
+          /  - if country
+          /
+          /- @theme_countries <<
+          /
+          /////////////
+          /
+          /- if @countries.any?
+          /  - @countries.each do |country|
+          /    p
+          /      = link_to "#{country}", "/thema/#{params[:name]}/land/#{country}"
+          /
+          /hr
+          /
+          // REGIO FILTER
+          //tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
+          /- @regions = []
+          /- @regions = Vacation.distinct(:region).pluck(:region)
+          /- if @regions.any?
+          /  - @regions.each do |region|
+          /    p
+          /      = link_to "#{region}", "/thema/#{params[:name]}/regio/#{region}"
+          /
+          /
+          /hr
+          /
 
 
 
@@ -64,7 +87,7 @@
 
             / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
             / .any? returns true of false for an array
-            - if vacation.vphotos.any?
+            - if vacation.vphotos[0].present?
               .vl-image style="background: url(#{vacation.vphotos[0].image}) center; background-size: cover"
 
             .vl-title

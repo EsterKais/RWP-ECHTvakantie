@@ -1,4 +1,5 @@
 class VphotosController < ApplicationController
+
   def destroy
     @vphoto = Vphoto.find(params[:id])
     @vacation = @vphoto.vacation
