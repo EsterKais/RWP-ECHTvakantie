@@ -369,7 +369,7 @@ footer {
 
 .thema-kolom {
   float:left;
-  width: 33.1%;
+  width: 33.13%;
   height: 200px;
   font-weight: bold;
   font-size: 20px;
@@ -377,6 +377,12 @@ footer {
   margin-bottom: 2px;
   border-right: 2px solid white;
   box-shadow: inset 0px -60px 129px -27px rgba(0,0,0,0.5);
+
+  &:hover {
+    box-shadow: inset 0px -60px 129px -27px rgba(0,0,0,0.7);
+    position: relative;
+    top: -1px;
+  }
 
   span {
     position: relative;
