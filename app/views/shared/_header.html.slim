@@ -9,7 +9,6 @@ header
             li Home
           = link_to '/pages/Over_ons' do
             li Over ons
-          li.dropdown-menu Themas &nabla;
           = link_to '/pages/Contact' do
             li Contact
       .search
@@ -21,6 +20,7 @@ header
   .header--bottom
     .container
       ul
+        span.choose Kies een thema:
         - @themes.each do |theme|
           li= link_to theme do
             = theme.name
