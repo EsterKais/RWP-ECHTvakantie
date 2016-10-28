@@ -18,7 +18,8 @@
             = vacation[:title]
           .vl-place
             = vacation[:region]
-          .vl-description
-            = vacation[:description]
+          .vl-description.font-hind
+            = vacation[:description].truncate(250)
           .vl-price
+            | Prijsindicatie: 
             = vacation[:price]
