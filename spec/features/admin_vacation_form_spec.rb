@@ -46,7 +46,10 @@ feature 'Add vacation', js: true do
       find("option[value='Prijzig']").click
     end
 
-    fill_in 'vacation_show', with: true
+    # true!
+    within 'vacation_show' do
+      find("option[value='#{theme.id}']").click
+    end
 
     within '#vacation_themes_ids' do
       find("option[value='#{theme.id}']").click
