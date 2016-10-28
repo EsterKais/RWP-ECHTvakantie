@@ -6,7 +6,7 @@ class CreateVacations < ActiveRecord::Migration[5.0]
       t.string :region
       t.string :price
       t.text :description
-      t.boolean :show
+      t.boolean :show, default: true, null: false
 
       t.timestamps
     end

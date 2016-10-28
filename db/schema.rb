@@ -61,9 +61,9 @@ ActiveRecord::Schema.define(version: 20161026090919) do
     t.string   "region"
     t.string   "price"
     t.text     "description"
-    t.boolean  "show"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "show",        default: true, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
