@@ -15,7 +15,7 @@ feature 'Add vacation', js: true do
 
   # user needs to be logged in to add a vacation
   before { login_as user }
-  let ( :user) { create :user, email: "admin@test.com" }
+  let ( :user) { create :user, email: "admin@test.com", password: "secret" }
 
   ################ this should be another to acheive the same ###########
   ##                                                                   ##
