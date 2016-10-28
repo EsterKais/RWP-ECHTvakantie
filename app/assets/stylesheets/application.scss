@@ -578,11 +578,15 @@ footer {
 }
 
 .vac-details {
-  background: $background-dark;
-  color: white;
+  background: url(http://res.cloudinary.com/unique/image/upload/v1477661670/reviewthing_iiuhxq.png) left center;
+  background-color: rgba(#4da6ff, 0.19);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: black;
   width: calc(100% - 80px);
   border-radius: 5px;
   padding: 40px;
+  padding-top: 30px;
   margin: 20px 0;
   font-size: 14px;
   font-weight: 100;
@@ -638,7 +642,7 @@ display: flex;
 justify-content: space-between;
 
   .vac-review-left {
-  width: 15%;
+  width: 25%;
     img {
       width: 100%;
       border-radius: 200px;
@@ -646,7 +650,8 @@ justify-content: space-between;
   }
 
   .vac-review-right {
-  width: 80%;
+  width: 70%;
+
     h2 {
       font-size: 26px;
     }
