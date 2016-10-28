@@ -21,7 +21,8 @@
         hr
 
 
-          == render_countries_filter_links
+          - render_countries_filter_links.each do |link|
+            = content_tag( :p, link )
 
           // LAND FILTER
           //tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't

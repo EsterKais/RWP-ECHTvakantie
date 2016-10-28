@@ -1,5 +1,8 @@
 class ThemesController < ApplicationController
+
+  # sorting helper_method
   helper_method :sort_vacations, :sort_direction
+
   before_action :set_theme, only: [:edit, :update, :show]
 
   # vacations should only be set for :edit, :update, :destroy
@@ -11,10 +14,8 @@ class ThemesController < ApplicationController
   before_action :set_photos, only: [:edit, :show, :destroy]
 
   # here's the good stuff
-  before_action :set_unique_countries, only [:show]
-  before_action :set_filtered_vacations, only [:show]
-
-
+  before_action :set_unique_countries, only: [:show]
+  before_action :set_filtered_vacations, only: [:show]
 
 
   def show
