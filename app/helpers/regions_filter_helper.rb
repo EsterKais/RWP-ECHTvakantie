@@ -1,16 +1,16 @@
 module RegionsFilterHelper
 
-  def regions_filter
-    @regions = Vacation.distinct(:region).pluck(:region)
+  def render_regions_filter_links
 
-    html = []
+    @links = []
 
-    if @regions != []
-      @regions.each do |region|
-        html << ("<p>" +  link_to( "#{region}", "#{params[:name]}/land/#{region}" ) + "</p>")
+    # then we check if there are any at all & generate the right filter path
+    if @unique_regions.any?
+      @unique_regions.each do |region|
+        @links << ("<p>" + link_to( "#{region}", "#{params[:name]}/regio/#{region}" ) + "</p>").html_safe
       end
     end
 
-    return html
+    return @links
   end
 end
