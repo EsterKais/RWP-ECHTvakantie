@@ -19,60 +19,37 @@
         p
           = link_to "Prijzig", filter_prijzig_path
         hr
-        h4
+	      h4
           | Filter op land:
-        / LAND FILTER
-        /tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
-        - @countries = []
-        - @unique_countries = []
-        - @theme.vacations.each do |vacation|
-          - @countries << vacation.country
+        
+          - render_countries_filter_links.each do |link|
+            = content_tag( :p, link )
+          
+	      hr
+	      h4
+          | Filter op regio:
 
-        / then we make sure we only have unique ones
-        - @unique_countries = @countries.uniq
-       
-        / then we check if there are any at all & generate the right filter path
-        - if @unique_countries.any?
-          - @unique_countries.each do |country|
-            p
-              = link_to "#{country}", "/thema/#{params[:name]}/land/#{country}"
+          - render_regions_filter_links.each do |link|
+            = content_tag(:p, link)
 
+        hr
 
-          hr
-          h4 
-            | Filter op regio:
-          / REGIO FILTER
-          /tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
-          / first we get all the countries of all the vacations in this theme
-          - @regions = []
-          - @unique_regions = []
-          - @theme.vacations.each do |vacation|
-            - @regions << vacation.region
-
-          / then we make sure we only have unique ones
-          - @unique_regions = @regions.uniq
-         
-          / then we check if there are any at all & generate the right filter path
-          - if @unique_regions.any?
-            - @unique_regions.each do |country|
-              p
-                = link_to "#{country}", "/thema/#{params[:name]}/regio/#{country}"
-
-          hr
-
-
-
-
-      .theme-left-admin
-        .title
-          | Administratie opties
-        .content
-          = link_to 'Edit', edit_theme_path(@theme)
+      - if current_user
+        .theme-left-admin
+          .title
+            | Administratie opties
+          .content
+            = link_to 'Bewerk thema', edit_theme_path(@theme)
+            = link_to 'Verwijder thema', @theme, method: :delete, data: {confirm: 'Are you sure?'}
+                    
     .theme-right-column
-      p Sorteer op: 
-      p= sortable "title", "Naam"
-      p= sortable "country", "Land"
-      p= sortable "created_at", "Nieuwste"
+      span Sorteer op: 
+      span.sort-button
+        = sortable "title", "Naam"
+      span.sort-button
+        = sortable "country", "Land"
+      span.sort-button
+        = sortable "created_at", "Nieuwste"
 
       - @vacations.each do |vacation|
         = link_to vacation do
