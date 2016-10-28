@@ -9,30 +9,29 @@
         .filtertitle
           | Specificeer jouw zoekopdracht...
         .filtercontent
-        .filtercontent
-        h4 
-          | Filter op prijs:
-        p
-          = link_to "Voordelig", filter_voordelig_path
-        p
-          = link_to "Gemiddeld", filter_gemiddeld_path
-        p
-          = link_to "Prijzig", filter_prijzig_path
-        hr
-	      h4
-          | Filter op land:
-        
-          - render_countries_filter_links.each do |link|
-            = content_tag( :p, link )
+          h4 
+            | Filter op prijs:
+          p
+            = link_to "Voordelig", filter_voordelig_path
+          p
+            = link_to "Gemiddeld", filter_gemiddeld_path
+          p
+            = link_to "Prijzig", filter_prijzig_path
+          hr
+  	      h4
+            | Filter op land:
           
-	      hr
-	      h4
-          | Filter op regio:
+            - render_countries_filter_links.each do |link|
+              = content_tag( :p, link )
 
-          - render_regions_filter_links.each do |link|
-            = content_tag(:p, link)
+  	      hr
+  	      h4
+            | Filter op regio:
 
-        hr
+            - render_regions_filter_links.each do |link|
+              = content_tag(:p, link)
+
+          hr
 
       - if current_user
         .theme-left-admin
@@ -43,13 +42,14 @@
             = link_to 'Verwijder thema', @theme, method: :delete, data: {confirm: 'Are you sure?'}
                     
     .theme-right-column
-      span Sorteer op: 
-      span.sort-button
-        = sortable "title", "Naam"
-      span.sort-button
-        = sortable "country", "Land"
-      span.sort-button
-        = sortable "created_at", "Nieuwste"
+      .sorting
+        span Sorteer op: 
+        span.sort-button
+          = sortable "title", "Naam"
+        span.sort-button
+          = sortable "country", "Land"
+        span.sort-button
+          = sortable "created_at", "Nieuwste"
 
       - @vacations.each do |vacation|
         = link_to vacation do
