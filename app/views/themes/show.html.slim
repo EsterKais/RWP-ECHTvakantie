@@ -52,23 +52,24 @@
           = sortable "created_at", "Nieuwste"
 
       - @vacations.each do |vacation|
-        = link_to vacation do
-          .vacation-single
+        - if vacation.show == true
+          = link_to vacation do
+            .vacation-single
 
-            / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
-            / .any? returns true of false for an array
-            - if vacation.vphotos[0].present?
-              .vl-image style="background: url(#{vacation.vphotos[0].image}) center; background-size: cover"
+              / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
+              / .any? returns true of false for an array
+              - if vacation.vphotos[0].present?
+                .vl-image style="background: url(#{vacation.vphotos[0].image}) center; background-size: cover"
 
-            .vl-title
-              = vacation[:title]
-            .vl-place
-              = vacation[:region]
-            .vl-country
-              = vacation[:country]
-            .vl-description.font-hind
-              = vacation[:description].truncate_words(20)
-            .vl-price
-              | Prijsindicatie: 
-              = vacation[:price]
-    .clear
+              .vl-title
+                = vacation[:title]
+              .vl-place
+                = vacation[:region]
+              .vl-country
+                = vacation[:country]
+              .vl-description.font-hind
+                = vacation[:description].truncate_words(20)
+              .vl-price
+                | Prijsindicatie:
+                = vacation[:price]
+      .clear
