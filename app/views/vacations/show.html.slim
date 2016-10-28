@@ -43,7 +43,7 @@
           = @vacation.review
         span ~ Vincent Scholten
   
-  - if current_user
+- if current_user
   .content
     .admin-button = link_to 'Bewerk vakantie', edit_vacation_path(@vacation)
     .admin-button = link_to 'Verwijder vakantie', @vacation, method: :delete, data: {confirm: 'Are you sure?'}
