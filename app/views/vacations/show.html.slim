@@ -5,7 +5,6 @@
   .vacation
       .vacation-pic
         ul.bxslider
-
           / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
           - if @vacation.vphotos[0] == []
             - @vphotos.each do |photo|

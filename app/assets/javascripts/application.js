@@ -26,12 +26,6 @@
 //= require_tree .
 
 
-var ready;
-ready = function() {
-  $('.bxslider').bxSlider();
-};
-$(document).on('turbolinks:load', ready);
-
 var currentBackground = 0;
 var backgrounds = [];
 backgrounds[0] = 'http://res.cloudinary.com/unique/image/upload/v1477498791/Nature_k5rz4b.jpg';
@@ -54,9 +48,8 @@ function changeBackground() {
 
 $(document).ready(function() {
     setTimeout(changeBackground, 5000);
-    $('.dropdown-menu').click(function(){
-      $('.header--bottom').slideToggle();
-      return false;
+    $('.bxslider').bxSlider({
+      auto: true,
+      mode: 'fade',
     });
-
 });

@@ -127,7 +127,7 @@ class ThemesController < ApplicationController
     # set photos belonging to this theme
     if @theme.present?
       @tphotos = @theme.tphotos
-    end 
+    end
   end
 
   def image_params

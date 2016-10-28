@@ -78,7 +78,7 @@ header {
 .placeholder-header {
   height: 124px;
   width: 100%;
-  box-shadow: 0px 0px 173px 0px rgba(0,0,0,0.5);
+
 }
 .header--top {
   background: $swimmingpool-blue;
@@ -86,6 +86,7 @@ header {
   width: 100%;
   z-index: 9999;
   padding: 15px 0;
+  box-shadow: 0px 0px 173px 0px rgba(0,0,0,0.5);
 
 
   .logo {
@@ -222,19 +223,19 @@ flex-direction: row;
       font-size: 30px;
       margin-top: 25px;
 
-      // .vacation-sm{
-      //   width: 100%;
-      //   text-align: right;
-      //   align-items: flex-end;
-      //   margin-left: 50%;
-      //   }
+      .social-media.vacation{
+        background-color: black;
+        width: 100px;
+        height: 25px;
       }
     }
+
       .vacation-price{
         font-size: 20px;
         margin-top: 25px;
       }
     }
+  }
 
 .vacation-descr{
   // border: 2px solid black;
@@ -570,8 +571,9 @@ footer {
   width: auto;
 
   input {
-    width: calc(100% - 40px);
-    padding: 20px;
+    padding: 10px;
+    font-size: 13px;
+    display: block;
   }
 }
 
@@ -585,6 +587,15 @@ footer {
   font-size: 14px;
   font-weight: 100;
 
+  .vacation-title{
+
+    span {
+      border: solid 1px white;
+      width: 20%;
+      text-align: right;
+      margin-left: 5px;
+    }
+  }
 }
 
 
@@ -804,4 +815,29 @@ justify-content: space-between;
   padding: 5px;
   background: rgba(0,0,0,0.2);
   border-radius: 5px;
+}
+
+.filtercontent {
+
+  h4 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .filterbutton {
+    margin: 0;
+    padding: 0;
+    background: rgb(111, 193, 214);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 5px 0;
+    width: 150px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+
+  }
 }
