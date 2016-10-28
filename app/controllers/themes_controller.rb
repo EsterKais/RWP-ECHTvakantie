@@ -52,6 +52,7 @@ class ThemesController < ApplicationController
   def destroy
     @theme = Theme.find_by_name(params[:name])
 
+    @theme.tphotos[0].destroy
     @theme.destroy
 
     redirect_to root_path
@@ -77,7 +78,9 @@ class ThemesController < ApplicationController
   private
 
   def set_vacations
-    @vacations = @theme.vacations
+    if @theme.present?
+      @vacations = @theme.vacations
+    end
   end
 
   def set_theme
@@ -122,7 +125,9 @@ class ThemesController < ApplicationController
     @vphotos = Vphoto.all
 
     # set photos belonging to this theme
-    @tphotos = @theme.tphotos
+    if @theme.present?
+      @tphotos = @theme.tphotos
+    end 
   end
 
   def image_params

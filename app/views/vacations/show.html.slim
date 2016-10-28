@@ -15,15 +15,16 @@
       .vacation-info
         .vacation-title
           = @vacation.title
-          span.vacation-sm
-            img src="http://res.cloudinary.com/unique/image/upload/v1477388245/pinterest-logo_hoh7pl.png"
-            img src="http://res.cloudinary.com/unique/image/upload/v1477388238/instagram-logo_iuhbc3.png"
-            img src="http://res.cloudinary.com/unique/image/upload/v1477388242/facebook-logo-button_vclbux.png"
         .vacation-location
           = @vacation.region
           | , #{@vacation.country}
+          / span
+          /   img src="http://www.mapleridgeranches.com/images/socialmedia-icons/pinterest_icon.png"
+          /   img src="http://thebohotribe.com/wp-content/themes/The-boho-tribe/images/icons/instagram.png"
+          /   img src="http://thebohotribe.com/wp-content/themes/The-boho-tribe/images/icons/facebook.png"
           .vacation-price
             = @vacation.price
+
   .vac-desc
     .vac-desc-left
       h3 Omschrijving
@@ -34,28 +35,30 @@
   .vac-details
     .vac-review
       .vac-review-left
-        img src='http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,h_218/v1477556090/EchtVakantie/Vincent_profielfoto.jpg'
+        img src='http://res.cloudinary.com/dfc7k24vb/image/upload/v1477647302/EchtVakantie/IMG_3613.jpg'
       .vac-review-right
         h2 Review
         p
           = @vacation.review
         span ~ Vincent Scholten
 
-.vacation-selection
-  | Misschien vind je deze vakanties ook interessant...
-  .container.flexbox
-    - @vacarray = []
-    - @vacations.each do |vacation|
-      - if vacation.themes == @vacation.themes
-        - if vacation.title != @vacation.title
-          - @vacarray << vacation          
-     
-    = @vacarray.each_with_index do |e, index|  
-      = link_to @vacarray[index] do
+- @vacarray = []
+- @vacations.each do |vacation|
+  - if vacation.themes == @vacation.themes
+    - if vacation.title != @vacation.title
+      - @vacarray << vacation          
 
-        / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
-        - if @vacation.vphotos[0].present?
-          .thumbnail style="background: url(#{@vacarray[index].vphotos[0].image})"
-            = @vacarray[index].title
-      - break if index == 2
-      
+- if @vacarray.length >= 3
+  
+  .vacation-selection
+    | Misschien vind je deze vakanties ook interessant...
+    .container.flexbox
+      - @vacarray.each_with_index do |e, index|
+        = link_to @vacarray[index] do
+
+          / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
+          / .present? returns true of false
+          - if @vacarray[index].vphotos[0].present?
+            .thumbnail style="background: url(#{@vacarray[index].vphotos[0].image})"
+              = @vacarray[index].title
+        - break if index == 2
