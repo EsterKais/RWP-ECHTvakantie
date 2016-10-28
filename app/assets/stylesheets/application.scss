@@ -221,19 +221,19 @@ flex-direction: row;
       font-size: 30px;
       margin-top: 25px;
 
-      .social-media.vacation{
-        background-color: black;
-        width: 100px;
-        height: 25px;
+      // .vacation-sm{
+      //   width: 100%;
+      //   text-align: right;
+      //   align-items: flex-end;
+      //   margin-left: 50%;
+      //   }
       }
     }
-
       .vacation-price{
         font-size: 20px;
         margin-top: 25px;
       }
     }
-  }
 
 .vacation-descr{
   // border: 2px solid black;
@@ -567,15 +567,6 @@ footer {
   font-size: 14px;
   font-weight: 100;
 
-  .vacation-title{
-
-    span {
-      border: solid 1px white;
-      width: 20%;
-      text-align: right;
-      margin-left: 5px;
-    }
-  }
 }
 
 
