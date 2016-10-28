@@ -15,8 +15,8 @@
  */
 
 /* GRID SETTINGS */
-$full-width:          1220px;
-$min-width:           1220px;
+$full-width:          1020px;
+$min-width:           1020px;
 
 /* COLORS */
 $white:              #FFF;
@@ -39,6 +39,8 @@ $theme8:             #fff;
 $theme9:             #fff;
 $theme10:            #fff;
 $theme11:            #fff;
+
+$swimmingpool-blue:  #4da6ff;
 
 body {
   background: $white;
@@ -78,7 +80,7 @@ header {
   width: 100%;
 }
 .header--top {
-  background: linear-gradient(170deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  background: $swimmingpool-blue;
   color: white;
   width: 100%;
   z-index: 9999;
@@ -358,37 +360,53 @@ footer {
 }
 
 .grid {
-  display: flex;
-  justify-content: space-between;
+  h2 {
+    text-align: center;
+    font-size: 32px;
+    margin: 30px;
+  }
 }
 
 .thema-kolom {
-  width: 200px;
-  text-align: center;
-  padding: 100px;
+  float:left;
+  width: 33.1%;
+  height: 200px;
   font-weight: bold;
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 2px;
+  border-right: 2px solid white;
+  box-shadow: inset 0px -60px 129px -27px rgba(0,0,0,0.5);
 
+  span {
+    position: relative;
+    display: inline-block;
+    top: 160px;
+    width: 100%;
+    left: 20px;
+  }
   &:last-child {
+    margin-right: 0;
+
   }
 }
 
 .slider {
   width: 100%;
-  height: 300px;
-  background: linear-gradient(rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.7)), url(http://res.cloudinary.com/unique/image/upload/q_76/v1477408102/Water_lsqdam.jpg) center;
+  height: 230px;
+  background: url(http://res.cloudinary.com/unique/image/upload/q_76/v1477408102/Water_lsqdam.jpg) center;
   background-color: #333;
   background-size: cover;
-  margin-bottom: 20px;
   text-shadow: 0 0 5px #333;
   z-index: -1;
 
   h1 {
     margin: 0;
     padding: 0;
+    letter-spacing: -1px;
+    font-size: 30px;
     color: white;
-    padding-top: 110px;
+    padding-top: 90px;
     text-align: center;
 
   }
@@ -540,8 +558,13 @@ footer {
 
 .admin-model {
   min-height: 470px;
-  padding: 20px;
+  padding: 20px 0;
   width: auto;
+
+  input {
+    width: calc(100% - 40px);
+    padding: 20px;
+  }
 }
 
 .vac-details {
@@ -553,12 +576,23 @@ footer {
   margin: 20px 0;
   font-size: 14px;
   font-weight: 100;
+
+  .vacation-title{
+
+    span {
+      border: solid 1px white;
+      width: 20%;
+      text-align: right;
+      margin-left: 5px;
+    }
+  }
 }
 
 
 .vac-desc {
 display: flex;
 justify-content: space-between;
+// margin-top: 60px;
 
   .vac-desc-left {
   width: 60%;
@@ -652,4 +686,95 @@ justify-content: space-between;
   font-size: 12px;
   margin: 3px;
   border-radius: 8px;
+}
+
+
+.about-home {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-radius: 5px;
+
+  .column-1 {
+    width: calc(48% - 40px);
+    border-radius: 5px;
+    padding: 20px;
+    background: white;
+  }
+
+  .column-2 {
+    width: calc(48% - 40px);
+    border-radius: 5px;
+    background: white;
+    padding: 20px;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.font-hind {
+  font-family: 'Hind', sans-serif;
+}
+
+.usp-row {
+display: flex;
+justify-content: space-between;
+
+
+
+  .column {
+    width: 20%;
+    text-align: center;
+
+  }
+}
+
+.bglight {
+  background: $background-light;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.about-header {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('http://res.cloudinary.com/unique/image/upload/v1477592996/n400r0dwjofwritekkc4.jpg') center fixed;
+  background-size: cover;
+  width: 100%;
+  text-align: center;
+  padding: 50px 0;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.about-content {
+  margin: 30px 0;
+
+  .column {
+    float:left;
+    width: 47%;
+  }
+
+  .column:last-child {
+    margin-left: 6%;
+  }
+}
+
+.about-featured {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('http://res.cloudinary.com/unique/image/upload/v1477592996/n400r0dwjofwritekkc4.jpg') center fixed;
+  background-size: cover;
+  width: 100%;
+  text-align: center;
+  padding: 50px 0;
+  margin-top: 40px;
 }

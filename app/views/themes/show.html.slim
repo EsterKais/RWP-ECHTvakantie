@@ -10,8 +10,8 @@
           | Specificeer jouw zoekopdracht...
         .filtercontent
         .filtercontent
- 
-        
+        h4 
+          | Filter op prijs:
         p
           = link_to "Voordelig", filter_voordelig_path
         p
@@ -19,22 +19,28 @@
         p
           = link_to "Prijzig", filter_prijzig_path
         hr
-
+	h4
+          | Filter op land:
+        
         - render_countries_filter_links.each do |link|
           = content_tag( :p, link )
-
-        hr
+          
+	hr
+	h4 
+          | Filter op regio:
 
         - render_regions_filter_links.each do |link|
           = content_tag(:p, link)
 
         hr
 
-      .theme-left-admin
-        .title
-          | Administratie opties
-        .content
-          = link_to 'Edit', edit_theme_path(@theme)
+      - if current_user
+        .theme-left-admin
+          .title
+            | Administratie opties
+          .content
+            = link_to 'Edit', edit_theme_path(@theme)
+                    
     .theme-right-column
       p Sorteer op: 
       p= sortable "title", "Naam"

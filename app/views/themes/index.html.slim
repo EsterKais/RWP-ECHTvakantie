@@ -1,17 +1,37 @@
 .slider
   .container
     h1 Ontdek echt bijzondere verblijven voor een weekendje weg of vakantie.
-    h2 Kleinschalig, persoonlijk en authentiek. Voor een echt vakantiegevoel.
     
-     
-      
+.bglight    
+  .container  
+    .about-home
+      .column-1
+        h3 Over EchtVakantie
+        p.font-hind
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      .column-2
+        h3 Hallo!
+        p.font-hind
+          | Ik ben Vincent en ik ben echt goed in het vinden van de meest unieke vakantie bestemmingen! Op deze website wil ik mijn kennis graag met jou delen. Je vindt hier mijn verzameling echt bijzondere verblijven voor een weekendje weg of vakantie. Kleinschalig, persoonlijk en authentiek. Voor een echt vakantiegevoel!
+
+.container style="display: none"
+  .usp-row
+    .column
+      | USP 1
+    .column
+      | USP 1
+    .column
+      | USP 1
+
 .container
   .themes
     .grid
+      h2 Kies een thema
       - @themes.each do |theme|  
         = link_to theme do
           .thema-kolom style="background: linear-gradient(rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.5)), url(#{theme.tphotos[0].image}); background-size: cover;"
-            = theme.name
+            span
+              = theme.name
             br
             - if current_user
               = link_to 'Edit', edit_theme_path(theme), class: "admin-button"
@@ -20,4 +40,4 @@
       = link_to new_theme_path do
         .new-theme
           | New theme
-          
+    .clear

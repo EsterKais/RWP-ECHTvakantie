@@ -1,6 +1,13 @@
-.container
-  .admin-model
-    h1
-      | New vacation
-    = render 'form', vacation: @vacation
-    = link_to 'Terug', vacations_path
+- if current_user
+  .container
+    .admin-model
+      h1
+        | Nieuwe vakantie
+      = render 'form', vacation: @vacation
+      = link_to 'Terug', vacations_path
+- else 
+  .container
+    .admin-model
+      h1
+        | Helaas, eerst inloggen om iets te veranderen
+      = link_to 'Terug naar de homepage', root_path

@@ -7,14 +7,17 @@
         ul.bxslider
 
           / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
-          / .any? returns true of false
-          - if @vphotos.any?
+          - if @vacation.vphotos[0] == []
             - @vphotos.each do |photo|
               li
                 = image_tag photo.image
       .vacation-info
         .vacation-title
           = @vacation.title
+          span.vacation-sm
+            img src="http://res.cloudinary.com/unique/image/upload/v1477388245/pinterest-logo_hoh7pl.png"
+            img src="http://res.cloudinary.com/unique/image/upload/v1477388238/instagram-logo_iuhbc3.png"
+            img src="http://res.cloudinary.com/unique/image/upload/v1477388242/facebook-logo-button_vclbux.png"
         .vacation-location
           = @vacation.region
           | , #{@vacation.country}
@@ -45,13 +48,13 @@
       - if vacation.themes == @vacation.themes
         - if vacation.title != @vacation.title
           - @vacarray << vacation          
-    
+     
     = @vacarray.each_with_index do |e, index|  
       = link_to @vacarray[index] do
 
         / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
-        / .present? returns true of false
-        - if @vacarray[index].vphotos[0].present?
+        - if @vacation.vphotos[0].present?
           .thumbnail style="background: url(#{@vacarray[index].vphotos[0].image})"
             = @vacarray[index].title
       - break if index == 2
+      
