@@ -23,12 +23,11 @@ feature 'Add a theme', js: true do
     fill_in 'theme_name', with: "Awesome Sauce"
     fill_in 'theme_description', with: Faker::Lorem.sentence(40)
 
-    attach_file('images_', File.join(Rails.root, '/spec/support/frank-nikes-2.jpg'))
+    # attach_file('images_', File.join(Rails.root, '/spec/support/frank-nikes-2.jpg'))
+    # sleep(10)
 
     # click save
     click_button('Create Theme')
-
-    sleep(10)
 
     # expect to have a product in the db now
     expect(Theme.all.length).to eq(1)
