@@ -10,8 +10,8 @@
           | Specificeer jouw zoekopdracht...
         .filtercontent
         .filtercontent
- 
-        
+        h4 
+          | Filter op prijs:
         p
           = link_to "Voordelig", filter_voordelig_path
         p
@@ -19,54 +19,47 @@
         p
           = link_to "Prijzig", filter_prijzig_path
         hr
+        h4
+          | Filter op land:
+        / LAND FILTER
+        /tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
+        - @countries = []
+        - @unique_countries = []
+        - @theme.vacations.each do |vacation|
+          - @countries << vacation.country
+
+        / then we make sure we only have unique ones
+        - @unique_countries = @countries.uniq
+       
+        / then we check if there are any at all & generate the right filter path
+        - if @unique_countries.any?
+          - @unique_countries.each do |country|
+            p
+              = link_to "#{country}", "/thema/#{params[:name]}/land/#{country}"
 
 
-          // LAND FILTER
-          //tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
-          /
-          // first we get all the countries of all the vacations in this theme
-          /- @regions = []
-          /- @unique_regions = []
-          /- @theme.vacations.each do |vacation|
-          /  - @regions << vacation.region
-          /- @regions.uniq = @unique_regions
-          /
-          /- @unique_regions
-          /
-          /
-          ////////
-          /
-          /- @theme_countries = []
-          /- @all_countries = Vacation.distinct(:country).pluck(:country)
-          /
-          /
-          /- @all_countries.each do |country|
-          /
-          /  - if country
-          /
-          /- @theme_countries <<
-          /
-          /////////////
-          /
-          /- if @countries.any?
-          /  - @countries.each do |country|
-          /    p
-          /      = link_to "#{country}", "/thema/#{params[:name]}/land/#{country}"
-          /
-          /hr
-          /
-          // REGIO FILTER
-          //tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
-          /- @regions = []
-          /- @regions = Vacation.distinct(:region).pluck(:region)
-          /- if @regions.any?
-          /  - @regions.each do |region|
-          /    p
-          /      = link_to "#{region}", "/thema/#{params[:name]}/regio/#{region}"
-          /
-          /
-          /hr
-          /
+          hr
+          h4 
+            | Filter op regio:
+          / REGIO FILTER
+          /tried to put this in a helper method but somehow the method should an array of many html tags which it doesn't
+          / first we get all the countries of all the vacations in this theme
+          - @regions = []
+          - @unique_regions = []
+          - @theme.vacations.each do |vacation|
+            - @regions << vacation.region
+
+          / then we make sure we only have unique ones
+          - @unique_regions = @regions.uniq
+         
+          / then we check if there are any at all & generate the right filter path
+          - if @unique_regions.any?
+            - @unique_regions.each do |country|
+              p
+                = link_to "#{country}", "/thema/#{params[:name]}/regio/#{country}"
+
+          hr
+
 
       - if current_user
         .theme-left-admin
