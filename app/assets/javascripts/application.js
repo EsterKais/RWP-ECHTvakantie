@@ -32,6 +32,15 @@ ready = function() {
 };
 $(document).on('turbolinks:load', ready);
 
+// $(document).ready(function(){
+//   $('.bxslider').bxSlider();
+// });
+
+// $(document).on('turbolinks:load', function() {
+//
+//   ...your javascript goes here...
+//
+// });
 
 var currentBackground = 0;
 var backgrounds = [];
