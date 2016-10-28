@@ -12,27 +12,26 @@
         .filtercontent
           h4 
             | Filter op prijs:
-          p
-            = link_to "Voordelig", filter_voordelig_path
-          p
-            = link_to "Gemiddeld", filter_gemiddeld_path
-          p
-            = link_to "Prijzig", filter_prijzig_path
+      
+          div.filterbutton
+            = link_to "Voordelig", filter_voordelig_path, :class => 'filterbutton' 
+          div.filterbutton
+            = link_to "Gemiddeld", filter_gemiddeld_path, :class => 'filterbutton' 
+          div.filterbutton
+            = link_to "Prijzig", filter_prijzig_path, :class => 'filterbutton' 
           hr
   	      h4
             | Filter op land:
           
             - render_countries_filter_links.each do |link|
-              = content_tag( :p, link )
+              = content_tag( :div, link, :class => 'filterbutton' )
 
   	      hr
   	      h4
             | Filter op regio:
-
             - render_regions_filter_links.each do |link|
-              = content_tag(:p, link)
+              = content_tag(:div, link, :class => 'filterbutton' )
 
-          hr
 
       - if current_user
         .theme-left-admin
@@ -67,9 +66,9 @@
               = vacation[:region]
             .vl-country
               = vacation[:country]
-            .vl-description
+            .vl-description.font-hind
               = vacation[:description].truncate_words(20)
             .vl-price
-              | Prijs indicatie: 
+              | Prijsindicatie: 
               = vacation[:price]
     .clear

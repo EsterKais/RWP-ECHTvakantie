@@ -8,16 +8,10 @@
 //= require_tree .
 
 
-var ready;
-ready = function() {
-  $('.bxslider').bxSlider();
-};
-$(document).on('turbolinks:load', ready);
-
 var currentBackground = 0;
 var backgrounds = [];
-backgrounds[0] = 'http://res.cloudinary.com/unique/image/upload/v1477498791/Nature_k5rz4b.jpg';
-backgrounds[1] = 'http://res.cloudinary.com/unique/image/upload/q_76/v1477408102/Water_lsqdam.jpg';
+backgrounds[0] = 'http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650352/EchtVakantie/theme/Take_a_ride.jpg';
+backgrounds[1] = 'http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650344/EchtVakantie/theme/Camping.jpg';
 
 function changeBackground() {
     currentBackground++;
@@ -36,9 +30,8 @@ function changeBackground() {
 
 $(document).ready(function() {
     setTimeout(changeBackground, 5000);
-    $('.dropdown-menu').click(function(){
-      $('.header--bottom').slideToggle();
-      return false;
+    $('.bxslider').bxSlider({
+      auto: true,
+      mode: 'fade',
     });
-
 });
