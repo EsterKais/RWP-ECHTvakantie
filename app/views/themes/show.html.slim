@@ -35,7 +35,7 @@
           - if @unique_countries.any?
             - @unique_countries.each do |country|
               p
-                = link_to "#{country}", "/thema/#{params[:name]}/region/#{country}"
+                = link_to "#{country}", "/thema/#{params[:name]}/land/#{country}"
 
 
           hr
@@ -55,7 +55,7 @@
           - if @unique_regions.any?
             - @unique_regions.each do |country|
               p
-                = link_to "#{country}", "/thema/#{params[:name]}/region/#{country}"
+                = link_to "#{country}", "/thema/#{params[:name]}/regio/#{country}"
 
           hr
 
