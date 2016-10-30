@@ -78,7 +78,6 @@ header {
 .placeholder-header {
   height: 124px;
   width: 100%;
-
 }
 .header--top {
   background: $swimmingpool-blue;
@@ -218,15 +217,14 @@ flex-direction: row;
     }
 
     .vacation-location{
-      // border: 2px solid black;
       margin-left: 25px;
-      font-size: 20px;
+      font-size: 25px;
       margin-top: 25px;
-
-      .social-media.vacation{
-        background-color: black;
-        width: 100px;
-        height: 25px;
+      }
+      .vacation-address{
+        margin-left: 25px;
+        font-size: 22px;
+        margin-top: 25px;
       }
     }
 
@@ -235,15 +233,12 @@ flex-direction: row;
         margin-top: 25px;
       }
     }
-  }
 
 .vacation-descr{
-  // border: 2px solid black;
   margin-top: 150px;
   margin-bottom: 20px;
 
   .vacation-descr-title{
-    // border: 2px solid black;
     font-size: 30px;
   }
 
@@ -325,6 +320,24 @@ flex-direction: row;
   height: 300px;
   width: 100%;
   color: black;
+}
+.title {
+  margin-left: 30%;
+}
+.content {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 30%;
+
+  a {
+    text-decoration: none;
+    color: black;
+    padding: 2px 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+  }
 }
 
 // end of VACATION SHOW PAGE by ESTER
@@ -578,11 +591,15 @@ footer {
 }
 
 .vac-details {
-  background: $background-dark;
-  color: white;
+  background: url(http://res.cloudinary.com/unique/image/upload/v1477661670/reviewthing_iiuhxq.png) left center;
+  background-color: rgba(#4da6ff, 0.19);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: black;
   width: calc(100% - 80px);
   border-radius: 5px;
   padding: 40px;
+  padding-top: 30px;
   margin: 20px 0;
   font-size: 14px;
   font-weight: 100;
@@ -638,7 +655,7 @@ display: flex;
 justify-content: space-between;
 
   .vac-review-left {
-  width: 15%;
+  width: 25%;
     img {
       width: 100%;
       border-radius: 200px;
@@ -646,7 +663,8 @@ justify-content: space-between;
   }
 
   .vac-review-right {
-  width: 80%;
+  width: 70%;
+
     h2 {
       font-size: 26px;
     }
@@ -711,6 +729,11 @@ justify-content: space-between;
     border-radius: 5px;
     padding: 20px;
     background: white;
+
+    img {
+      margin-right: 20px;
+      border-radius: 100px;
+    }
   }
 
   .column-2 {
@@ -728,6 +751,7 @@ justify-content: space-between;
 
 .font-hind {
   font-family: 'Hind', sans-serif;
+  text-align: justify;
 }
 
 .usp-row {
