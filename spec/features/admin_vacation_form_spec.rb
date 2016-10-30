@@ -56,10 +56,13 @@ feature 'Add vacation', js: true do
     attach_file('vphotos_', File.join(Rails.root, '/spec/support/frank-nikes-2.jpg'))
 
     # make sure the photo is uploaded to cloudinary
-    sleep(5)
+    sleep(4)
 
     # click save
     click_button('Create Vacation')
+
+    # check it out
+    sleep(2)
 
     # expect to have a product in the db now
     expect(Vacation.all.length).to eq(1)
