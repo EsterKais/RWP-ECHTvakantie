@@ -23,8 +23,11 @@ feature 'Add a theme', js: true do
     fill_in 'theme_name', with: "Awesome Sauce"
     fill_in 'theme_description', with: Faker::Lorem.sentence(40)
 
-    # attach_file('images_', File.join(Rails.root, '/spec/support/frank-nikes-2.jpg'))
-    # sleep(10)
+    # element is called _images ....
+    attach_file('images_', File.join(Rails.root, '/spec/support/frank-nikes-2.jpg'))
+
+    # make sure the photo is uploaded to cloudinary
+    sleep(6)
 
     # click save
     click_button('Create Theme')
