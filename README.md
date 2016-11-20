@@ -13,3 +13,34 @@ Link to the website: http://echtvakantie.codaisseur.cloud/
 ## Homepage
 
 ![homepage](http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,q_auto:low,w_551/v1479557973/screencapture-echtvakantie-codaisseur-cloud-1479557942527_ydzgcu.png "Homepage Screenshot") 
+
+## Search page
+
+add another screenshot here
+
+## Main challenges
+
+## Getting started
+
+  clone
+  ```bash
+  git clone git@github.com:EsterKais/RWP-ECHTvakantie.git
+  cd RWP-ECHTvakantie
+  ```
+  install Gems
+  ```bash
+  bundle install
+  ```
+  setup database
+
+  ```bash
+  rake db:create db:migrate db:seed
+  ```
+  start server
+  ```bash
+  rails server
+  ```
+
+## Database Structure
+
+## Help
