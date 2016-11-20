@@ -2,11 +2,13 @@
 
 ## Summary
 
-This project was part of the Real World Project assignment at Codaisseur Academy. We were assigned a client and had a week to create a website(Ruby on Rails) for him. As our co-operation was good, we decided to continue improving this project, thus it is still work in progress.
+This project was part of the Real World Project assignment at Codaisseur Academy. We were assigned a client and had a week to create a website for him using Ruby on Rails. As our co-operation was good, we decided to continue improving this project, thus the project is still a work in progress.
 
-The purpose of the website is to display vacations that our client has experience with and categorize them by themes. Upon clikcing on a theme, several vacations are displayed (filtering and searching for specific vacancies also possible). Once on a selected vacation page you can see a description, pictures, location (googlemaps API), review by our client and suggestions for other vacations related to the theme.
+The purpose of this Rails webapplication is to allow our client to display his recommandations for a nice vacation. To acheive this we implemented a **CMS** for our client. This allows him to perform **CRUD** actions using forms on the website itself in a user friendly way.
 
-We also implemented a CMS for our client, so it would be easy for him to add/adjust the content of the website.
+Vacations are **categorized** by themes. Upon clikcing on a theme, vacations withing that theme are displayed. Besides themes, **filters** for country and region are **automatically generated** based on vacations in the database and are thus lined up with the client's input. Filters for prizing are already present.
+
+It is also possible to **order** vacations (e.g. by name) and to **search** for specific vacations based on text. Once on a selected vacation page the visitor sees a description, pictures, location (**googlemaps** API for static maps), review by our client and **suggestions** for other vacations related to the theme.
 
 Link to the website: http://echtvakantie.codaisseur.cloud/
 
