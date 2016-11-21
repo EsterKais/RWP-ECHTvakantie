@@ -1142,12 +1142,14 @@ justify-content: space-between;
 
 // admin
 
-
-
 .admin-model{
-  margin-bottom: 50px;
 
-  label, input, select, textarea, span, {
+  #user_remember_me {
+    width: 20px;
+    display: inline;
+  }
+
+  input, select, textarea, span, {
     width: 50%;
     margin-top: 4px;
     font-size: 14pt;
@@ -1156,8 +1158,6 @@ justify-content: space-between;
 
   select, textarea,  {
    width: 536px;
-   margin-top: 5px;
-   margin-bottom: 20px;
    }
 
   textarea {
@@ -1165,8 +1165,7 @@ justify-content: space-between;
     font-size: 15pt;
   }
 
-select{
+  select{
     font-size: 15px;
   }
-
 }
