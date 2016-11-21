@@ -171,7 +171,7 @@ header {
 
 
   ul {
-  margin:0;
+  margin: 0;
   padding: 0;
 
     li {
@@ -183,6 +183,36 @@ header {
       a {
         color: #333;
         text-decoration: none;
+      }
+
+      .btn {
+        padding: 10px 15px;
+        text-transform: uppercase;
+        // letter-spacing: 0.1px;
+        // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.5);
+        color: rgba(0,0,0,.7);
+        font-size: 11px;
+        border-radius: 5px;
+        display: inline-block;
+        font-weight: bold;
+        transition: .2s;
+        background: white;
+        // box-shadow: 0 0 7px 0 rgba(0,0,0,.1);
+
+
+        &:hover {
+          background: #4da6ff;
+          color: white;
+          // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.2);
+        }
+
+        &:active {
+          background: #4da6ff;
+          position: relative;
+          top: 2px;
+          color: white;
+          // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.2);
+        }
       }
     }
    }
@@ -1112,12 +1142,14 @@ justify-content: space-between;
 
 // admin
 
-
-
 .admin-model{
-  margin-bottom: 50px;
 
-  label, input, select, textarea, span, {
+  #user_remember_me {
+    width: 20px;
+    display: inline;
+  }
+
+  input, select, textarea, span, {
     width: 50%;
     margin-top: 4px;
     font-size: 14pt;
@@ -1126,8 +1158,6 @@ justify-content: space-between;
 
   select, textarea,  {
    width: 536px;
-   margin-top: 5px;
-   margin-bottom: 20px;
    }
 
   textarea {
@@ -1135,8 +1165,7 @@ justify-content: space-between;
     font-size: 15pt;
   }
 
-select{
+  select{
     font-size: 15px;
   }
-
 }
