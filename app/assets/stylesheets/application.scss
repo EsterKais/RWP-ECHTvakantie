@@ -1045,3 +1045,16 @@ justify-content: space-between;
   width: 100%;
 
 }
+
+// hiding map logo and text map dawg
+.gm-style a, .gm-style span {
+  display:none !important;
+}
+
+.gm-style div {
+  background:none !important;
+}
+
+.gm-style div div a div img{
+  display:none !important;
+}
