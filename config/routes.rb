@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'pages/Over_ons'
   get 'pages/Contact'
 
+  get 'contact', to: 'messages#new', as: 'contact'
+  post 'contact', to: 'messages#create'
+
   # except sign_up
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
