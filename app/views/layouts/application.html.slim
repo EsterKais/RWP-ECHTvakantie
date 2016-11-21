@@ -6,14 +6,14 @@ html
 
     = csrf_meta_tags
 
-    / TODO someone please look into this, I have tried everything
+    / use defer here
     = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAuyArgWCx6lM7VW8gAxyFhi1bNqexoFcQ', :defer => "defer"
 
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
 
     = favicon_link_tag 'favicon.ico'
 
-    / add here: 'default' instead of 'application' too fix turbolinks errors :)
+    / use defer here
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload', :defer => "defer"
 
     link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css"
