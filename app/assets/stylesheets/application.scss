@@ -904,8 +904,15 @@ justify-content: space-between;
   }
 }
 
-.filter-partial {
+.fixed {
   position: fixed;
+}
+
+.bottom {
+  position: static;
+}
+
+.filter-partial {
   background: rgba(255,255,255,.9);
   width: 100%;
   bottom: 0;
@@ -1031,4 +1038,10 @@ justify-content: space-between;
       }
     }
   }
+}
+
+.filter-placeholder {
+  height: 119px;
+  width: 100%;
+
 }

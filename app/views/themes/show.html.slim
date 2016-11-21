@@ -60,22 +60,22 @@
                 .vl-description.font-hind
                   = vacation[:description].truncate_words(28)
       
-
-.filter-partial
-  .container
-    .box.price
-      .box-title Prijs:
-      .buttons
-          = link_to "Voordelig", filter_voordelig_path, :class => 'btn' 
-          = link_to "Gemiddeld", filter_gemiddeld_path, :class => 'btn' 
-          = link_to "Prijzig", filter_prijzig_path, :class => 'btn' 
-    .box.country
-      .box-title Land:
-      .buttons
-        - render_countries_filter_links.each do |link|
-           = content_tag( :div, link, :class => 'btn' )
-    .box.region
-      .box-title Regio:
-      .buttons
-        - render_regions_filter_links.each do |link|
-          = content_tag(:div, link, :class => 'btn' )
+.filter-placeholder
+  .filter-partial
+    .container
+      .box.price
+        .box-title Prijs:
+        .buttons
+            = link_to "Voordelig", filter_voordelig_path, :class => 'btn' 
+            = link_to "Gemiddeld", filter_gemiddeld_path, :class => 'btn' 
+            = link_to "Prijzig", filter_prijzig_path, :class => 'btn' 
+      .box.country
+        .box-title Land:
+        .buttons
+          - render_countries_filter_links.each do |link|
+             = content_tag( :div, link, :class => 'btn' )
+      .box.region
+        .box-title Regio:
+        .buttons
+          - render_regions_filter_links.each do |link|
+            = content_tag(:div, link, :class => 'btn' )

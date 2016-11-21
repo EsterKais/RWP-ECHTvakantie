@@ -34,6 +34,26 @@ function changeBackground() {
     setTimeout(changeBackground, 5000);
 }
 
+$.fn.isOnScreen = function(){
+
+    var win = $(window);
+
+    var viewport = {
+        top : win.scrollTop(),
+        left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+
+    var bounds = this.offset();
+    bounds.right = bounds.left + this.outerWidth();
+    bounds.bottom = bounds.top;
+
+    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+
+};
+
+
 $(document).ready(function() {
     setTimeout(changeBackground, 5000);
     $('.bxslider').bxSlider({
@@ -41,3 +61,19 @@ $(document).ready(function() {
       mode: 'fade',
     });
 });
+
+$(window).scroll(function() {
+  var footer = document.getElementById("footer");
+
+  if ($('#footer').isOnScreen()) {
+    if ($('.filter-partial').hasClass('fixed')){
+      $('.filter-partial').addClass('bottom');
+      $('.filter-partial').removeClass('fixed');
+      console.log("bottomed");
+    }
+  } else {
+    $('.filter-partial').addClass('fixed');
+    $('.filter-partial').removeClass('bottom');
+    console.log("fixed");
+  }
+})
