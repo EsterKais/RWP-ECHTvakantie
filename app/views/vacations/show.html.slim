@@ -12,7 +12,7 @@
             li
             = image_tag photo.image
       .vacation-info
-        .vacation-title
+        #vacation-title.vacation-title
           = @vacation.title
         .vacation-location
           = @vacation.region
@@ -31,8 +31,8 @@
       h3 Omschrijving
       p 
         = @vacation.description
-    .vac-desc-right
-      = static_map_for(@vacation, options = {})
+    #map_canvas.vac-desc-right data-latitude="#{@vacation.latitude}" data-longitude="#{@vacation.longitude}"
+      /! The Map gets drawn here!
   .vac-details
     .vac-review
       .vac-review-left

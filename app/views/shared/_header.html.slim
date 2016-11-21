@@ -20,7 +20,7 @@ header
   .header--bottom
     .container
       ul
-        span.choose Kies een thema:
+        
         - @themes.each do |theme|
           li= link_to theme do
             = theme.name

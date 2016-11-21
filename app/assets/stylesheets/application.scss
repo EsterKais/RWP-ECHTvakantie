@@ -449,10 +449,11 @@ footer {
 
 .theme-name {
   position: absolute;
-  bottom: 20px;
+  bottom: 30px;
   color: white;
   font-size: 55px;
   font-weight: bold;
+  width: 50%;
 }
 
 .theme-left-column {
@@ -461,10 +462,9 @@ footer {
   margin-top: 20px;
 }
 
-.theme-right-column {
-  float: right;
-  width: 68%;
-  margin-top: 20px;
+.theme-full-column {
+  width: 100%;
+  margin: 30px 0;
 }
 
 .clear {
@@ -524,43 +524,79 @@ footer {
   }
 }
 
+.vacation-cards {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
 
-.vacation-single {
-  background:$background-light;
+.vacation-card {
   border-radius: 5px;
-  width: calc(100%);
+  width: 320px;
   margin-bottom: 10px;
-  height: 150px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,.1  );
+  transition: .2s;
+
 
   .vl-image {
     height: 150px;
-    width: 200px;
+    width: 320px;
     background: red;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.85);
     float: left;
     margin-right: 20px;
+    position: relative;
+    box-shadow: inset 0px 0px 129px 0px rgba(0,0,0,0.9);
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 15px;
   }
 
   .vl-title {
-    padding: 10px 0 0 20px;
-    font-size: 24px;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
   }
 
   .vl-place {
     font-size: 12px;
+    color: white;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .vl-country {
+    color: white;
+    margin-left: 15px;
+
   }
 
   .vl-description {
-    color: $background-dark;
     opacity: 0.5;
     margin-top: 10px;
     font-size: 13px;
-    z-index: -99;
+    padding: 20px;
+  }
+
+  .vl-price {
+
+
+    color: white;
+
+    position: absolute;
+    right: 15px;
+    letter-spacing: 1px;
+    top: 15px;
+    font-size: 13px;
+    border-radius: 3px;
   }
 
   &:hover {
     box-shadow: 0 0 4px #ccc;
-    position: relative;
-    top: -2px;
+    transform: scale(1.01);
   }
 }
 
@@ -823,22 +859,24 @@ justify-content: space-between;
 }
 
 .sorting {
-  padding: 10px;
+  padding: 10px 0;
   border-radius: 5px;
-  background: rgba(139, 181, 67, 0.72);
-  color: white;
   font-size: 12px;
-  margin-bottom: 20px;
-
   font-weight: bold;
+  z-index: 10;
 }
 
 .sort-button {
   font-weight: normal;
   margin-left: 10px;
   padding: 5px;
-  background: rgba(0,0,0,0.2);
   border-radius: 5px;
+  transition: .2s;
+
+  &:hover {
+    background: #4da6ff;
+    color: white;
+  }
 }
 
 .filtercontent {
@@ -864,6 +902,161 @@ justify-content: space-between;
     margin-bottom: 5px;
 
   }
+}
+
+.fixed {
+  position: fixed;
+}
+
+.bottom {
+  position: static;
+}
+
+.filter-partial {
+  background: rgba(255,255,255,.9);
+  width: 100%;
+  bottom: 0;
+  padding: 20px 0;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,.2);
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #menu {
+
+  }
+
+  .placeholder {
+    padding: 10px 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.5);
+    color: rgba(0,0,0,.7);
+    font-size: 12px;
+    border-radius: 5px;
+    display: inline-block;
+
+    margin-right: 5px;
+    transition: .2s;
+    background: white;
+    box-shadow: 0 0 7px 0 rgba(0,0,0,.2);
+  }
+
+  #menu ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+  }
+
+  #menu > ul > li {
+    float: left;
+    margin: 10px;
+    position: relative;
+  }
+
+  #menu a { display: block;}
+
+  #menu a:hover {
+    background: #fff;
+    color: #333;
+  }
+
+  #menu ul li ul {
+    position: absolute;
+    height: 0px;
+    width: 250%;
+    overflow: hidden;
+  }
+
+  #menu ul li:hover ul {
+    height: initial;
+    bottom: 100%;
+    overflow: visible;
+    padding: 10px 15px;
+    box-shadow: 0 0 7px 0 rgba(0,0,0,.2);
+    background: white;
+  }
+
+  #menu li li a {
+    padding: 5px 10px;
+  }
+
+  #menu a {
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    padding: 0px 10px;
+  }
+
+
+  .box {
+    width: 33%;
+
+    .box-title {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .buttons {
+      display: block;
+      height: 50px;
+
+      select {
+
+      }
+
+      .btn {
+        padding: 10px 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.5);
+        color: rgba(0,0,0,.7);
+        font-size: 12px;
+        border-radius: 5px;
+        display: inline-block;
+
+        margin-right: 5px;
+        transition: .2s;
+        background: white;
+        box-shadow: 0 0 7px 0 rgba(0,0,0,.2);
+
+
+        &:hover {
+          background: #4da6ff;
+          color: white;
+          // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.2);
+        }
+
+        &:active {
+          background: #4da6ff;
+          position: relative;
+          top: 2px;
+          color: white;
+          // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.2);
+        }
+      }
+    }
+  }
+}
+
+.filter-placeholder {
+  height: 119px;
+  width: 100%;
+
+}
+
+// hiding map logo and text map dawg
+.gm-style a, .gm-style span {
+  display:none !important;
+}
+
+.gm-style div {
+  background:none !important;
+}
+
+.gm-style div div a div img{
+  display:none !important;
 }
 
 // admin
