@@ -110,11 +110,9 @@ $(window).scroll(function() {
     if ($('.filter-partial').hasClass('fixed')){
       $('.filter-partial').addClass('bottom');
       $('.filter-partial').removeClass('fixed');
-      console.log("bottomed");
     }
   } else {
     $('.filter-partial').addClass('fixed');
     $('.filter-partial').removeClass('bottom');
-    console.log("fixed");
   }
 })
