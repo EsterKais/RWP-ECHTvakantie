@@ -652,74 +652,7 @@ footer {
 }
 
 
-.vac-desc {
-display: flex;
-justify-content: space-between;
-// margin-top: 60px;
 
-  .vac-desc-left {
-  width: 60%;
-
-    h3 {
-      margin:0;
-      padding: 0;
-      font-size: 26px;
-    }
-    p {
-      margin: 0;
-      padding: 0;
-      font-weight: 100;
-      letter-spacing: 0.5px;
-      margin-top: 4px;
-      max-height: 200px;
-      text-align: justify;
-    }
-  }
-
-  .vac-desc-right {
-    width: 35%;
-
-    img {
-      width: 100%;
-      border-radius: 5px;
-    }
-  }
-}
-
-.vac-review {
-display: flex;
-justify-content: space-between;
-
-  .vac-review-left {
-  width: 25%;
-    img {
-      width: 100%;
-      border-radius: 200px;
-    }
-  }
-
-  .vac-review-right {
-  width: 70%;
-
-    h2 {
-      font-size: 26px;
-    }
-
-    p {
-      margin: 0;
-      padding: 0;
-      text-align: justify;
-    }
-
-    span {
-      width: 100%;
-      text-align: right;
-      display: inline-block;
-      margin-top: 10px;
-      font-style: italic;
-    }
-  }
-}
 
 .vacation-selection {
   a {
@@ -1057,6 +990,116 @@ justify-content: space-between;
 
 .gm-style div div a div img{
   display:none !important;
+}
+
+.vac-show {
+  display:flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.vac-show-header {
+  border: 0;
+}
+
+.vac-show-left {
+  width: 60%;
+
+  .vac-show-desc {
+
+  }
+
+  .vac-show-review {
+
+  }
+
+  .vac-show-map {
+
+  }
+}
+
+.vac-show-right {
+  width: 35%;
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+
+    .btn {
+      padding: 10px 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.5);
+      color: rgba(0,0,0,.7);
+      font-size: 12px;
+      border-radius: 5px;
+      width: 38%;
+      text-align: center;
+      display: inline-block;
+
+      margin-right: 5px;
+      transition: .2s;
+      background: white;
+      box-shadow: 0 0 7px 0 rgba(0,0,0,.2);
+
+
+      &:hover {
+        background: #4da6ff;
+        color: white;
+        // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.2);
+      }
+
+      &:active {
+        background: #4da6ff;
+        position: relative;
+        top: 2px;
+        color: white;
+        // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.2);
+      }
+    }
+  }
+
+  .vac-show-pictures {
+    box-shadow: 0 0 7px 0 rgba(0,0,0,.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+}
+
+.vac-show-details {
+  color: white;
+  margin-top: 30px;
+
+  .address {
+    font-size: 14px;
+    display: inline;
+    margin-right: 10px;
+  }
+
+  .price {
+    display: inline;
+  }
+
+  .vac-show-photos {
+
+  }
+}
+
+.theme-banner .container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 210px;
+}
+
+.theme-title {
+  color: white;
+  width: 50%;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 // admin

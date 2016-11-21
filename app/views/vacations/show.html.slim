@@ -1,47 +1,45 @@
-- if @tphotos[0].present?
-  .vac-show-header
-    .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{@tphotos[0].image}) center; background-size: cover;"
-
-.container  
-  .vacation
-      .vacation-pic
-        ul.bxslider
-          / if there is no vphoto this should give an error but we're not validating for any photos (cause it sucks in our seeds), so work around for when there is no photo
-          - if @vacation.vphotos[0] == []
-          - @vphotos.each do |photo|
-            li
-            = image_tag photo.image
-      .vacation-info
-        #vacation-title.vacation-title
-          = @vacation.title
-        .vacation-location
+.vac-show-header
+  .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{@tphotos[0].image}) center; background-size: cover;"
+    .container
+      .theme-title
+        h1= @vacation.title
+        span
           = @vacation.region
-          | , #{@vacation.country}
-        .vacation-address
-          = @vacation.address
-          / span
-          /   img src="http://www.mapleridgeranches.com/images/socialmedia-icons/pinterest_icon.png"
-          /   img src="http://thebohotribe.com/wp-content/themes/The-boho-tribe/images/icons/instagram.png"
-          /   img src="http://thebohotribe.com/wp-content/themes/The-boho-tribe/images/icons/facebook.png"
-          .vacation-price
-            = @vacation.price
-
-  .vac-desc
-    .vac-desc-left
-      h3 Omschrijving
-      p 
-        = @vacation.description
-    #map_canvas.vac-desc-right data-latitude="#{@vacation.latitude}" data-longitude="#{@vacation.longitude}"
+          | ,&nbsp;
+          = @vacation.country
+      .theme-info
+        .vac-show-details
+          .address
+            | Adres:&nbsp;
+            = @vacation.address 
+            | &nbsp; - &nbsp;
+            = @vacation.country
+          .price
+            / = @vacation.price
+            | €€€
+      
+.container.vac-show
+  .vac-show-left
+    .vac-show-desc
+      = @vacation.description
+    .vac-show-review
+      = @vacation.review
+    .vac-show-map
+      #map_canvas.vac-desc-right data-latitude="#{@vacation.latitude}" data-longitude="#{@vacation.longitude}"
+  .vac-show-right
+    .buttons
+      .more-btn.btn=link_to
+        | Meer info
+      .book-btn.btn=link_to
+        | Direct boeken
+    .vac-show-pictures
+      p photos
+      - if @vacation.vphotos[0] == []
+        - @vphotos.each do |photo|
+          li
+            = image_tag photo.image
       /! The Map gets drawn here!
-  .vac-details
-    .vac-review
-      .vac-review-left
-        
-      .vac-review-right
-        h2 Review
-        p
-          = @vacation.review
-        span ~ Vincent Scholten
+    
   
 - if current_user
   .content
