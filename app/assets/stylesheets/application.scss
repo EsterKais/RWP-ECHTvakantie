@@ -1101,3 +1101,34 @@ justify-content: space-between;
     padding: 0;
   }
 }
+
+// admin
+
+
+
+.admin-model{
+  margin-bottom: 50px;
+
+  label, input, select, textarea, span, {
+    width: 50%;
+    margin-top: 4px;
+    font-size: 14pt;
+    margin-bottom: 25px;
+  }
+
+  select, textarea,  {
+   width: 536px;
+   margin-top: 5px;
+   margin-bottom: 20px;
+   }
+
+  textarea {
+    height: 350px;
+    font-size: 15pt;
+  }
+
+select{
+    font-size: 15px;
+  }
+
+}

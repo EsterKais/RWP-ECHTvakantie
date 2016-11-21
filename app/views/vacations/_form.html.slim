@@ -9,31 +9,32 @@
           li
             = message
   .field
-    = f.label :title
+    = f.label :titel
     = f.text_field :title
   .field
-    = f.label :country
+    = f.label :land
     = f.text_field :country
   .field
-    = f.label :region
+    = f.label :regio
     = f.text_field :region
   .field
-    = f.label :address
+    = f.label :adres
     = f.text_field :address
   .field
-    = f.label :show
-    = f.select :show, [['Yes', true], ['No', false]]
-  .field
-    = f.label :price
+    = f.label :prijs
+    br
     = f.select :price, [['Voordelig', 1], ['Gemiddeld', 2], ['Prijzig', 3]]
   .field
     = f.label :thema
+    br
     = f.collection_select :theme_ids, Theme.all, :id, :name, { :prompt => "Kies thema"}, {  :multiple => true }
   .field
-    = f.label :description
-    = f.text_field :description
+    = f.label :beschrijving
+    br
+    = f.text_area :description
   .field
-    = f.label :review
+    = f.label :recensie
+    br
     = f.text_area :review
 
   .form-group
@@ -42,5 +43,11 @@
       = file_field_tag "vphotos[]", type: :file, multiple: true
   #vphotos
     = render 'vphotos/list'
+  
+  .field
+    = f.label :direct_publiceren?
+    br
+    = f.select :show, [['Ja', true], ['Nee', false]]  
+
   .actions
     = f.submit
