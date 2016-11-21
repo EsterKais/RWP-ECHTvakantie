@@ -461,9 +461,8 @@ footer {
   margin-top: 20px;
 }
 
-.theme-right-column {
-  float: right;
-  width: 68%;
+.theme-full-column {
+  width: 100%;
   margin-top: 20px;
 }
 
@@ -863,5 +862,134 @@ justify-content: space-between;
     border-radius: 5px;
     margin-bottom: 5px;
 
+  }
+}
+
+.filter-partial {
+  position: fixed;
+  background: rgba(255,255,255,.9);
+  width: 100%;
+  bottom: 0;
+  padding: 20px 0;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,.2);
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #menu {
+
+  }
+
+  .placeholder {
+    padding: 10px 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.5);
+    color: rgba(0,0,0,.7);
+    font-size: 12px;
+    border-radius: 5px;
+    display: inline-block;
+
+    margin-right: 5px;
+    transition: .2s;
+    background: white;
+    box-shadow: 0 0 7px 0 rgba(0,0,0,.2);
+  }
+
+  #menu ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+  }
+
+  #menu > ul > li {
+    float: left;
+    margin: 10px;
+    position: relative;
+  }
+
+  #menu a { display: block;}
+
+  #menu a:hover {
+    background: #fff;
+    color: #333;
+  }
+
+  #menu ul li ul {
+    position: absolute;
+    height: 0px;
+    width: 250%;
+    overflow: hidden;
+  }
+
+  #menu ul li:hover ul {
+    height: initial;
+    bottom: 100%;
+    overflow: visible;
+    padding: 10px 15px;
+    box-shadow: 0 0 7px 0 rgba(0,0,0,.2);
+    background: white;
+  }
+
+  #menu li li a {
+    padding: 5px 10px;
+  }
+
+  #menu a {
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    padding: 0px 10px;
+  }
+
+
+  .box {
+    width: 33%;
+
+    .box-title {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .buttons {
+      display: block;
+      height: 50px;
+
+      select {
+
+      }
+
+      .btn {
+        padding: 10px 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.5);
+        color: rgba(0,0,0,.7);
+        font-size: 12px;
+        border-radius: 5px;
+        display: inline-block;
+
+        margin-right: 5px;
+        transition: .2s;
+        background: white;
+        box-shadow: 0 0 7px 0 rgba(0,0,0,.2);
+
+
+        &:hover {
+          background: #4da6ff;
+          color: white;
+          // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.2);
+        }
+
+        &:active {
+          background: #4da6ff;
+          position: relative;
+          top: 2px;
+          color: white;
+          // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.2);
+        }
+      }
+    }
   }
 }

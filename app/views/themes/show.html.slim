@@ -5,43 +5,34 @@
         = @theme.name
 .theme-content
   .container
-    .theme-left-column
-      .filter
-        .filtertitle
-          | Specificeer jouw zoekopdracht...
-        .filtercontent
-          h4 
-            | Filter op prijs:
-      
-          div.filterbutton
-            = link_to "Voordelig", filter_voordelig_path, :class => 'filterbutton' 
-          div.filterbutton
-            = link_to "Gemiddeld", filter_gemiddeld_path, :class => 'filterbutton' 
-          div.filterbutton
-            = link_to "Prijzig", filter_prijzig_path, :class => 'filterbutton' 
-          hr
-  	      h4
-            | Filter op land:
-          
-            - render_countries_filter_links.each do |link|
-              = content_tag( :div, link, :class => 'filterbutton' )
-
-  	      hr
-  	      h4
-            | Filter op regio:
-            - render_regions_filter_links.each do |link|
-              = content_tag(:div, link, :class => 'filterbutton' )
-
-
-      - if current_user
-        .theme-left-admin
-          .title
-            | Administratie opties
-          .content
-            = link_to 'Bewerk thema', edit_theme_path(@theme)
-            = link_to 'Verwijder thema', @theme, method: :delete, data: {confirm: 'Are you sure?'}
+    / .theme-left-column
+    /   .filter
+    /     .filtertitle
+    /       | Specificeer jouw zoekopdracht...
+    /     .filtercontent
+    /       h4 
+    /         | Filter op prijs:
+    /   
+    /       div.filterbutton
+    /         = link_to "Voordelig", filter_voordelig_path, :class => 'filterbutton' 
+    /       div.filterbutton
+    /         = link_to "Gemiddeld", filter_gemiddeld_path, :class => 'filterbutton' 
+    /       div.filterbutton
+    /         = link_to "Prijzig", filter_prijzig_path, :class => 'filterbutton' 
+    /       hr
+  	/       h4
+    /         | Filter op land:
+    /       
+    /         - render_countries_filter_links.each do |link|
+    /           = content_tag( :div, link, :class => 'filterbutton' )
+    / 
+  	/       hr
+  	/       h4
+    /         | Filter op regio:
+    /         - render_regions_filter_links.each do |link|
+    /           = content_tag(:div, link, :class => 'filterbutton' )
                     
-    .theme-right-column
+    .theme-full-column
       .sorting
         span Sorteer op: 
         span.sort-button
@@ -72,4 +63,22 @@
               .vl-price
                 | Prijsindicatie:
                 = vacation[:price]
-.clear
+
+.filter-partial
+  .container
+    .box.price
+      .box-title Prijs:
+      .buttons
+          = link_to "Voordelig", filter_voordelig_path, :class => 'btn' 
+          = link_to "Gemiddeld", filter_gemiddeld_path, :class => 'btn' 
+          = link_to "Prijzig", filter_prijzig_path, :class => 'btn' 
+    .box.country
+      .box-title Land:
+      .buttons
+        - render_countries_filter_links.each do |link|
+           = content_tag( :div, link, :class => 'btn' )
+    .box.region
+      .box-title Regio:
+      .buttons
+        - render_regions_filter_links.each do |link|
+          = content_tag(:div, link, :class => 'btn' )
