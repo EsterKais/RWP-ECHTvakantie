@@ -41,8 +41,3 @@ $(document).ready(function() {
       mode: 'fade',
     });
 });
-
-
-document.querySelector('.dropContainer').addEventListener('click', function(){
-  document.querySelector('.dropContainer').classList.toggle('show');
-})
