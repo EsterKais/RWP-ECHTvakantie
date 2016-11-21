@@ -64,6 +64,9 @@
   .filter-partial
     .container
       .box.price
+        .buttons
+          = link_to 'Verwijder filters', @theme, :class => 'btn green'
+      .box.price
         .box-title Prijs:
         .buttons
             = link_to "Voordelig", filter_voordelig_path, :class => 'btn' 

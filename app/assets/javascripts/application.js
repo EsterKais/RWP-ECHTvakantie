@@ -46,7 +46,7 @@ google.maps.event.addDomListener(window, 'load', function() {
 
     var myLatLng = {lat: lat, lng: lng};
 
-    var map = new google.maps.Map(document.getElementById('map_canvas'), {
+    var map = new google.maps.Map(document.getElementById('#map_canvas'), {
         styles: mapStyle,
         zoom: 4,
         center: myLatLng,
