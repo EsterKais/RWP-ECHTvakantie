@@ -3,13 +3,19 @@ html
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
     title EchtVakantie
+
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+
+    / use defer here
+    = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAuyArgWCx6lM7VW8gAxyFhi1bNqexoFcQ', :defer => "defer"
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
 
     = favicon_link_tag 'favicon.ico'
 
-      / add here: 'default' instead of 'application' too fix turbolinks errors :)
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    / use defer here
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload', :defer => "defer"
+
     link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css"
     link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"
     link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet"

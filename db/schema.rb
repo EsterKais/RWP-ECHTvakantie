@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20161121134015) do
     t.float    "latitude"
     t.float    "longitude"
     t.text     "review"
+    t.string   "booking"
   end
 
   create_table "vphotos", force: :cascade do |t|
