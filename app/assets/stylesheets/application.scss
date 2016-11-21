@@ -944,7 +944,7 @@ justify-content: space-between;
         text-transform: uppercase;
         letter-spacing: 1px;
         // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.5);
-        color: rgba(0,0,0,.7);
+        color: rgba(0, 0, 0, .7);
         font-size: 12px;
         border-radius: 5px;
         display: inline-block;
@@ -952,8 +952,7 @@ justify-content: space-between;
         margin-right: 5px;
         transition: .2s;
         background: white;
-        box-shadow: 0 0 7px 0 rgba(0,0,0,.2);
-
+        box-shadow: 0 0 7px 0 rgba(0, 0, 0, .2);
 
         &:hover {
           background: #4da6ff;
@@ -969,6 +968,15 @@ justify-content: space-between;
           // box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,0.2);
         }
       }
+
+      .green {
+         &:hover {
+           background: #8BC34A;
+           color: white;
+         }
+       }
+
+
     }
   }
 }
