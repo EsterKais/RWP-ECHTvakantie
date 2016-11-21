@@ -34,13 +34,7 @@ function changeBackground() {
     setTimeout(changeBackground, 5000);
 }
 
-$(document).ready(function() {
-    setTimeout(changeBackground, 5000);
-    $('.bxslider').bxSlider({
-      auto: true,
-      mode: 'fade',
-    });
-});
+
 
 var mapStyle = [{"featureType":"administrative","stylers":[{"visibility":"off"}]},{"featureType":"poi","stylers":[{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"water","stylers":[{"visibility":"simplified"}]},{"featureType":"transit","stylers":[{"visibility":"simplified"}]},{"featureType":"landscape","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"visibility":"off"}]},{"featureType":"road.local","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"water","stylers":[{"color":"#84afa3"},{"lightness":52}]},{"stylers":[{"saturation":-17},{"gamma":0.36}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"color":"#3f518c"}]}]
 
@@ -76,3 +70,51 @@ google.maps.event.addDomListener(window, 'load', function() {
     }, 2500);
 });
 
+
+
+
+
+
+$.fn.isOnScreen = function(){
+
+    var win = $(window);
+
+    var viewport = {
+        top : win.scrollTop(),
+        left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+
+    var bounds = this.offset();
+    bounds.right = bounds.left + this.outerWidth();
+    bounds.bottom = bounds.top;
+
+    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+
+};
+
+
+$(document).ready(function() {
+    setTimeout(changeBackground, 5000);
+    $('.bxslider').bxSlider({
+      auto: true,
+      mode: 'fade',
+    });
+});
+
+$(window).scroll(function() {
+  var footer = document.getElementById("footer");
+
+  if ($('#footer').isOnScreen()) {
+    if ($('.filter-partial').hasClass('fixed')){
+      $('.filter-partial').addClass('bottom');
+      $('.filter-partial').removeClass('fixed');
+      console.log("bottomed");
+    }
+  } else {
+    $('.filter-partial').addClass('fixed');
+    $('.filter-partial').removeClass('bottom');
+    console.log("fixed");
+  }
+})
