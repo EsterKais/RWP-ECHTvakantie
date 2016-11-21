@@ -30,8 +30,9 @@
     .buttons
       .more-btn.btn=link_to
         | Meer info
-      .book-btn.btn=link_to
-        | Direct boeken
+      .book-btn.btn
+        a[href="http://#{@vacation.booking}"]
+          | Direct boeken
     .vac-show-pictures
       p photos
       - if @vacation.vphotos[0] == []
