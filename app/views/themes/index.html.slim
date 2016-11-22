@@ -27,12 +27,12 @@
 
 .container
   .themes
+    h2 Kies een thema
     .grid
-      h2 Kies een thema
       - @themes.each do |theme|  
         = link_to theme do
           - if theme.tphotos[0].present?
-            .thema-kolom style="background: linear-gradient(rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.5)), url(#{theme.tphotos[0].image}); background-size: cover;"
+            .thema-kolom style="background: url(#{theme.tphotos[0].image}); background-size: cover;"
               span
                 = theme.name
       .clear
