@@ -30,7 +30,7 @@ $(document).on('turbolinks:load', function(){
     $('.vl-price').text(function(){
       return $(this).text().replace(/E/g, '€');
     });
-  })
+  });
 
 
   var footer = document.getElementById("footer");
@@ -85,6 +85,7 @@ $(document).on('turbolinks:load', function(){
 
       setTimeout(changeBackground, 5000);
   }
+})
 
 // callback only on vakantie#show
 if (document.location.pathname.indexOf("/vakantie/") == 0) {
