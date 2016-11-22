@@ -72,3 +72,5 @@ gem 'rails_12factor', group: :production
 gem 'carrierwave'
 
 gem 'cloudinary'
+
+gem 'meta-tags'
