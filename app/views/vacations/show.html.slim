@@ -15,8 +15,7 @@
             | &nbsp; - &nbsp;
             = @vacation.country
           .price
-            / = @vacation.price
-            | €€€
+            = @vacation.price
       
 .container.vac-show
   .vac-show-left
@@ -39,16 +38,16 @@
       #map_canvas data-latitude="#{@vacation.latitude}" data-longitude="#{@vacation.longitude}"
   .vac-show-right
     .buttons
-      .more-btn.btn=link_to
-        | Meer info
+      .more-btn.btn
+        a[href="http://#{@vacation.more_info}"]
+          | Meer info
       .book-btn.btn
         a[href="http://#{@vacation.booking}"]
           | Direct boeken
     .vac-show-pictures
       - @vphotos.each do |photo|
           = image_tag photo.image
-      /! The Map gets drawn here!
-    
+
   
 - if current_user
   .content

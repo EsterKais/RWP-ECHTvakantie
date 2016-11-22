@@ -55,8 +55,7 @@
                     .vl-country
                       = vacation[:country]
                     .vl-price
-                      | €€€
-                      / = vacation[:price]
+                      = vacation[:price]
                 .vl-description.font-hind
                   = vacation[:description].truncate_words(28)
       
