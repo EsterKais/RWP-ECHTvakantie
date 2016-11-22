@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  def Over_ons
+  def over_ons
   end
 
   def Contact

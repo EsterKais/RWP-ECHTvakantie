@@ -7,9 +7,9 @@ header
         ul
           = link_to root_path do
             li Home
-          = link_to '/pages/Over_ons' do
+          = link_to over_ons_path do
             li Over ons
-          = link_to '/contact' do
+          = link_to contact_path do
             li Contact
       .search
         = form_tag(vacations_path, :method => "get",presence: true, allow_blank: false) do
