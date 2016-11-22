@@ -2,8 +2,27 @@ doctype html
 html
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
-    title EchtVakantie
-
+    meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
+    //SEO META TAGS
+    = display_meta_tags site: 'ECHTvakantie', title: @page_title, description: @page_description, keywords: @page_keywords
+    /Facebook
+    meta content="ECHTvakantie" property="og:site_name" 
+    meta content="Welkom op ECHTvakantie! Op deze website vind je de meest bijzondere vakantieplekken in Europa, voor een weekendje weg of vakantie." property="og:description" 
+    meta content="ECHTvakantie" property="og:title" 
+    meta content="website" property="og:type" 
+    meta content="http://www.echtvakantie.nl" property="og:url" 
+    meta content="http://res.cloudinary.com/co/image/upload/v1479749636/knjz1x6qtqxs4dvjicwc.jpg" property="og:image" 
+    meta content="nl_NL" property="og:locale" 
+    meta content="nl" property="og:country-name" 
+    meta content="Amsterdam" property="og:locality" 
+    /Twitter
+    meta name="twitter:card" content="summary_large_image"
+    meta name="twitter:creator" content="@HarveyGuzzini"
+    meta name="twitter:title" content="ECHTvakantie"
+    meta name="twitter:description" content="Op deze website vind je de meest bijzondere vakantieplekken in Europa"
+    meta name="twitter:image" content="http://res.cloudinary.com/co/image/upload/v1479749636/knjz1x6qtqxs4dvjicwc.jpg"
+    meta name="twitter:image:alt" content="Vakantie foto die een volkswagenbusje laat zien."
+    
     = csrf_meta_tags
 
     / use defer here

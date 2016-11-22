@@ -2,7 +2,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   # before_filter should be before_action from rails 5.1 onwards
-  before_action :theme
+  before_action :theme, :seo
+
+  def seo
+    @page_title       = 'Bijzondere vakantieplekken in Europa'
+    @page_description = 'Ontdek de meest bijzondere vakantieplekken in Europa, voor een weekendje weg of vakantie. Persoonlijk vind ik de plek waar je overnacht net zo belangrijk als de bestemming. Altijd een kleinschalig, bijzonder verblijf met persoonlijke touch.'
+    @page_keywords    = 'Bijzondere, vakantie, plekken, Europa, weekendje, weg, vakantie, overnachting, kleinschalig, persoonlijk, Benelux'
+  end
 
   def theme
     @themes = Theme.all

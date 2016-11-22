@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.2.5'
 
 gem 'geocoder'
 
@@ -72,3 +72,5 @@ gem 'rails_12factor', group: :production
 gem 'carrierwave'
 
 gem 'cloudinary'
+
+gem 'meta-tags'
