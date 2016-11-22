@@ -22,6 +22,14 @@ $.fn.isOnScreen = function(){
 
 
 $(document).on('turbolinks:load', function(){
+
+  $('.vl-price').ready(function(){
+    $('.vl-price').text(function(){
+      return $(this).text().replace(/E/g, '€');
+    });
+  })
+
+
   var footer = document.getElementById("footer");
 
   $(window).scroll(function(){
