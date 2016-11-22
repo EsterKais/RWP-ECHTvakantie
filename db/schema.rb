@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121165053) do
+ActiveRecord::Schema.define(version: 20161122103123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20161121165053) do
     t.float    "longitude"
     t.text     "review"
     t.string   "booking"
+    t.string   "more_info"
   end
 
   create_table "vphotos", force: :cascade do |t|

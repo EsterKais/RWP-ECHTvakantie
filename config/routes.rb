@@ -39,12 +39,12 @@ Rails.application.routes.draw do
   # get '/thema/:name/regio/ardennen' => "themes#show", as: :filter_ardennen
   # get '/thema/:name/regio/waddeneilanden' => "themes#show", as: :filter_waddeneilanden
 
-  get '/thema/:name/prijs/voordelig' => "themes#show", as: :filter_voordelig
-  get '/thema/:name/prijs/gemiddeld' => "themes#show", as: :filter_gemiddeld
-  get '/thema/:name/prijs/prijzig' => "themes#show", as: :filter_prijzig
+  get '/thema/:name/prijs/E' => "themes#show", as: :filter_voordelig
+  get '/thema/:name/prijs/EE' => "themes#show", as: :filter_gemiddeld
+  get '/thema/:name/prijs/EEE' => "themes#show", as: :filter_prijzig
 
   resources :tphotos
-  resources :vphotos
+  resources :vphoto
 
   root 'themes#index'
 
