@@ -85,6 +85,8 @@ class ThemesController < ApplicationController
 
   def set_theme
     @theme = Theme.find_by_name(params[:name])
+    @page_title = @theme.name
+    @page_description = @theme.description
   end
 
   def set_unique(type)
