@@ -9,4 +9,8 @@ class PagesController < ApplicationController
     respond_to :text
     expires_in 6.hours, public: true
   end
+
+  def sitemap
+    respond_to :xml
+  end
 end
