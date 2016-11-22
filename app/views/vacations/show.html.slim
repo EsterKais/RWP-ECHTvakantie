@@ -41,8 +41,9 @@
     .buttons
       .more-btn.btn=link_to
         | Meer info
-      .book-btn.btn=link_to
-        | Direct boeken
+      .book-btn.btn
+        a[href="http://#{@vacation.booking}"]
+          | Direct boeken
     .vac-show-pictures
       - @vphotos.each do |photo|
           = image_tag photo.image
