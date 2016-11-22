@@ -402,6 +402,11 @@ footer {
 
 .themes {
 
+  h2 {
+    text-align: center;
+    font-size: 32px;
+    margin: 30px;
+  }
 }
 
 .grid {
@@ -409,12 +414,6 @@ footer {
   width: 100%;
   justify-content: space-between;
   flex-wrap: wrap;
-
-  h2 {
-    text-align: center;
-    font-size: 32px;
-    margin: 30px;
-  }
 
   a {
     width: 32%;
