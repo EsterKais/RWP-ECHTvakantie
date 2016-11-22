@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'over-ons' => "pages#over_ons"
 
+  get '/robots.:format' => 'pages#robots'
+
   get 'contact', to: 'messages#new', as: 'contact'
   post 'contact', to: 'messages#create'
 
