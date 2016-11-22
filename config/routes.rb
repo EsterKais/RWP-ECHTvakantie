@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   get 'over-ons' => "pages#over_ons"
 
-  get '/robots.:format' => 'pages#robots'
+  get '/robots' => 'pages#robots', constraints: { format: :txt }
+  get '/sitemap' => 'pages#sitemap', constraints: { format: :xml }
 
   get 'contact', to: 'messages#new', as: 'contact'
   post 'contact', to: 'messages#create'
