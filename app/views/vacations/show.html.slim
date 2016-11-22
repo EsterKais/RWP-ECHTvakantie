@@ -11,12 +11,12 @@
         .vac-show-details
           .address
             | Adres:&nbsp;
-            = @vacation.address 
+            = @vacation.address
             | &nbsp; - &nbsp;
             = @vacation.country
           .price
             = @vacation.price
-      
+
 .container.vac-show
   .vac-show-left
     .vac-show-desc
@@ -48,7 +48,7 @@
       - @vphotos.each do |photo|
           = image_tag photo.image
 
-  
+
 - if current_user
   .content
     .admin-button = link_to 'Bewerk vakantie', edit_vacation_path(@vacation)
@@ -58,10 +58,10 @@
 - @vacations.each do |vacation|
   - if vacation.themes == @vacation.themes
     - if vacation.title != @vacation.title
-      - @vacarray << vacation          
+      - @vacarray << vacation
 
 - if @vacarray.length >= 3
-  
+
   .vacation-selection
     | Misschien vind je deze vakanties ook interessant...
     .container.flexbox
