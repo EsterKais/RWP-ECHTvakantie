@@ -23,9 +23,20 @@
     .vac-show-desc
       = @vacation.description
     .vac-show-review
-      = @vacation.review
+      .review-container
+        .review-column-left
+          .avatar
+            img src="http://res.cloudinary.com/unique/image/upload/v1479805963/Artboard_eoxydg.png"
+        .review-column-right
+          .info
+            h1 Recensie
+            strong Vincent Scholten
+            br
+            = @vacation.updated_at
+          .review
+            = @vacation.review
     .vac-show-map
-      #map_canvas.vac-desc-right data-latitude="#{@vacation.latitude}" data-longitude="#{@vacation.longitude}"
+      #map_canvas data-latitude="#{@vacation.latitude}" data-longitude="#{@vacation.longitude}"
   .vac-show-right
     .buttons
       .more-btn.btn=link_to
@@ -33,11 +44,8 @@
       .book-btn.btn=link_to
         | Direct boeken
     .vac-show-pictures
-      p photos
-      - if @vacation.vphotos[0] == []
-        - @vphotos.each do |photo|
-          li
-            = image_tag photo.image
+      - @vphotos.each do |photo|
+          = image_tag photo.image
       /! The Map gets drawn here!
     
   
