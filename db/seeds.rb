@@ -17,15 +17,15 @@ Vacation.delete_all
 User.create(email: "admin@test.com", password: "secret")
 
 # Themes Photos
-tphoto1 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650346/EchtVakantie/theme/Special___treehouse.jpg")
-tphoto2 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650352/EchtVakantie/theme/Nature2.jpg")
-tphoto3 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650344/EchtVakantie/theme/Camping.jpg")
-tphoto4 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650354/EchtVakantie/theme/Romance.jpg")
-tphoto5 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650344/EchtVakantie/theme/Historic2.jpg")
-tphoto6 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650349/EchtVakantie/theme/Food.jpg")
+tphoto1 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,q_auto:low,w_1339/v1477650346/EchtVakantie/theme/Special___treehouse.jpg")
+tphoto2 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,q_auto:low,w_1325/v1477650352/EchtVakantie/theme/Nature2.jpg")
+tphoto3 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,q_auto:low,w_1327/v1477650344/EchtVakantie/theme/Camping.jpg")
+tphoto4 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,q_auto:low,w_1379/v1477650354/EchtVakantie/theme/Romance.jpg")
+tphoto5 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,q_auto:low,w_1407/v1477650344/EchtVakantie/theme/Historic2.jpg")
+tphoto6 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,q_auto:low,w_1397/v1477650349/EchtVakantie/theme/Food.jpg")
 tphoto7 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650341/EchtVakantie/theme/Farm_life.jpg")
-tphoto8 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650344/EchtVakantie/theme/Luxury.jpg")
-tphoto9 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650352/EchtVakantie/theme/Take_a_ride.jpg")
+tphoto8 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,q_auto:low,w_1359/v1477650344/EchtVakantie/theme/Luxury.jpg")
+tphoto9 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,q_auto:low,w_1354/v1477650352/EchtVakantie/theme/Take_a_ride.jpg")
 
 # Themes
 theme1 = Theme.new(name: "In de Bomen", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", style: "nil")
