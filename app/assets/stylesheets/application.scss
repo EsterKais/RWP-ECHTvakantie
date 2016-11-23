@@ -1216,7 +1216,17 @@ justify-content: space-between;
       height: 300px;
       border-radius: 5px;
       margin-bottom: 30px;
+      margin-top: 20px;
     }
+
+    .address {
+      font-size: 14px;
+      display: inline;
+      margin-right: 10px;
+      color: #444;
+      // font-family: 'Hind', sans-serif;
+    }
+
   }
 }
 
@@ -1280,6 +1290,8 @@ justify-content: space-between;
     display: inline;
   }
 }
+
+
 
 .vac-show-pictures {
   margin-bottom: 30px;
