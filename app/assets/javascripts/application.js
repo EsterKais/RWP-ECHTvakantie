@@ -31,7 +31,7 @@ $(document).on('turbolinks:load', function(){
 
   $('.vl-price').ready(function(){
     $('.vl-price').text(function(){
-      return $(this).text().replace(/E/g, '€');
+      return $(this).text().replace('laag', '€').replace('midden', '€€').replace('hoog', '€€€');
     });
   });
 
