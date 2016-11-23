@@ -24,6 +24,14 @@ $.fn.isOnScreen = function(){
 
 $(document).on('turbolinks:load', function(){
 
+  var arrayPictures = [
+    "http://res.cloudinary.com/unique/image/upload/c_scale,q_auto:low,w_2324/v1479912059/photo-1473615695634-d284ec918736_w9wjiy.jpg",
+    "http://res.cloudinary.com/unique/image/upload/c_scale,q_auto:low,w_1869/v1479911640/photo-1418225043143-90858d2301b4_1_gdup8m.jpg",
+    "http://res.cloudinary.com/unique/image/upload/c_scale,q_auto:low,w_1729/v1479913019/photo-1446097320902-be2ad9808358_bbc6l8.jpg",
+    "http://res.cloudinary.com/unique/image/upload/c_scale,q_auto:low,w_2149/v1479913021/photo-1473773386757-42bbe7288351_m5ussl.jpg"
+  ]
+  $('.slider-wrapper').css({'background-image': 'url(' + arrayPictures[Math.floor(Math.random() * arrayPictures.length)] + ')'});
+
   $('.reset').click(function(){
     $('.contact-model .field input').val('');
     $('.contact-model .field textarea').val('');

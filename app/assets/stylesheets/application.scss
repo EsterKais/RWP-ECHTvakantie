@@ -76,15 +76,35 @@ header {
 }
 
 .placeholder-header {
-  height: 124px;
+  height: 97  px;
   width: 100%;
 }
+
+.menu-buttons {
+  display: flex;
+  justify-content: space-between;
+
+  li {
+    margin: 0 !important;
+    padding: 5px 0;
+  }
+}
+
+
+.menu-btn {
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
 .header--top {
   background: $swimmingpool-blue;
   color: white;
   width: 100%;
   z-index: 9999;
-  padding: 15px 0;
+  padding: 9px 0;
   box-shadow: 0px 0px 173px 0px rgba(0,0,0,0.5);
 
 
@@ -92,7 +112,7 @@ header {
     width: 17%;
     font-weight: bold;
     font-size: 26px;
-    margin-top: 4px;
+    margin-top: 2px;
     letter-spacing: -1px;
     color: white;
 
@@ -107,7 +127,7 @@ header {
 
     ul {
     margin:0;
-    margin-top: 10px;
+    margin-top: 8px;
     padding: 0;
     margin-left: 20px;
 
@@ -149,11 +169,12 @@ header {
 .search-field {
   width: calc(100% - 20px);
   border:0;
-  padding: 15px 10px;
+  padding: 9px 10px;
   font-weight: 16px;
   border-radius: 5px;
+  background: rgba(255,255,255,0.9);
   font-family: 'Montserrat', sans-serif;
-  color: black;
+  color: white;
 }
 
 .search-field:focus {
@@ -165,7 +186,7 @@ header {
 .header--bottom {
   background: $white;
   color: black;
-  padding: 15px 0;
+  padding: 5px 0;
   z-index: 0;
   position: relative;
 
@@ -452,13 +473,18 @@ footer {
 
 }
 
-.slider {
+.slider-wrapper {
   width: 100%;
-  height: 230px;
-  background: url(http://res.cloudinary.com/dfc7k24vb/image/upload/q_auto:low/v1477650346/EchtVakantie/theme/Special___treehouse.jpg) center;
   background-color: #333;
   background-size: cover;
-  text-shadow: 0 0 5px #333;
+  background-position: center;
+}
+
+.slider {
+  width: 100%;
+  height: 700px;
+  -webkit-filter: grayscale(100%);
+  background: rgba(255,255,255,.01);
   z-index: -1;
 
   h1 {
@@ -467,16 +493,22 @@ footer {
     letter-spacing: -1px;
     font-size: 30px;
     color: white;
-    padding-top: 90px;
+    padding-top: 340px;
     text-align: center;
-
+    opacity: 0.9;
+    width: 60%;
+    margin: 0 auto;
+    text-shadow: 0 0 9px black;
   }
 
   h2 {
     margin: 0;
     padding: 0;
+    margin: 0 auto;
     text-align: center;
     color: white;
+    font-size: 24px;
+    opacity: 0.9;
     font-weight: 300;
   }
 }
@@ -1361,6 +1393,18 @@ justify-content: space-between;
 
 @media (max-width: 700px) {
 
+  .grid {
+
+    a {
+      width: 100%;
+      padding: 0;
+      margin:0;
+
+      &:nth-child(3n) {
+        width: 100%;
+      }
+    }
+  }
   .header--bottom {
 
     .active {
