@@ -12,7 +12,7 @@ header
           = link_to contact_path do
             li Contact
       .search
-        = form_tag(vacations_path, :method => "get",presence: true, allow_blank: false) do
+        = form_tag(vacations_path, :method => "get", presence: true, allow_blank: false) do
           = text_field_tag :search, params[:search], placeholder: "Zoek echte vakanties", class: "search-field"
             = submit_tag "Zoeken", :name => nil
 

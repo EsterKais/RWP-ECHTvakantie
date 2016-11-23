@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   get '/thema/:id/prijs/EEE' => "themes#show", as: :filter_prijzig
 
   resources :tphotos
-  resources :vphoto
+  resources :vphotos
 
   root 'themes#index'
 

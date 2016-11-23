@@ -10,7 +10,6 @@ class VacationsController < ApplicationController
   # one thing is for sure: in update we wanna set vphotos ourselves (using build_photos method) because there we delete or add new ones
   before_action :set_photos, only: [:edit, :show, :destroy]
 
-
   # for index we'll just feed as much as we got
   def index
     @vacations = Vacation.all
@@ -19,8 +18,6 @@ class VacationsController < ApplicationController
     @themes = Theme.all
     @vphotos = Vphoto.all
     @tphoto = Tphoto.all
-
-
     if params[:search]
       @vacations = Vacation.search(params[:search]).order("created_at DESC")
     else
@@ -45,6 +42,9 @@ class VacationsController < ApplicationController
   def show
     @themes = Theme.all
     @vacations = Vacation.order("RANDOM()").all
+    @theme = session[:theme]
+    add_breadcrumb @theme, theme_path(@theme)
+    add_breadcrumb @vacation.title
   end
 
   def destroy
@@ -71,7 +71,6 @@ class VacationsController < ApplicationController
     @page_title = @vacation.title
     @page_description = @vacation.description
   end
-
 
   def set_themes
     @themes = @vacation.themes
@@ -103,6 +102,6 @@ class VacationsController < ApplicationController
   def vacation_params
     # here we forgot to add theme_id, which also needs to be added in the create_form
     params.require(:vacation).permit(:address, :title, :country, :region, :price,
-      :description, :show, :review, vphotos_attributes: [ :image ], theme_ids: [])
+      :description, :show, :review, :booking, :more_info, vphotos_attributes: [ :image ], theme_ids: [])
   end
 end

@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   # before_filter should be before_action from rails 5.1 onwards
   before_action :theme, :seo
 
+  add_breadcrumb "Thema's", :themes_path
+
+
+
   def seo
     @site_title       = 'ECHTvakantie'
     @page_title       = 'Bijzondere vakantieplekken in Europa'

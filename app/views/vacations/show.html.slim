@@ -16,7 +16,12 @@
       /       = @vacation.country
       /     .price
       /       = @vacation.price
-
+            
+.container
+  .breadcrumbs
+    span
+      | Je bevindt je hier:  
+    = render_breadcrumbs :separator => ' > '
 .container.vac-show
   .vac-show-left
     .vac-show-desc
@@ -34,7 +39,13 @@
             = @vacation.updated_at
           .review
             = @vacation.review
+
     .vac-show-map
+      .address
+        | Adres:&nbsp;
+        = @vacation.address
+        | &nbsp; - &nbsp;
+        = @vacation.country
       #map_canvas data-latitude="#{@vacation.latitude}" data-longitude="#{@vacation.longitude}"
   .vac-show-right
     .buttons
