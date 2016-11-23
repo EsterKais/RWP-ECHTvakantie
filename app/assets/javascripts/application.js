@@ -24,11 +24,24 @@ $.fn.isOnScreen = function(){
 
 $(document).on('turbolinks:load', function(){
 
+
+  // CONTACT FORM
   $('.reset').click(function(){
     $('.contact-model .field input').val('');
     $('.contact-model .field textarea').val('');
   });
 
+
+  $(".check-form").blur(function() {
+    if( !$(this).val() ) {
+          $(this).addClass('warning');
+    };
+  });
+
+
+
+
+  // EURO SIGNS
   $('.vl-price').ready(function(){
     $('.vl-price').text(function(){
       return $(this).text().replace('laag', '€').replace('midden', '€€').replace('hoog', '€€€');
