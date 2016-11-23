@@ -32,14 +32,29 @@ $(document).on('turbolinks:load', function(){
   ]
   $('.slider-wrapper').css({'background-image': 'url(' + arrayPictures[Math.floor(Math.random() * arrayPictures.length)] + ')'});
 
-  $('.reset').click(function(){
-    $('.contact-model .field input').val('');
-    $('.contact-model .field textarea').val('');
-  });
+    if ( $('.notice').text().length > 0 ){
+    $('.notice').text('')
+  }
+  // // CONTACT FORM
+  // $('.reset').click(function(){
+  //   $('.contact-model .field input').val('');
+  //   $('.contact-model .field textarea').val('');
+  // });
 
+
+  // $(".check-form").blur(function() {
+  //   if( !$(this).val() ) {
+  //         $(this).addClass('warning');
+  //   };
+  // });
+
+
+
+
+  // EURO SIGNS
   $('.vl-price').ready(function(){
     $('.vl-price').text(function(){
-      return $(this).text().replace(/E/g, '€');
+      return $(this).text().replace('laag', '€').replace('midden', '€€').replace('hoog', '€€€');
     });
   });
 
@@ -153,6 +168,8 @@ $(document).on('turbolinks:load', function(){
         var mapDiv = $('#map_canvas');
         var lat = mapDiv.data('latitude'),
             lng = mapDiv.data('longitude');
+
+        mapDiv.css("height", "300");
 
         var myLatLng = {lat: lat, lng: lng};
 

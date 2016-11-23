@@ -44,7 +44,7 @@ class VacationsController < ApplicationController
     @vacations = Vacation.order("RANDOM()").all
     @theme = session[:theme]
     add_breadcrumb @theme, theme_path(@theme)
-    add_breadcrumb @vacation.title, vacation_path(@vacation.title)
+    add_breadcrumb @vacation.title
   end
 
   def destroy
@@ -67,7 +67,7 @@ class VacationsController < ApplicationController
   private
 
   def set_vacation
-    @vacation = Vacation.find_by_title(params[:title])
+    @vacation = Vacation.friendly.find(params[:id])
     @page_title = @vacation.title
     @page_description = @vacation.description
   end
@@ -102,6 +102,6 @@ class VacationsController < ApplicationController
   def vacation_params
     # here we forgot to add theme_id, which also needs to be added in the create_form
     params.require(:vacation).permit(:address, :title, :country, :region, :price,
-      :description, :show, :review, vphotos_attributes: [ :image ], theme_ids: [])
+      :description, :show, :review, :booking, :more_info, vphotos_attributes: [ :image ], theme_ids: [])
   end
 end

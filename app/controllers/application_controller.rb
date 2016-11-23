@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 
 
   def seo
+    @site_title       = 'ECHTvakantie'
     @page_title       = 'Bijzondere vakantieplekken in Europa'
     @page_description = 'Ontdek de meest bijzondere vakantieplekken in Europa, voor een weekendje weg of vakantie. Persoonlijk vind ik de plek waar je overnacht net zo belangrijk als de bestemming. Altijd een kleinschalig, bijzonder verblijf met persoonlijke touch.'
     @page_keywords    = 'Bijzondere, vakantie, plekken, Europa, weekendje, weg, vakantie, overnachting, kleinschalig, persoonlijk, Benelux'

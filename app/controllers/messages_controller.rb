@@ -10,13 +10,16 @@ class MessagesController < ApplicationController
     if @message.save
       MessageMailer.new_message(@message).deliver_later
       respond_to do |format|
-              format.html {}
-              format.js {}
+              #NULL ERROR ARRAYS
+              @errorName = []
+              @errorContent = []
+              format.html {redirect_to contact_path, notice: 'Je bericht is gestuurd.'}
+              format.js {flash[:notice] = "Bedankt, je bericht is ontvangen!"}
             end
           else
             respond_to do |format|
-              format.html {}
-              format.js { render 'error'}
+              format.html { redirect_to contact_path }
+              format.js {flash[:notice] = "Sorry, er is iets misgegaan!"}
             end
           end
   end
