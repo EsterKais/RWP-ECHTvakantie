@@ -64,6 +64,3 @@ composer.lock
 
 *.orig
 .orig
-
-Gemfile
-Gemfile.lock
