@@ -23,7 +23,7 @@ class ThemesController < ApplicationController
     set_unique('country')
     @theme = Theme.find_by_name(params[:name])
     session[:theme] = @theme.name
-    add_breadcrumb @theme.name, themes_path
+    add_breadcrumb @theme.name
   end
 
   # for index we'll just feed as much as we got
