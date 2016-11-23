@@ -25,6 +25,11 @@ $.fn.isOnScreen = function(){
 $(document).on('turbolinks:load', function(){
     console.log('turbolinks')
 
+  $('.reset').click(function(){
+    $('.contact-model .field input').val('');
+    $('.contact-model .field textarea').val('');
+  });
+
   $('.vl-price').ready(function(){
     $('.vl-price').text(function(){
       return $(this).text().replace(/E/g, '€');
