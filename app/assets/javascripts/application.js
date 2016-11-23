@@ -23,7 +23,6 @@ $.fn.isOnScreen = function(){
 
 
 $(document).on('turbolinks:load', function(){
-    console.log('turbolinks')
 
   $('.reset').click(function(){
     $('.contact-model .field input').val('');
@@ -63,10 +62,8 @@ $(document).on('turbolinks:load', function(){
   $('.filter-dropdown').hover(function(){
     if ($(this).hasClass("active")){
       $(this).removeClass("active");
-      console.log("removed");
     } else {
       $(this).addClass("active");
-      console.log("added");
     }
   });
 
