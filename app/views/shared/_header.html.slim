@@ -22,7 +22,8 @@ header
       ul
         .dropdown
           strong Kies een thema
-        - @themes.each do |theme|
-          li= link_to theme, :class => 'buttons btn' do
-            = theme.name
+        .menu-buttons
+          - @themes.each do |theme|
+            li= link_to theme, :class => 'menu-btn' do
+              = theme.name
 .placeholder-header
