@@ -41,7 +41,7 @@ feature 'Add vacation', js: true do
     end
 
     within 'select#vacation_price' do
-      find("option[value='3']").click
+      find("option[value='1']").click
     end
 
     within 'select#vacation_theme_ids' do
