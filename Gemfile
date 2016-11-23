@@ -76,3 +76,5 @@ gem 'cloudinary'
 gem 'meta-tags'
 
 gem 'breadcrumbs_on_rails'
+
+gem 'friendly_id', '~> 5.1.0'
