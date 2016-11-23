@@ -873,14 +873,36 @@ justify-content: space-between;
 .about-content {
   margin: 30px 0;
 
-  .column {
-    float:left;
-    width: 47%;
-  }
+  .overons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 
-  .column:last-child {
-    margin-left: 6%;
-  }
+    .column {
+      // float:left;
+      width: 100%;
+      margin-right: 5%;
+
+      // p.welcome {
+      //   text-align: center;
+      // }
+        p.paragraph {
+          text-align: justify;
+        }
+        p.author {
+          text-align: right;
+          font-style: italic;
+        }
+    }
+
+    .column-picture {
+        img {
+          width: 80%;
+          border-radius: 10px;
+          margin-top: 23%;
+        }
+    }
+}
 }
 
 .about-featured {
