@@ -42,8 +42,9 @@ class VacationsController < ApplicationController
   def show
     @themes = Theme.all
     @vacations = Vacation.order("RANDOM()").all
-    @theme = session[:theme]
-    add_breadcrumb @theme, theme_path(@theme)
+    @name = session[:theme]['name']
+    @slug = session[:theme]['slug']
+    add_breadcrumb @name, theme_path(@slug)
     add_breadcrumb @vacation.title
   end
 
