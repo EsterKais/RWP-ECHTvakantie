@@ -16,7 +16,12 @@
       /       = @vacation.country
       /     .price
       /       = @vacation.price
-
+            
+.container
+  .breadcrumbs
+    span
+      | Je bevindt je hier:  
+    = render_breadcrumbs :separator => ' > '
 .container.vac-show
   .vac-show-left
     .vac-show-desc

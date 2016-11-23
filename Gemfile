@@ -74,3 +74,5 @@ gem 'carrierwave'
 gem 'cloudinary'
 
 gem 'meta-tags'
+
+gem 'breadcrumbs_on_rails'
