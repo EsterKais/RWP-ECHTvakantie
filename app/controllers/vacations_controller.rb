@@ -44,7 +44,7 @@ class VacationsController < ApplicationController
     @vacations = Vacation.order("RANDOM()").all
     @theme = session[:theme]
     add_breadcrumb @theme, theme_path(@theme)
-    add_breadcrumb @vacation.title, vacation_path(@vacation.title)
+    add_breadcrumb @vacation.title
   end
 
   def destroy
