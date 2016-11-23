@@ -5,6 +5,10 @@
         = @theme.name
 .theme-content
   .container
+    .breadcrumbs
+      span
+        | Je bevindt je hier:  
+      = render_breadcrumbs :separator => ' > '
     / .theme-left-column
     /   .filter
     /     .filtertitle

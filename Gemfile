@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.5'
+ruby '2.3.1'
 
 gem 'geocoder'
 
@@ -74,3 +74,5 @@ gem 'carrierwave'
 gem 'cloudinary'
 
 gem 'meta-tags'
+
+gem 'breadcrumbs_on_rails'
