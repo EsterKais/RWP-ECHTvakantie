@@ -24,19 +24,21 @@ $.fn.isOnScreen = function(){
 
 $(document).on('turbolinks:load', function(){
 
+    if ( $('.notice').text().length > 0 ){
+    $('.notice').text('')
+  }
+  // // CONTACT FORM
+  // $('.reset').click(function(){
+  //   $('.contact-model .field input').val('');
+  //   $('.contact-model .field textarea').val('');
+  // });
 
-  // CONTACT FORM
-  $('.reset').click(function(){
-    $('.contact-model .field input').val('');
-    $('.contact-model .field textarea').val('');
-  });
 
-
-  $(".check-form").blur(function() {
-    if( !$(this).val() ) {
-          $(this).addClass('warning');
-    };
-  });
+  // $(".check-form").blur(function() {
+  //   if( !$(this).val() ) {
+  //         $(this).addClass('warning');
+  //   };
+  // });
 
 
 
