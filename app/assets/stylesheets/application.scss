@@ -670,6 +670,71 @@ footer {
   }
 }
 
+.contact-model {
+  min-height: 470px;
+  padding: 20px 0;
+  width: auto;
+
+  .contact-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contact-left, .contact-right {
+    width: 48%;
+  }
+
+  .reset {
+    display: inline;
+    margin-right: 20px;
+    font-size: 12px;
+    color: #333;
+    cursor: pointer;
+
+    &:active {
+      position: relative;
+      top: 2px;
+    }
+  }
+
+  h1 {
+
+  }
+
+  .actions {
+    text-align: right;
+  }
+  input {
+    padding: 10px;
+    font-size: 13px;
+    display: block;
+    width: calc(100% - 20px);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    width: calc(100% - 20px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 13px;
+    resize: none;
+  }
+
+  input[type="submit"] {
+    background: rgb(145, 210, 101);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 25%;
+    padding: 10px;
+    display: inline;
+    margin-top: 20px;
+  }
+}
+
 .vac-details {
   background: url(http://res.cloudinary.com/unique/image/upload/v1477661670/reviewthing_iiuhxq.png) left center;
   background-color: rgba(#4da6ff, 0.19);
