@@ -27,7 +27,7 @@ feature 'Add a theme', js: true do
     attach_file('images_', File.join(Rails.root, '/spec/support/frank-nikes-2.jpg'))
 
     # make sure the photo is uploaded to cloudinary
-    sleep(6)
+    sleep(5)
 
     # click save
     click_button('Create Theme')
