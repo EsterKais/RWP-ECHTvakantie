@@ -24,9 +24,9 @@ Rails.application.routes.draw do
   devise_scope :user do get "/admin" => "devise/sessions#new" end
   devise_scope :user do get "/admin/loguit" => "devise/sessions#destroy" end
 
-  get '/thema/:id/prijs/E' => "themes#show", as: :filter_voordelig
-  get '/thema/:id/prijs/EE' => "themes#show", as: :filter_gemiddeld
-  get '/thema/:id/prijs/EEE' => "themes#show", as: :filter_prijzig
+  get '/thema/:id/prijsklasse/laag' => "themes#show", as: :filter_voordelig
+  get '/thema/:id/prijsklasse/midden' => "themes#show", as: :filter_gemiddeld
+  get '/thema/:id/prijsklasse/hoog' => "themes#show", as: :filter_prijzig
 
   resources :tphotos
   resources :vphotos
