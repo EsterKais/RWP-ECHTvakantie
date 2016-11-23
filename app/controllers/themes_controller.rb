@@ -21,8 +21,8 @@ class ThemesController < ApplicationController
     # here's the good stuff
     set_unique('region')
     set_unique('country')
-    @theme = Theme.find_by_name(params[:name])
-    session[:theme] = @theme.name
+    @theme = Theme.friendly.find(params[:id])
+    session[:theme] = @theme
     add_breadcrumb @theme.name
   end
 
