@@ -83,24 +83,5 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { host: 'https://echtvakantie.herokuapp.com/' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-  address: "smtp.gmail.com",
-  port: 587,
-  domain: "gmail.com",
-  user_name: 'echtvakantie@gmail.com',
-  password: '!T0maat36',
-  authentication: 'plain',
-  enable_starttls_auto: true,
-  openssl_verify_mode: 'none'
-  }
-
-  # Use an evented file watcher to asynchronously detect changes in source code,
-  # routes, locales, etc. This feature depends on the listen gem.
-  # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = { address: "localhost", port: 1025}
-
+  
 end
