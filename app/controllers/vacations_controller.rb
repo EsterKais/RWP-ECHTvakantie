@@ -67,7 +67,7 @@ class VacationsController < ApplicationController
   private
 
   def set_vacation
-    @vacation = Vacation.find_by_title(params[:title])
+    @vacation = Vacation.friendly.find(params[:id])
     @page_title = @vacation.title
     @page_description = @vacation.description
   end

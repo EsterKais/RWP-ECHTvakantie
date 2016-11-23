@@ -74,3 +74,5 @@ gem 'carrierwave'
 gem 'cloudinary'
 
 gem 'meta-tags'
+
+gem 'friendly_id', '~> 5.1.0'

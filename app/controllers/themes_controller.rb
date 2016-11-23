@@ -50,7 +50,7 @@ class ThemesController < ApplicationController
 
 
   def destroy
-    @theme = Theme.find_by_name(params[:name])
+    @theme = Theme.find_by_name(params[:id])
 
     @theme.tphotos[0].destroy
     @theme.destroy
@@ -84,7 +84,7 @@ class ThemesController < ApplicationController
   end
 
   def set_theme
-    @theme = Theme.find_by_name(params[:name])
+    @theme = Theme.friendly.find(params[:id])
     @page_title = @theme.name
     @page_description = @theme.description
   end

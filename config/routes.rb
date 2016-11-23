@@ -12,21 +12,21 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :vacations, :path => 'vakantie', param: :title
+  resources :vacations, :path => 'vakantie'
 
-  resources :themes, :path => 'thema', param: :name
+  resources :themes, :path => 'thema'
 
   # this helps us creating paths for all possible region and country filters (check helper_methods)
-  get '/thema/:name/*filters' => "themes#show"
+  get '/thema/:id/*filters' => "themes#show"
 
   ######################################################################################################################
   # users/sign_in/ is /admin
   devise_scope :user do get "/admin" => "devise/sessions#new" end
   devise_scope :user do get "/admin/loguit" => "devise/sessions#destroy" end
 
-  get '/thema/:name/prijs/E' => "themes#show", as: :filter_voordelig
-  get '/thema/:name/prijs/EE' => "themes#show", as: :filter_gemiddeld
-  get '/thema/:name/prijs/EEE' => "themes#show", as: :filter_prijzig
+  get '/thema/:id/prijs/E' => "themes#show", as: :filter_voordelig
+  get '/thema/:id/prijs/EE' => "themes#show", as: :filter_gemiddeld
+  get '/thema/:id/prijs/EEE' => "themes#show", as: :filter_prijzig
 
   resources :tphotos
   resources :vphoto
