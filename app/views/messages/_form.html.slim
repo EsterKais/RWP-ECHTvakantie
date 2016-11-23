@@ -1,0 +1,11 @@
+= form_for @message, url: contact_path, method: :post, remote: true do |f|
+  fieldset
+    .field
+      = f.text_field :name, placeholder: "Name", id: "sender-name"
+    .field
+      = f.email_field :email, placeholder: "Email", id: "sender-email"
+    .field
+      = f.text_area :content, placeholder: "Message", id: "message-content"
+  fieldset
+    .field
+      = f.submit "Send", class: "btn btn-primary"

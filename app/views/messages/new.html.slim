@@ -1,15 +1,2 @@
-p.notice
-  = notice
-p.alert
-  = alert
-= form_for @message, url: contact_path do |message_form|
-  fieldset
-    .field
-      = message_form.text_field :name, placeholder: "Name"
-    .field
-      = message_form.email_field :email, placeholder: "Email"
-    .field
-      = message_form.text_area :content, placeholder: "Message"
-  fieldset
-    .field
-      = message_form.submit "Send"
+#message
+  = render "form"

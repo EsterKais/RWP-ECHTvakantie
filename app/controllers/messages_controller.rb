@@ -9,11 +9,16 @@ class MessagesController < ApplicationController
 
     if @message.save
       MessageMailer.new_message(@message).deliver_later
-      redirect_to contact_path, notice: "Your messages has been sent."
-    else
-      flash[:alert] = "An error occurred while delivering this message."
-      render :new
-    end
+      respond_to do |format|
+              format.html {}
+              format.js {}
+            end
+          else
+            respond_to do |format|
+              format.html {}
+              format.js { render 'error'}
+            end
+          end
   end
 
   private
