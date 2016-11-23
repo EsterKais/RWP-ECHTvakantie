@@ -26,6 +26,14 @@
   .vac-show-left
     .vac-show-desc
       = @vacation.description
+      / br
+      /   | Adres:&nbsp;
+      /   = @vacation.address
+      /   | &nbsp; - &nbsp;
+      /   = @vacation.region
+      /   | &nbsp; - &nbsp;
+      /   = @vacation.country
+        
     .vac-show-review
       .review-container
         .review-column-left
@@ -39,14 +47,7 @@
             = @vacation.updated_at
           .review
             = @vacation.review
-
-    .vac-show-map
-      .address
-        | Adres:&nbsp;
-        = @vacation.address
-        | &nbsp; - &nbsp;
-        = @vacation.country
-      #map_canvas data-latitude="#{@vacation.latitude}" data-longitude="#{@vacation.longitude}"
+          
   .vac-show-right
     .buttons
       .more-btn.btn
@@ -55,10 +56,14 @@
       .book-btn.btn
         a[href="http://#{@vacation.booking}"]
           | Direct boeken
+      
     .vac-show-pictures
       - @vphotos.each do |photo|
           = image_tag photo.image
 
+.vac-show-map
+  
+  #map_canvas data-latitude="#{@vacation.latitude}" data-longitude="#{@vacation.longitude}"
 
 - if current_user
   .content

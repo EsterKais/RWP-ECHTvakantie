@@ -1190,7 +1190,17 @@ justify-content: space-between;
     margin-bottom: 20px;
     border-bottom: 1px solid #ccc;
     text-align: justify;
+
+    // .addres {
+    //   font-size: 14px;
+    //   display: inline;
+    //   color: #444;
+    //   text-align: right;
+    //   width: 100%;
+    // }
   }
+
+
 
   .vac-show-review {
 
@@ -1216,6 +1226,7 @@ justify-content: space-between;
             margin-top: 20px;
           }
       }
+
     }
 
     .review-column-right {
@@ -1238,21 +1249,15 @@ justify-content: space-between;
 
   .vac-show-map {
 
+
+
     #map_canvas {
       height: 300px;
       border-radius: 5px;
       margin-bottom: 30px;
       margin-top: 20px;
-    }
 
-    .address {
-      font-size: 14px;
-      display: inline;
-      margin-right: 10px;
-      color: #444;
-      // font-family: 'Hind', sans-serif;
     }
-
   }
 }
 
@@ -1275,6 +1280,7 @@ justify-content: space-between;
       text-align: center;
       display: inline-block;
 
+      margin-bottom: 20px;
       margin-right: 5px;
       transition: .2s;
       background: white;
@@ -1296,6 +1302,8 @@ justify-content: space-between;
       }
     }
   }
+
+
 
   .vac-show-pictures {
     margin-top: 20px;

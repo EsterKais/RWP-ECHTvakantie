@@ -161,6 +161,8 @@ $(document).on('turbolinks:load', function(){
         var lat = mapDiv.data('latitude'),
             lng = mapDiv.data('longitude');
 
+        mapDiv.css("height", "300");
+
         var myLatLng = {lat: lat, lng: lng};
 
         var map = new google.maps.Map(document.getElementById('map_canvas'), {
