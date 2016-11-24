@@ -19,6 +19,8 @@ class VacationsController < ApplicationController
     @vphotos = Vphoto.all
     @tphoto = Tphoto.all
     if params[:search]
+      session[:name] = nil
+      session[:slug] = nil
       @vacations = Vacation.search(params[:search]).order("created_at DESC")
     else
       @vacations = Vacation.all.order("created_at DESC")
@@ -42,8 +44,16 @@ class VacationsController < ApplicationController
   def show
     @themes = Theme.all
     @vacations = Vacation.order("RANDOM()").all
-    @name = session[:theme]['name']
-    @slug = session[:theme]['slug']
+
+    if (session[:name] == nil )
+      @name = @vacation.themes.first.name
+      @slug = @vacation.themes.first.slug
+    else
+      @name = session[:name]
+      @slug = session[:slug]
+      session[:name] = nil
+    end
+
     add_breadcrumb @name, theme_path(@slug)
     add_breadcrumb @vacation.title
   end
