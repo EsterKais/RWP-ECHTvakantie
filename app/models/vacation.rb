@@ -24,7 +24,7 @@ class Vacation < ApplicationRecord
   AVAILABLE_FILTERS = {
     regio: RegionFilter,
     land: CountryFilter,
-    prijs: PriceFilter,
+    prijsklasse: PriceFilter,
   }
 
   # In controller use following method like so Vacation.filtered("land/Spanje") of Vacation.filtered("prijs/echt-goedkoop")
