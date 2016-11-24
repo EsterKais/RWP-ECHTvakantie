@@ -115,6 +115,12 @@ $(document).on('turbolinks:load', function(){
 
     if ( document.location.pathname.indexOf("/vakantie/") == 0 ) {
 
+        var mapDiv = $('#map_canvas');
+        // console.log(mapDiv)
+
+        if ( mapDiv.length == 0 ) {
+          return
+        }
         var mapStyle = [{
             "featureType": "administrative",
             "elementType": "labels.text.fill",
@@ -165,7 +171,6 @@ $(document).on('turbolinks:load', function(){
             "stylers": [{"color": "#eaf6f8"}, {"visibility": "on"}]
         }, {"featureType": "water", "elementType": "geometry.fill", "stylers": [{"color": "#eaf6f8"}]}]
 
-        var mapDiv = $('#map_canvas');
         var lat = mapDiv.data('latitude'),
             lng = mapDiv.data('longitude');
 
