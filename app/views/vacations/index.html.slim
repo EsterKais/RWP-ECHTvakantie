@@ -1,3 +1,8 @@
+.theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(http://res.cloudinary.com/unique/image/upload/c_scale,q_auto:low,w_1869/v1479911640/photo-1418225043143-90858d2301b4_1_gdup8m.jpg) center fixed; background-size: cover;"
+  .container
+    .theme-name
+      | Zoekresultaten
+
 - if @vacations.blank?
   .container
     h4
@@ -10,17 +15,19 @@
     - if @vacations.present?
       h5
         | We hebben #{@vacations.count} zoekresultaten gevonden voor "#{params[:search]}".
-    - @vacations.each do |vacation|
-      = link_to vacation do
-        .vacation-single
-          - if vacation.vphotos[0].present?
-            .vl-image style="background: url(#{vacation.vphotos[0].image}) center; background-size: cover"
-            .vl-title
-              = vacation[:title]
-            .vl-place
-              = vacation[:region]
-            .vl-description.font-hind
-              = vacation[:description].truncate(250)
-            .vl-price
-              | Prijsindicatie:
-              = vacation[:price]
+    .vacation-cards
+      - @vacations.each do |vacation|
+        - if vacation.show == true
+          = link_to vacation do
+            .vacation-card
+              - if vacation.vphotos[0].present?
+                .vl-image style="background: url(#{vacation.vphotos[0].image}) center; background-size: cover"
+                  .vl-title= vacation[:title]
+                  .vl-place
+                    = vacation[:region]
+                  .vl-country
+                    = vacation[:country]
+                  .vl-price
+                    = vacation[:price]
+              .vl-description.font-hind
+                = vacation[:description].truncate_words(28)
