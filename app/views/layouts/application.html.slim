@@ -11,9 +11,6 @@ html
     meta content=@page_title property="og:title" 
     meta content="website" property="og:type" 
     meta content="http://www.echtvakantie.nl" property="og:url" 
-    / meta content=@image property="og:image" 
-    //show on all pages (also themes) the same image
-    
     meta content="nl_NL" property="og:locale" 
     meta content="nl" property="og:country-name" 
     meta content="Amsterdam" property="og:locality" 
@@ -22,8 +19,7 @@ html
     meta name="twitter:creator" content="@HarveyGuzzini"
     meta name="twitter:title" content=@page_title
     meta name="twitter:description" content=@page_description
-    /"Op deze website vind je de meest bijzondere vakantieplekken in Europa"
-    / meta name="twitter:image" content=@image
+    meta name="twitter:image" content=@image
     meta name="twitter:image:alt" content="ECHTvakantie."
     
     = csrf_meta_tags
