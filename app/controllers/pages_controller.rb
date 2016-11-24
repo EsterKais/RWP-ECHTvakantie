@@ -16,5 +16,6 @@ class PagesController < ApplicationController
 
   def sitemap
     respond_to :xml
+    expires_in 6.hours, public: true
   end
 end
