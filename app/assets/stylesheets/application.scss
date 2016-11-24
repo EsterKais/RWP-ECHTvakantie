@@ -170,11 +170,12 @@ header {
   width: calc(100% - 20px);
   border:0;
   padding: 9px 10px;
-  font-weight: 16px;
+  // font-weight: 16px;
   border-radius: 5px;
   background: rgba(255,255,255,0.9);
-  font-family: 'Montserrat', sans-serif;
-  color: white;
+  letter-spacing: 1px;
+  // font-family: 'Montserrat', sans-serif;
+  // color: black;
 }
 
 .search-field:focus {
