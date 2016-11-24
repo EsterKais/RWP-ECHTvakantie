@@ -14,7 +14,7 @@ Link to the website: http://echtvakantie.codaisseur.cloud/
 
 ## Homepage
 
-![homepage](http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,q_auto:low,w_551/v1479557973/screencapture-echtvakantie-codaisseur-cloud-1479557942527_ydzgcu.png "Homepage Screenshot") 
+![homepage](http://i.imgur.com/wC74P4m.png "Homepage Screenshot") 
 
 ## Search page
 
