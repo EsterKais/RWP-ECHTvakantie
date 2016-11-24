@@ -81,6 +81,7 @@ class VacationsController < ApplicationController
     @vacation = Vacation.friendly.find(params[:id])
     @page_title = @vacation.title
     @page_description = @vacation.description
+    @image = @vacation.vphotos[0]
   end
 
   def set_themes

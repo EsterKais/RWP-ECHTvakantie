@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
     @page_title       = 'Bijzondere vakantieplekken in Europa'
     @page_description = 'Ontdek de meest bijzondere vakantieplekken in Europa, voor een weekendje weg of vakantie. Persoonlijk vind ik de plek waar je overnacht net zo belangrijk als de bestemming. Altijd een kleinschalig, bijzonder verblijf met persoonlijke touch.'
     @page_keywords    = 'Bijzondere, vakantie, plekken, Europa, weekendje, weg, vakantie, overnachting, kleinschalig, persoonlijk, Benelux'
+    @image = "http://res.cloudinary.com/co/image/upload/c_scale,w_968/v1479921341/Pasted_image_at_2016_11_23_17_50_mjmeci.png"
   end
 
   def theme
