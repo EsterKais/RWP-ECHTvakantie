@@ -61,6 +61,8 @@ $(document).on('turbolinks:load', function(){
 
   var footer = document.getElementById("footer");
 
+  $('.filter-dropdown').removeClass('active');
+  
   $(window).scroll(function(){
     if ($('#footer').isOnScreen()) {
       if ($('.filter-partial').hasClass('fixed')){
