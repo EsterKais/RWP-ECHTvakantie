@@ -6,12 +6,13 @@ html
     //SEO META TAGS
     = display_meta_tags site: @site_title, title: @page_title, description: @page_description, keywords: @page_keywords
     /Facebook
-    meta content="ECHTvakantie" property="og:site_name" 
-    meta content="Welkom op ECHTvakantie! Op deze website vind je de meest bijzondere vakantieplekken in Europa, voor een weekendje weg of vakantie." property="og:description" 
+    meta content=@site_title property="og:site_name" 
+    meta content=@page_description property="og:description" 
+    / "Welkom op ECHTvakantie! Op deze website vind je de meest bijzondere vakantieplekken in Europa, voor een weekendje weg of vakantie."
     meta content="ECHTvakantie" property="og:title" 
     meta content="website" property="og:type" 
     meta content="http://www.echtvakantie.nl" property="og:url" 
-    meta content="http://res.cloudinary.com/co/image/upload/v1479749636/knjz1x6qtqxs4dvjicwc.jpg" property="og:image" 
+    meta content="http://res.cloudinary.com/co/image/upload/c_scale,w_968/v1479921341/Pasted_image_at_2016_11_23_17_50_mjmeci.png" property="og:image" 
     //show on all pages (also themes) the same image
     /@vacation.remote_image_url[0].present? ? @vacation.remote_image_url[0] : 'default'
     
@@ -22,8 +23,9 @@ html
     meta name="twitter:card" content="summary_large_image"
     meta name="twitter:creator" content="@HarveyGuzzini"
     meta name="twitter:title" content="ECHTvakantie"
-    meta name="twitter:description" content="Op deze website vind je de meest bijzondere vakantieplekken in Europa"
-    meta name="twitter:image" content="http://res.cloudinary.com/co/image/upload/v1479749636/knjz1x6qtqxs4dvjicwc.jpg"
+    meta name="twitter:description" content=@page_description
+    /"Op deze website vind je de meest bijzondere vakantieplekken in Europa"
+    meta name="twitter:image" content="http://res.cloudinary.com/co/image/upload/c_scale,w_968/v1479921341/Pasted_image_at_2016_11_23_17_50_mjmeci.png"
     meta name="twitter:image:alt" content="Vakantie foto die een volkswagenbusje laat zien."
     
     = csrf_meta_tags
