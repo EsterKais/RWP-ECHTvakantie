@@ -14,7 +14,7 @@ Theme.delete_all
 Vacation.delete_all
 
 # Creating User
-User.create(email: "admin@test.com", password: "secret")
+User.create(email: ENV['EMAIL_USER'] || "admin@test.com", password: EMAIL['PASSWD'] || "secret")
 
 # Themes Photos
 tphoto1 = Tphoto.new(remote_image_url: "http://res.cloudinary.com/dfc7k24vb/image/upload/c_scale,q_auto:low,w_1339/v1477650346/EchtVakantie/theme/Special___treehouse.jpg")
