@@ -92,7 +92,9 @@ class ThemesController < ApplicationController
     @theme = Theme.friendly.find(params[:id])
     @page_title = @theme.name
     @page_description = @theme.description
-    @image = @theme.tphotos[0].image
+    if @theme.tphotos[0].present?
+      @image = @theme.tphotos[0].image
+    end
   end
 
   def set_unique(type)
