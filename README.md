@@ -10,11 +10,11 @@ Vacations are **categorized** by themes. Upon clikcing on a theme, vacations wit
 
 It is also possible to **order** vacations (e.g. by name) and to **search** for specific vacations based on text. Once on a selected vacation page the visitor sees a description, pictures, location (**googlemaps** API for static maps), review by our client and **suggestions** for other vacations related to the theme.
 
-Link to the website: https://echtvakantie.herokuapp.com/
+Link to the website: http://www.echtvakantie.nl/
 
 ## Homepage
 
-![homepage](http://res.cloudinary.com/dfc7k24vb/image/upload/v1480329536/screencapture-echtvakantie-herokuapp-1480329521674_dggaml.png "Homepage Screenshot") 
+![homepage](http://res.cloudinary.com/dfc7k24vb/image/upload/v1480329536/screencapture-echtvakantie-herokuapp-1480329521674_dggaml.png "Homepage Screenshot")
 
 ## Search page
 
