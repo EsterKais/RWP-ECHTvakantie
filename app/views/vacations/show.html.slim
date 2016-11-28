@@ -1,21 +1,22 @@
 .vac-show-header
-  .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{@tphotos[0].image}) center; background-size: cover;"
-    .container
-      .theme-title
-        h1= @vacation.title
-        span
-          = @vacation.region
-          | ,&nbsp;
-          = @vacation.country
-      / .theme-info
-      /   .vac-show-details
-      /     .address
-      /       | Adres:&nbsp;
-      /       = @vacation.address
-      /       | &nbsp; - &nbsp;
-      /       = @vacation.country
-      /     .price
-      /       = @vacation.price
+  -if @tphotos[0].present?
+    .theme-banner style="background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(#{@tphotos[0].image}) center; background-size: cover;"
+      .container
+        .theme-title
+          h1= @vacation.title
+          span
+            = @vacation.region
+            | ,&nbsp;
+            = @vacation.country
+        / .theme-info
+        /   .vac-show-details
+        /     .address
+        /       | Adres:&nbsp;
+        /       = @vacation.address
+        /       | &nbsp; - &nbsp;
+        /       = @vacation.country
+        /     .price
+        /       = @vacation.price
             
 .container
   .breadcrumbs
